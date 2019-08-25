@@ -26,6 +26,7 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
     
     //data
     var listBanners: [BannerDTO] = [];
+    var listCategory: [CategoryDTO] = [];
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
         
         //get data
         self.getSlideBanner();
+        self.getCategory();
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +57,7 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
 
     // MARK: - UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1;
+        return 2;
         
         //TODO: display more cate
 //        return 8;
@@ -106,15 +108,15 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
             cell?.setData(listBanner: self.listBanners);
             return cell!;
         }
-//        else if (indexPath.section == 1) {
-//            var cell: ListCategoryCell? = tableView.dequeueReusableCell(withIdentifier: "ListCategoryCell") as? ListCategoryCell;
-//            if (cell == nil) {
-//                cell = Bundle.main.loadNibNamed("ListCategoryCell", owner: self, options: nil)?.first as? ListCategoryCell;
-//            }
+        else if (indexPath.section == 1) {
+            var cell: ListCategoryCell? = tableView.dequeueReusableCell(withIdentifier: "ListCategoryCell") as? ListCategoryCell;
+            if (cell == nil) {
+                cell = Bundle.main.loadNibNamed("ListCategoryCell", owner: self, options: nil)?.first as? ListCategoryCell;
+            }
 //            cell?.delegate = self;
-//            cell?.setData(listCategory: self.listCategory);
-//            return cell!;
-//        }
+            cell?.setData(listCategory: self.listCategory);
+            return cell!;
+        }
 //        else if (indexPath.section == 2) {
 //            var cell: NeedLoginCell? = tableView.dequeueReusableCell(withIdentifier: "NeedLoginCell") as? NeedLoginCell;
 //            if (cell == nil) {
@@ -253,6 +255,62 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
 //                    }
 //                    self.tableView.reloadData();
 //                }
+//            }
+//            else {
+//
+//            }
+//        }
+    }
+    
+    func getCategory() {
+        //TODO: Demo Categories
+        let cat1 = CategoryDTO(catID: "1", name: "Cat 1", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
+        let cat2 = CategoryDTO(catID: "2", name: "Cat 2", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
+        let cat3 = CategoryDTO(catID: "3", name: "Cat 3", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
+        let cat4 = CategoryDTO(catID: "4", name: "Cat 4", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
+        let cat5 = CategoryDTO(catID: "5", name: "Cat 5", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
+        let cat6 = CategoryDTO(catID: "6", name: "Cat 6", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
+        let cat7 = CategoryDTO(catID: "7", name: "Cat 7", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
+        let cat8 = CategoryDTO(catID: "8", name: "Cat 8", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
+        let cat9 = CategoryDTO(catID: "9", name: "Cat 9", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
+        self.listCategory.append(cat1)
+        self.listCategory.append(cat2)
+        self.listCategory.append(cat3)
+        self.listCategory.append(cat4)
+        self.listCategory.append(cat5)
+        self.listCategory.append(cat6)
+        self.listCategory.append(cat7)
+        self.listCategory.append(cat8)
+        self.listCategory.append(cat9)
+        self.tableView.reloadData()
+        
+//        let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
+//        requestGetCategory { (operation, responseObject, error) in
+//            hud.hide(animated: true);
+//            if (error == nil) {
+//                //                print("requestGetCategory: \(responseObject)");
+//                let json = JSON(responseObject ?? [:]);
+//                if (json["TopMenuResult"].dictionary != nil) {
+//                    let data = json["TopMenuResult"];
+//                    if (data["Categories"].array != nil) {
+//                        let categories = data["Categories"].arrayValue;
+//                        for jsonData in categories {
+//                            let catDTO = CategoryDTO(jsonData: jsonData);
+//                            self.listCategory.append(catDTO);
+//
+//                            let subCatDTO = SubCategoryDTO(jsonData: jsonData);
+//                            self.listSubCategory.append(subCatDTO);
+//                        }
+//                    }
+//
+//                    for subCatDTO in self.listSubCategory {
+//                        self.getProductByCategory(subCategoryDTO: subCatDTO);
+//                    }
+//
+//                    self.tableView.reloadData();
+//
+//                }
+//
 //            }
 //            else {
 //

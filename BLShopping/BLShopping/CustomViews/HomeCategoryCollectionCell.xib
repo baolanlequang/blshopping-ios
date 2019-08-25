@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCategoryCollectionCell" id="gTV-IL-0wX" customClass="HomeCategoryCollectionCell" customModule="BLShopping" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pRt-Py-IGZ">
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meq-MU-wgN">
+                                <rect key="frame" x="6" y="8" width="107" height="14.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="vgR-4y-FxG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQI-yh-QWP">
+                                <rect key="frame" x="6" y="46" width="107" height="68"/>
+                                <color key="backgroundColor" red="0.54751018029999998" green="0.8492826819" blue="0.5216232261" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="OgU-N8-gDU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                <color key="textColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dge-SB-pYB">
+                                <rect key="frame" x="119" y="0.0" width="1" height="120"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="dvT-M5-sWq"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4C3-lU-2a0">
+                                <rect key="frame" x="6" y="46" width="107" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="hfE-0i-dpN"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dge-SB-pYB" secondAttribute="trailing" id="2f9-In-qCW"/>
+                            <constraint firstItem="dge-SB-pYB" firstAttribute="leading" secondItem="4C3-lU-2a0" secondAttribute="trailing" constant="6" id="4zA-on-kHW"/>
+                            <constraint firstItem="dge-SB-pYB" firstAttribute="top" secondItem="pRt-Py-IGZ" secondAttribute="top" id="OYi-HM-Vc9"/>
+                            <constraint firstAttribute="bottom" secondItem="4C3-lU-2a0" secondAttribute="bottom" constant="6" id="TJq-dg-MOT"/>
+                            <constraint firstItem="dge-SB-pYB" firstAttribute="leading" secondItem="OQI-yh-QWP" secondAttribute="trailing" constant="6" id="TZe-yY-Gah"/>
+                            <constraint firstAttribute="trailing" secondItem="meq-MU-wgN" secondAttribute="trailing" constant="6" id="e0m-wq-lMR"/>
+                            <constraint firstItem="meq-MU-wgN" firstAttribute="leading" secondItem="pRt-Py-IGZ" secondAttribute="leading" constant="6" id="lR6-CN-07K"/>
+                            <constraint firstItem="OQI-yh-QWP" firstAttribute="leading" secondItem="pRt-Py-IGZ" secondAttribute="leading" constant="6" id="oDp-fT-ihP"/>
+                            <constraint firstAttribute="bottom" secondItem="OQI-yh-QWP" secondAttribute="bottom" constant="6" id="vbq-rK-SLW"/>
+                            <constraint firstItem="4C3-lU-2a0" firstAttribute="leading" secondItem="pRt-Py-IGZ" secondAttribute="leading" constant="6" id="xKE-fU-gLd"/>
+                            <constraint firstAttribute="bottom" secondItem="dge-SB-pYB" secondAttribute="bottom" id="xf7-ml-W7N"/>
+                            <constraint firstItem="meq-MU-wgN" firstAttribute="top" secondItem="pRt-Py-IGZ" secondAttribute="top" constant="8" id="zEt-ah-DwH"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="pRt-Py-IGZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="QQ5-Nv-kZs"/>
+                <constraint firstAttribute="bottom" secondItem="pRt-Py-IGZ" secondAttribute="bottom" id="RKA-pp-ncX"/>
+                <constraint firstItem="pRt-Py-IGZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Wfe-ea-w2a"/>
+                <constraint firstAttribute="trailing" secondItem="pRt-Py-IGZ" secondAttribute="trailing" id="Xqg-TU-06K"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="imageViewThumb" destination="4C3-lU-2a0" id="rYD-mp-rLr"/>
+                <outlet property="lblImage" destination="OQI-yh-QWP" id="ZU6-sC-6gf"/>
+                <outlet property="lblName" destination="meq-MU-wgN" id="Im2-pu-8DP"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

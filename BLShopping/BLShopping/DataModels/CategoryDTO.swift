@@ -19,6 +19,13 @@ class CategoryDTO: NSObject {
         
     }
     
+    init(catID: String, name: String, thumb: String) {
+        super.init();
+        self.ID = catID;
+        self.name = name;
+        self.thumbnail = thumb;
+    }
+    
     init(jsonData: JSON) {
         self.ID = jsonData["Id"].stringValue;
         self.name = jsonData["Name"].stringValue;

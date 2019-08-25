@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		305A4FD32312D072002C8968 /* ListCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A4FD12312D072002C8968 /* ListCategoryCell.swift */; };
+		305A4FD42312D072002C8968 /* ListCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305A4FD22312D072002C8968 /* ListCategoryCell.xib */; };
+		305A4FD72312D130002C8968 /* HomeCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A4FD52312D130002C8968 /* HomeCategoryCollectionCell.swift */; };
+		305A4FD82312D130002C8968 /* HomeCategoryCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305A4FD62312D130002C8968 /* HomeCategoryCollectionCell.xib */; };
+		30932E3D2312D17600AC87A0 /* HomeCategoryCollectionCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30932E3C2312D17600AC87A0 /* HomeCategoryCollectionCell~ipad.xib */; };
+		30932E3F2312D4A300AC87A0 /* ListCategoryCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30932E3E2312D4A300AC87A0 /* ListCategoryCell~ipad.xib */; };
 		30BB6CD22312658200D25667 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB6CD12312658200D25667 /* AppDelegate.swift */; };
 		30BB6CD92312658400D25667 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30BB6CD82312658400D25667 /* Assets.xcassets */; };
 		30BB6CDC2312658400D25667 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BB6CDA2312658400D25667 /* LaunchScreen.storyboard */; };
@@ -49,6 +55,12 @@
 
 /* Begin PBXFileReference section */
 		2F8E6B4EDF68F222745D58C1 /* Pods_BLShopping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BLShopping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		305A4FD12312D072002C8968 /* ListCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategoryCell.swift; sourceTree = "<group>"; };
+		305A4FD22312D072002C8968 /* ListCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCategoryCell.xib; sourceTree = "<group>"; };
+		305A4FD52312D130002C8968 /* HomeCategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryCollectionCell.swift; sourceTree = "<group>"; };
+		305A4FD62312D130002C8968 /* HomeCategoryCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCategoryCollectionCell.xib; sourceTree = "<group>"; };
+		30932E3C2312D17600AC87A0 /* HomeCategoryCollectionCell~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "HomeCategoryCollectionCell~ipad.xib"; sourceTree = "<group>"; };
+		30932E3E2312D4A300AC87A0 /* ListCategoryCell~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "ListCategoryCell~ipad.xib"; sourceTree = "<group>"; };
 		30BB6CCE2312658200D25667 /* BLShopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLShopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BB6CD12312658200D25667 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30BB6CD82312658400D25667 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -217,6 +229,12 @@
 				30BB6D302312775100D25667 /* BannerCell.swift */,
 				30BB6D312312775100D25667 /* BannerCell.xib */,
 				30BB6D382312811100D25667 /* BannerCell~ipad.xib */,
+				305A4FD12312D072002C8968 /* ListCategoryCell.swift */,
+				305A4FD22312D072002C8968 /* ListCategoryCell.xib */,
+				30932E3E2312D4A300AC87A0 /* ListCategoryCell~ipad.xib */,
+				305A4FD52312D130002C8968 /* HomeCategoryCollectionCell.swift */,
+				305A4FD62312D130002C8968 /* HomeCategoryCollectionCell.xib */,
+				30932E3C2312D17600AC87A0 /* HomeCategoryCollectionCell~ipad.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -375,12 +393,16 @@
 				30BB6D2C231273A000D25667 /* en.json in Resources */,
 				30BB6D392312811100D25667 /* BannerCell~ipad.xib in Resources */,
 				30BB6D0923126B9400D25667 /* AccountVC.xib in Resources */,
+				305A4FD82312D130002C8968 /* HomeCategoryCollectionCell.xib in Resources */,
 				30BB6D2D231273A000D25667 /* vi.json in Resources */,
 				30BB6D0123126B6700D25667 /* SearchVC.xib in Resources */,
+				305A4FD42312D072002C8968 /* ListCategoryCell.xib in Resources */,
+				30932E3F2312D4A300AC87A0 /* ListCategoryCell~ipad.xib in Resources */,
 				30BB6CE82312685400D25667 /* SplashVC.xib in Resources */,
 				30BB6D0D23126BA100D25667 /* NotificationVC.xib in Resources */,
 				30BB6CDC2312658400D25667 /* LaunchScreen.storyboard in Resources */,
 				30BB6CF923126AFA00D25667 /* ListStoreVC.xib in Resources */,
+				30932E3D2312D17600AC87A0 /* HomeCategoryCollectionCell~ipad.xib in Resources */,
 				30BB6D332312775100D25667 /* BannerCell.xib in Resources */,
 				30BB6D0523126B8600D25667 /* CartVC.xib in Resources */,
 				30BB6CD92312658400D25667 /* Assets.xcassets in Resources */,
@@ -487,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30BB6D1523126C2200D25667 /* BLGlobal.swift in Sources */,
+				305A4FD32312D072002C8968 /* ListCategoryCell.swift in Sources */,
 				30BB6D1323126C1600D25667 /* CallAPIs.swift in Sources */,
 				30BB6CF823126AFA00D25667 /* ListStoreVC.swift in Sources */,
 				30BB6D1F23126C9300D25667 /* SwiftHEXColors.swift in Sources */,
@@ -503,6 +526,7 @@
 				30BB6CF42312698D00D25667 /* UserDTO.swift in Sources */,
 				30BB6D0F23126BCC00D25667 /* Utils.swift in Sources */,
 				30BB6CE72312685400D25667 /* SplashVC.swift in Sources */,
+				305A4FD72312D130002C8968 /* HomeCategoryCollectionCell.swift in Sources */,
 				30BB6D3B2312844B00D25667 /* CategoryDTO.swift in Sources */,
 				30BB6D0023126B6700D25667 /* SearchVC.swift in Sources */,
 				30BB6D0823126B9400D25667 /* AccountVC.swift in Sources */,
