@@ -1,0 +1,24 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'BLShopping' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for BLShopping
+pod 'AFNetworking', '~> 3.0'
+  pod 'SDWebImage'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
+  pod 'SwiftyJSON'
+  pod 'MBProgressHUD'
+  pod 'FMDB/FTS'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKShareKit'
+  pod 'FBSDKLoginKit'
+  pod 'MXSegmentedPager'
+  pod 'DLRadioButton', '~> 1.4'
+  pod 'Google/SignIn'
+  pod 'CCBottomRefreshControl'
+
+end
