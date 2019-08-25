@@ -8,9 +8,22 @@
 
 import Foundation
 
-class BannerDTO {
+class BannerDTO: NSObject  {
+    var bannerID = "";
     var content = "";
     var imageURL = "";
     var link = "";
+    
+    override init() {
+        
+    }
+    
+    init(bannerID: String, content: String, imageURL: String, link: String) {
+        super.init();
+        self.bannerID = bannerID;
+        self.content = content;
+        self.imageURL = imageURL;
+        self.link = link;
+    }
     
 }

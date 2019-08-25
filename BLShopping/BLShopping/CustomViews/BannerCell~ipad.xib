@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="4l9-Hb-6If" customClass="BannerCell" customModule="BLShopping" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4l9-Hb-6If" id="0xv-RM-Lfa">
+                <rect key="frame" x="0.0" y="0.0" width="768" height="299.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01V-6e-V4Q">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="300"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="300" id="XZp-MN-Lad"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="delegate" destination="4l9-Hb-6If" id="yz2-8x-Wbm"/>
+                        </connections>
+                    </scrollView>
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="4CL-Gh-TzO">
+                        <rect key="frame" x="689" y="254.5" width="71" height="37"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="37" id="nUE-iQ-0mc"/>
+                        </constraints>
+                        <color key="pageIndicatorTintColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="currentPageIndicatorTintColor" red="0.1058823529" green="0.6588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </pageControl>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="4CL-Gh-TzO" secondAttribute="trailing" constant="8" id="1pd-sQ-zRO"/>
+                    <constraint firstAttribute="bottom" secondItem="01V-6e-V4Q" secondAttribute="bottom" constant="-0.5" id="GDi-q5-b8k"/>
+                    <constraint firstItem="01V-6e-V4Q" firstAttribute="leading" secondItem="0xv-RM-Lfa" secondAttribute="leading" id="O0g-iw-Q83"/>
+                    <constraint firstItem="01V-6e-V4Q" firstAttribute="top" secondItem="0xv-RM-Lfa" secondAttribute="top" id="PbV-o1-I8S"/>
+                    <constraint firstAttribute="trailing" secondItem="01V-6e-V4Q" secondAttribute="trailing" id="ijo-cC-Xzx"/>
+                    <constraint firstAttribute="bottom" secondItem="4CL-Gh-TzO" secondAttribute="bottom" constant="8" id="sb0-Fw-sGK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="pageController" destination="4CL-Gh-TzO" id="aLD-vv-rAs"/>
+                <outlet property="scrollView" destination="01V-6e-V4Q" id="aJi-Wl-mCk"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

@@ -33,6 +33,9 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
         self.edgesForExtendedLayout = [];
         
         self.bgSearchBar.layer.cornerRadius = 3;
+        
+        //get data
+        self.getSlideBanner();
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -264,5 +267,52 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
             }
         }
         
+    }
+    
+    // MARK: - CALL APIs
+    func getSlideBanner() {
+        
+        //TODO: demo banner
+        let banner1 = BannerDTO(bannerID: "1", content: "", imageURL: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg", link: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
+        let banner2 = BannerDTO(bannerID: "2", content: "", imageURL: "https://cdn.pixabay.com/photo/2014/04/14/20/11/japanese-cherry-trees-324175_1280.jpg", link: "https://cdn.pixabay.com/photo/2014/04/14/20/11/japanese-cherry-trees-324175_1280.jpg")
+        let banner3 = BannerDTO(bannerID: "3", content: "", imageURL: "https://cdn.pixabay.com/photo/2013/10/02/23/03/dawn-190055_1280.jpg", link: "https://cdn.pixabay.com/photo/2013/10/02/23/03/dawn-190055_1280.jpg");
+        self.listBanners.append(banner1)
+        self.listBanners.append(banner2)
+        self.listBanners.append(banner3)
+        self.tableView.reloadData()
+        
+        
+        
+        //TODO: load banner
+//        let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
+//        requestGetSlideBanner { (operation, responseObject, error) in
+//            hud.hide(animated: true);
+//            if (error == nil) {
+//                let json = JSON(responseObject ?? [:]);
+//                if (json["NivoSliderResult"].dictionary != nil) {
+//                    let dicBanner = json["NivoSliderResult"];
+//                    for i in 1...5 {
+//                        let picStr = "Picture\(i)Url";
+//                        let linkStr = "Link\(i)";
+//                        let contentStr = "Text\(i)";
+//                        if (dicBanner[picStr].string != nil) {
+//                            let bannerDTO = BannerDTO();
+//                            bannerDTO.imageURL = dicBanner[picStr].stringValue;
+//                            if (dicBanner[linkStr].string != nil) {
+//                                bannerDTO.link = dicBanner[linkStr].stringValue;
+//                            }
+//                            if (dicBanner[contentStr].string != nil) {
+//                                bannerDTO.content = dicBanner[contentStr].stringValue;
+//                            }
+//                            self.listBanners.append(bannerDTO);
+//                        }
+//                    }
+//                    self.tableView.reloadData();
+//                }
+//            }
+//            else {
+//
+//            }
+//        }
     }
 }
