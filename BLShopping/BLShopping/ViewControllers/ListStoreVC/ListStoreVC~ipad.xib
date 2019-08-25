@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListStoreVC" customModule="BLShopping" customModuleProvider="target">
             <connections>
                 <outlet property="bgSearchBar" destination="Yor-6H-AbT" id="zQx-Hh-VR1"/>
+                <outlet property="marginTopTopBarView" destination="G08-oY-sVb" id="y3w-pF-1Q7"/>
                 <outlet property="tableView" destination="reI-Fi-DAO" id="IyA-Pg-Sz2"/>
                 <outlet property="topBarView" destination="Ph3-3I-GYp" id="5qI-yQ-e9C"/>
                 <outlet property="view" destination="iN0-l3-epB" id="lP0-ON-uY8"/>
@@ -67,7 +68,7 @@
             <constraints>
                 <constraint firstItem="Ph3-3I-GYp" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="91F-hN-0Vj"/>
                 <constraint firstItem="Ph3-3I-GYp" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="BSC-wx-Jce"/>
-                <constraint firstItem="Ph3-3I-GYp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="G08-oY-sVb"/>
+                <constraint firstItem="Ph3-3I-GYp" firstAttribute="top" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" id="G08-oY-sVb"/>
                 <constraint firstItem="reI-Fi-DAO" firstAttribute="top" secondItem="Ph3-3I-GYp" secondAttribute="bottom" id="Ghk-a3-DrS"/>
                 <constraint firstItem="Ph3-3I-GYp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Us6-Kq-4bJ"/>
                 <constraint firstItem="reI-Fi-DAO" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="XT2-yv-0Zk"/>
