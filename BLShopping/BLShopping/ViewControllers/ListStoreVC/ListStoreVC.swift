@@ -17,7 +17,8 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
     @IBOutlet weak var topBarView: UIView!
     @IBOutlet weak var bgSearchBar: UIView!
     
-    @IBOutlet weak var heightTopBar: NSLayoutConstraint!
+    @IBOutlet weak var marginTopTopBarView: NSLayoutConstraint!
+    
     
     //check scroll
     var lastContentOffset: CGFloat = 0;
@@ -182,49 +183,20 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
     
     // MARK: - UIScrollViewDelegate
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let distance = abs(self.lastContentOffset - scrollView.contentOffset.y);
-        
-        if (self.lastContentOffset > scrollView.contentOffset.y) {
-            if (self.isDragging) {
-                if (self.topBarView.frame.origin.y < 0) {
-                    var topBarFrame = self.topBarView.frame;
-                    topBarFrame.origin.y += distance;
-                    if (topBarFrame.origin.y > 0) {
-                        topBarFrame.origin.y = 0;
-                    }
-                    self.topBarView.frame = topBarFrame
-
+        if (self.isDragging) {
+            self.marginTopTopBarView.constant -= self.lastContentOffset;
+            if (checkIsIpad()) {
+                if (self.marginTopTopBarView.constant < -100) {
+                    self.marginTopTopBarView.constant = -100;
                 }
             }
-            
-        } else if (self.lastContentOffset < scrollView.contentOffset.y) {
-            if (self.isDragging) {
-                if (checkIsIpad()) {
-                    if (self.topBarView.frame.origin.y > -100) {
-                        var topBarFrame = self.topBarView.frame;
-                        topBarFrame.origin.y -= distance;
-                        if (topBarFrame.origin.y < -100) {
-                            topBarFrame.origin.y = -100;
-                        }
-                        self.topBarView.frame = topBarFrame
-                    }
+            else {
+                if (self.marginTopTopBarView.constant < -55) {
+                    self.marginTopTopBarView.constant = -55;
                 }
-                else {
-                    if (self.topBarView.frame.origin.y > -55) {
-                        var topBarFrame = self.topBarView.frame;
-                        topBarFrame.origin.y -= distance;
-                        if (topBarFrame.origin.y < -55) {
-                            topBarFrame.origin.y = -55;
-                        }
-                        self.topBarView.frame = topBarFrame
-                        
-//                        var tableviewFrame = self.tableView.frame;
-//                        tableviewFrame.origin.y = topBarFrame.origin.y + topBarFrame.size.height;
-//                        tableviewFrame.size.height = self.view.frame.size.height - tableviewFrame.origin.y;
-//                        self.tableView.frame = tableviewFrame;
-                    }
+                else if (self.marginTopTopBarView.constant > 0){
+                    self.marginTopTopBarView.constant = 0;
                 }
-                
             }
         }
         
@@ -239,35 +211,7 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
         self.isDragging = false;
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if (checkIsIpad()) {
-            if (self.topBarView.frame.origin.y > -100 && self.topBarView.frame.origin.y < -55) {
-                var topBarFrame = self.topBarView.frame;
-                topBarFrame.origin.y = -100;
-                self.topBarView.frame = topBarFrame
-            }
-            else if (self.topBarView.frame.origin.y >= -55 && self.topBarView.frame.origin.y < 0) {
-                var topBarFrame = self.topBarView.frame;
-                topBarFrame.origin.y = 0;
-                self.topBarView.frame = topBarFrame
 
-            }
-        }
-        else {
-            if (self.topBarView.frame.origin.y > -55 && self.topBarView.frame.origin.y < -25) {
-                var topBarFrame = self.topBarView.frame;
-                topBarFrame.origin.y = -55;
-                self.topBarView.frame = topBarFrame
-            }
-            else if (self.topBarView.frame.origin.y >= -25 && self.topBarView.frame.origin.y < 0) {
-                var topBarFrame = self.topBarView.frame;
-                topBarFrame.origin.y = 0;
-                self.topBarView.frame = topBarFrame
-
-            }
-        }
-        
-    }
     
     // MARK: - CALL APIs
     func getSlideBanner() {
