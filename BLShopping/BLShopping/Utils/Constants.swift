@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+// MARK: - Order status
+enum BLLanguageCode: String {
+    case EN = "en"
+    case VI = "vi"
+    init(fromRawValue: String) {
+        self = BLLanguageCode(rawValue: fromRawValue) ?? .EN
+    }
+}

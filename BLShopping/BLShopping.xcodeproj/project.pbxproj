@@ -33,6 +33,11 @@
 		30BB6D1F23126C9300D25667 /* SwiftHEXColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB6D1923126C9300D25667 /* SwiftHEXColors.swift */; };
 		30BB6D2023126C9300D25667 /* UIButton+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB6D1A23126C9300D25667 /* UIButton+Badge.m */; };
 		30BB6D2123126C9300D25667 /* EZRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB6D1C23126C9300D25667 /* EZRatingView.m */; };
+		30BB6D232312702200D25667 /* CartDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB6D222312702200D25667 /* CartDTO.swift */; };
+		30BB6D252312705800D25667 /* ProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB6D242312705800D25667 /* ProductDTO.swift */; };
+		30BB6D28231271A800D25667 /* BLColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB6D27231271A800D25667 /* BLColor.swift */; };
+		30BB6D2C231273A000D25667 /* en.json in Resources */ = {isa = PBXBuildFile; fileRef = 30BB6D2A231273A000D25667 /* en.json */; };
+		30BB6D2D231273A000D25667 /* vi.json in Resources */ = {isa = PBXBuildFile; fileRef = 30BB6D2B231273A000D25667 /* vi.json */; };
 		D54E1AC537D86EED1FFCB943 /* Pods_BLShopping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8E6B4EDF68F222745D58C1 /* Pods_BLShopping.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +74,11 @@
 		30BB6D1A23126C9300D25667 /* UIButton+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Badge.m"; sourceTree = "<group>"; };
 		30BB6D1C23126C9300D25667 /* EZRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRatingView.m; sourceTree = "<group>"; };
 		30BB6D1D23126C9300D25667 /* EZRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRatingView.h; sourceTree = "<group>"; };
+		30BB6D222312702200D25667 /* CartDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDTO.swift; sourceTree = "<group>"; };
+		30BB6D242312705800D25667 /* ProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDTO.swift; sourceTree = "<group>"; };
+		30BB6D27231271A800D25667 /* BLColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLColor.swift; sourceTree = "<group>"; };
+		30BB6D2A231273A000D25667 /* en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = en.json; sourceTree = "<group>"; };
+		30BB6D2B231273A000D25667 /* vi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vi.json; sourceTree = "<group>"; };
 		32745E673456E7EA617BF868 /* Pods-BLShopping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLShopping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLShopping/Pods-BLShopping.debug.xcconfig"; sourceTree = "<group>"; };
 		4B80D749A480EE8077C41772 /* Pods-BLShopping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLShopping.release.xcconfig"; path = "Pods/Target Support Files/Pods-BLShopping/Pods-BLShopping.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +116,7 @@
 		30BB6CD02312658200D25667 /* BLShopping */ = {
 			isa = PBXGroup;
 			children = (
+				30BB6D262312717000D25667 /* Resources */,
 				30BB6CF12312694C00D25667 /* ThirdPartyLibaries */,
 				30BB6CEE2312692200D25667 /* Utils */,
 				30BB6CF02312693F00D25667 /* DataModels */,
@@ -158,6 +169,7 @@
 				30BB6D1023126BE500D25667 /* Constants.swift */,
 				30BB6D1223126C1600D25667 /* CallAPIs.swift */,
 				30BB6D1423126C2200D25667 /* BLGlobal.swift */,
+				30BB6D27231271A800D25667 /* BLColor.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -166,6 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				30BB6CF32312698D00D25667 /* UserDTO.swift */,
+				30BB6D222312702200D25667 /* CartDTO.swift */,
+				30BB6D242312705800D25667 /* ProductDTO.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -242,6 +256,23 @@
 				30BB6D1D23126C9300D25667 /* EZRatingView.h */,
 			);
 			path = EZRatingView;
+			sourceTree = "<group>";
+		};
+		30BB6D262312717000D25667 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				30BB6D29231273A000D25667 /* LocalizedString */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		30BB6D29231273A000D25667 /* LocalizedString */ = {
+			isa = PBXGroup;
+			children = (
+				30BB6D2A231273A000D25667 /* en.json */,
+				30BB6D2B231273A000D25667 /* vi.json */,
+			);
+			path = LocalizedString;
 			sourceTree = "<group>";
 		};
 		6FC7CA06164CAD5A3AD8FA1C /* Pods */ = {
@@ -323,7 +354,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30BB6D2C231273A000D25667 /* en.json in Resources */,
 				30BB6D0923126B9400D25667 /* AccountVC.xib in Resources */,
+				30BB6D2D231273A000D25667 /* vi.json in Resources */,
 				30BB6D0123126B6700D25667 /* SearchVC.xib in Resources */,
 				30BB6CE82312685400D25667 /* SplashVC.xib in Resources */,
 				30BB6D0D23126BA100D25667 /* NotificationVC.xib in Resources */,
@@ -439,9 +472,11 @@
 				30BB6D0C23126BA100D25667 /* NotificationVC.swift in Sources */,
 				30BB6D2023126C9300D25667 /* UIButton+Badge.m in Sources */,
 				30BB6D2123126C9300D25667 /* EZRatingView.m in Sources */,
+				30BB6D28231271A800D25667 /* BLColor.swift in Sources */,
 				30BB6D1E23126C9300D25667 /* RaisePlaceholder.swift in Sources */,
 				30BB6CD22312658200D25667 /* AppDelegate.swift in Sources */,
 				30BB6D0423126B8600D25667 /* CartVC.swift in Sources */,
+				30BB6D232312702200D25667 /* CartDTO.swift in Sources */,
 				30BB6CED2312690A00D25667 /* BLNavigationController.swift in Sources */,
 				30BB6CEB231268EC00D25667 /* BLTabBarController.swift in Sources */,
 				30BB6CF42312698D00D25667 /* UserDTO.swift in Sources */,
@@ -450,6 +485,7 @@
 				30BB6D0023126B6700D25667 /* SearchVC.swift in Sources */,
 				30BB6D0823126B9400D25667 /* AccountVC.swift in Sources */,
 				30BB6D1123126BE500D25667 /* Constants.swift in Sources */,
+				30BB6D252312705800D25667 /* ProductDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

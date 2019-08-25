@@ -1,0 +1,9 @@
+{
+    "version": "1.0.0",
+    "STR_LABEL_OK": "OK",
+    "STR_LABEL_STORE": "Store",
+    "STR_LABEL_SEARCH": "Search",
+    "STR_LABEL_CART": "Your Cart",
+    "STR_LABEL_ACCOUNT": "Account",
+    "STR_LABEL_NOTIFICATION": "Notification"
+}

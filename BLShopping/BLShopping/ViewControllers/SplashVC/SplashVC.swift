@@ -41,18 +41,18 @@ class SplashVC: UIViewController {
         let tabbar = BLTabBarController();
         tabbar.viewControllers = [navListStore, navSearch, navCart, navAccount, navNotification];
         
-        navListStore.tabBarItem = UITabBarItem(title: "Cửa Hàng", image: UIImage(named: "icon_home")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icon_home_selected")?.withRenderingMode(.alwaysOriginal));
+        navListStore.tabBarItem = UITabBarItem(title: localizedString(key: "STR_LABEL_STORE"), image: UIImage(named: "icon_home")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icon_home_selected")?.withRenderingMode(.alwaysOriginal));
         
-        navSearch.tabBarItem = UITabBarItem(title: "Tìm Kiếm", image: UIImage(named: "icon_search")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icon_search_selected")?.withRenderingMode(.alwaysOriginal));
+        navSearch.tabBarItem = UITabBarItem(title: localizedString(key: "STR_LABEL_SEARCH"), image: UIImage(named: "icon_search")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icon_search_selected")?.withRenderingMode(.alwaysOriginal));
         
-        navCart.tabBarItem = UITabBarItem(title: "Giỏ Hàng", image: UIImage(named: "icon_cart")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icon_cart_selected")?.withRenderingMode(.alwaysOriginal));
+        navCart.tabBarItem = UITabBarItem(title: localizedString(key: "STR_LABEL_CART"), image: UIImage(named: "icon_cart")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icon_cart_selected")?.withRenderingMode(.alwaysOriginal));
         
         //TODO: show badgeValue
 //        navCart.tabBarItem.badgeValue = "\(BLGlobal.shared.cartDTO.getTotalProducts())";
         
-        navAccount.tabBarItem = UITabBarItem(title: "Tài Khoản", image: UIImage(named: "icon_user")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icon_user_selected")?.withRenderingMode(.alwaysOriginal));
+        navAccount.tabBarItem = UITabBarItem(title: localizedString(key: "STR_LABEL_ACCOUNT"), image: UIImage(named: "icon_user")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icon_user_selected")?.withRenderingMode(.alwaysOriginal));
         
-        navNotification.tabBarItem = UITabBarItem(title: "Thông Báo", image: UIImage(named: "icon_notification")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icon_notification_selected")?.withRenderingMode(.alwaysOriginal));
+        navNotification.tabBarItem = UITabBarItem(title: localizedString(key: "STR_LABEL_NOTIFICATION"), image: UIImage(named: "icon_notification")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icon_notification_selected")?.withRenderingMode(.alwaysOriginal));
         
         self.navigationController?.pushViewController(tabbar, animated: true);
         

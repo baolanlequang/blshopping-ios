@@ -1,0 +1,9 @@
+{
+    "version": "1.0.0",
+    "STR_LABEL_OK": "Đồng ý",
+    "STR_LABEL_STORE": "Cửa Hàng",
+    "STR_LABEL_SEARCH": "Tìm Kiếm",
+    "STR_LABEL_CART": "Giỏ Hàng",
+    "STR_LABEL_ACCOUNT": "Tài Khoản",
+    "STR_LABEL_NOTIFICATION": "Thông Báo"
+}
