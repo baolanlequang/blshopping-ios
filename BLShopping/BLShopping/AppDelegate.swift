@@ -3,7 +3,7 @@
 //  BLShopping
 //
 //  Created by Bao Lan Le Quang on 8/25/19.
-//  Copyright © 2019 HelloJack. All rights reserved.
+//  Copyright © 2019 BLShopping. All rights reserved.
 //
 
 import UIKit
@@ -15,7 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds);
+        self.window?.backgroundColor = UIColor.white;
+        
+        let splashScreen = SplashVC(nibName: "SplashVC", bundle: nil);
+        let navi = UINavigationController(rootViewController: splashScreen);
+        
+        self.window?.rootViewController = navi;
+        
+        self.window?.makeKeyAndVisible();
+        
         return true
     }
 
