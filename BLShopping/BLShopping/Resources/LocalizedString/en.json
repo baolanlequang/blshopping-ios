@@ -8,5 +8,9 @@
     "STR_LABEL_NOTIFICATION": "Notification",
     "STR_LABEL_SEARCH_HINT": "Find what's you need...",
     "STR_LABEL_CATEGORY": "Categories",
-    "STR_LABEL_SEE_ALL": "See all"
+    "STR_LABEL_SEE_ALL": "See all",
+    "STR_LABEL_LOG_IN": "Login",
+    "STR_LABEL_REGISTER": "Register",
+    "STR_LABEL_INTRO_LOGIN": "Please login to get more benefits",
+    "STR_LABEL_BEST_SELLER_PRODUCT": "Best seller"
 }

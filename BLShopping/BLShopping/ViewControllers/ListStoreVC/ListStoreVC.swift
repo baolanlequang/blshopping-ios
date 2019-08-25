@@ -10,7 +10,7 @@ import UIKit
 import MBProgressHUD
 import SwiftyJSON
 
-class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate {
+class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate, ListCategoryCellDelegate, NeedLoginCellDelegate {
     
     // variables
     @IBOutlet weak var tableView: UITableView!
@@ -27,6 +27,11 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
     //data
     var listBanners: [BannerDTO] = [];
     var listCategory: [CategoryDTO] = [];
+    var listSubCategory: [SubCategoryDTO] = [];
+    var listBestSellerProduct: [ProductDTO] = [];
+    var listWatchedProduct: [ProductDTO] = [];
+    var listNewAddedProduct: [ProductDTO] = [];
+    var listHotProduct: [ProductDTO] = [];
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +49,7 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
         //get data
         self.getSlideBanner();
         self.getCategory();
+        self.getBestSellerProduct();
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -64,45 +70,42 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
 
     // MARK: - UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2;
-        
-        //TODO: display more cate
-//        return 8;
+        return 8;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if (section == 7) {
-//            return self.listSubCategory.count;
-//        }
-//        else if (section == 3) {
-//            if (self.listBestSellerProduct.count > 0) {
-//                return 1;
-//            }
-//            return 0;
-//        }
-//        else if (section == 4) {
-//            if (self.listNewAddedProduct.count > 0) {
-//                return 1;
-//            }
-//            return 0;
-//        }
-//        else if (section == 5) {
-//            if (self.listHotProduct.count > 0) {
-//                return 1;
-//            }
-//            return 0;
-//        }
-//        else if (section == 6) {
-//            if (self.listWatchedProduct.count > 0) {
-//                return 1;
-//            }
-//            return 0;
-//        }
-//        else if (section == 2) {
-//            if (BLGlobal.shared.userDTO != nil) {
-//                return 0;
-//            }
-//        }
+        if (section == 7) {
+            return self.listSubCategory.count;
+        }
+        else if (section == 3) {
+            if (self.listBestSellerProduct.count > 0) {
+                return 1;
+            }
+            return 0;
+        }
+        else if (section == 4) {
+            if (self.listNewAddedProduct.count > 0) {
+                return 1;
+            }
+            return 0;
+        }
+        else if (section == 5) {
+            if (self.listHotProduct.count > 0) {
+                return 1;
+            }
+            return 0;
+        }
+        else if (section == 6) {
+            if (self.listWatchedProduct.count > 0) {
+                return 1;
+            }
+            return 0;
+        }
+        else if (section == 2) {
+            if (BLGlobal.shared.userDTO != nil) {
+                return 0;
+            }
+        }
         return 1;
     }
     
@@ -120,27 +123,27 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
             if (cell == nil) {
                 cell = Bundle.main.loadNibNamed("ListCategoryCell", owner: self, options: nil)?.first as? ListCategoryCell;
             }
-//            cell?.delegate = self;
+            cell?.delegate = self;
             cell?.setData(listCategory: self.listCategory);
             return cell!;
         }
-//        else if (indexPath.section == 2) {
-//            var cell: NeedLoginCell? = tableView.dequeueReusableCell(withIdentifier: "NeedLoginCell") as? NeedLoginCell;
-//            if (cell == nil) {
-//                cell = Bundle.main.loadNibNamed("NeedLoginCell", owner: self, options: nil)?.first as? NeedLoginCell;
-//            }
+        else if (indexPath.section == 2) {
+            var cell: NeedLoginCell? = tableView.dequeueReusableCell(withIdentifier: "NeedLoginCell") as? NeedLoginCell;
+            if (cell == nil) {
+                cell = Bundle.main.loadNibNamed("NeedLoginCell", owner: self, options: nil)?.first as? NeedLoginCell;
+            }
+            cell?.delegate = self;
+            return cell!;
+        }
+        else if (indexPath.section == 3) {
+            var cell: BestSellerCell? = tableView.dequeueReusableCell(withIdentifier: "BestSellerCell") as? BestSellerCell;
+            if (cell == nil) {
+                cell = Bundle.main.loadNibNamed("BestSellerCell", owner: self, options: nil)?.first as? BestSellerCell;
+            }
 //            cell?.delegate = self;
-//            return cell!;
-//        }
-//        else if (indexPath.section == 3) {
-//            var cell: HotPromotionCell? = tableView.dequeueReusableCell(withIdentifier: "HotPromotionCell") as? HotPromotionCell;
-//            if (cell == nil) {
-//                cell = Bundle.main.loadNibNamed("HotPromotionCell", owner: self, options: nil)?.first as? HotPromotionCell;
-//            }
-//            cell?.delegate = self;
-//            cell?.setData(listProducts: self.listBestSellerProduct);
-//            return cell!;
-//        }
+            cell?.setData(listProducts: self.listBestSellerProduct);
+            return cell!;
+        }
 //        else if (indexPath.section == 4) {
 //            var cell: ProductForYouCell? = tableView.dequeueReusableCell(withIdentifier: "ProductForYouCell") as? ProductForYouCell;
 //            if (cell == nil) {
@@ -220,7 +223,37 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
         self.isDragging = false;
     }
     
-
+    // MARK: - ListCategoryCellDelegate
+    func openSeeAllCategory() {
+//        let listAllCategoriesVC = ListAllCategoriesVC(nibName: "ListAllCategoriesVC", bundle: nil);
+//        listAllCategoriesVC.listCategory = self.listCategory;
+//        self.navigationController?.pushViewController(listAllCategoriesVC, animated: true);
+    }
+    
+    func openCategoryDetail(categoryDTO: CategoryDTO) {
+//        if (categoryDTO.listSubCat.count > 0) {
+//            let listAllCategoriesVC = ListAllCategoriesVC(nibName: "ListAllCategoriesVC", bundle: nil);
+//            listAllCategoriesVC.parentCategory = categoryDTO;
+//            listAllCategoriesVC.listCategory = categoryDTO.listSubCat;
+//            self.navigationController?.pushViewController(listAllCategoriesVC, animated: true);
+//        }
+    }
+    
+    // MARK: - NeedLoginCellDelegate
+    func openSignUpView() {
+//        let loginVC = LoginSignupVC(nibName: "LoginSignupVC", bundle: nil);
+//        let nav = UINavigationController(rootViewController: loginVC);
+//        loginVC.delegate = self;
+//        loginVC.isShowSignUp = true
+//        self.view.window?.rootViewController?.present(nav, animated: true, completion: nil);
+    }
+    
+    func openLoginView() {
+//        let loginVC = LoginSignupVC(nibName: "LoginSignupVC", bundle: nil);
+//        let nav = UINavigationController(rootViewController: loginVC);
+//        loginVC.delegate = self;
+//        self.view.window?.rootViewController?.present(nav, animated: true, completion: nil);
+    }
     
     // MARK: - CALL APIs
     func getSlideBanner() {
@@ -321,6 +354,45 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
 //            }
 //            else {
 //
+//            }
+//        }
+    }
+    
+    func getBestSellerProduct() {
+        //TODO: demo best seller
+        for i in 1...5 {
+            let product = ProductDTO()
+            product.ID = "\(i)"
+            product.imageURL = "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg";
+            product.name = "Product \(i+1)"
+            product.price = "\(i*100)$"
+            product.priceBeforeDiscount = "\(i*100+i)$"
+            self.listBestSellerProduct.append(product)
+        }
+        self.tableView.reloadData();
+        
+        
+//        let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
+//        requestBestSellerProducts { (operation, responseObject, error) in
+//            hud.hide(animated: true);
+//            if (error == nil) {
+//                //                print("requestBestSellerProducts: \(responseObject)");
+//                let json = JSON(responseObject ?? [:]);
+//                if (json["BestSellersResult"].dictionary != nil) {
+//                    let json = JSON(responseObject ?? [:]);
+//                    if (json["BestSellersResult"].array != nil) {
+//                        for jsonData in json["BestSellersResult"].arrayValue {
+//                            let product = ProductDTO(jsonData: jsonData);
+//                            self.listBestSellerProduct.append(product);
+//                        }
+//                        self.tableView.reloadData();
+//                    }
+//                    self.tableView.reloadData();
+//                }
+//                
+//            }
+//            else {
+//                
 //            }
 //        }
     }

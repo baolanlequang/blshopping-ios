@@ -25,4 +25,12 @@ class BLColor {
     func textHintColor() -> UIColor {
         return UIColor(hexString: "#8E8E93")!;
     }
+    
+    func highlightButtonColor() -> UIColor {
+        return UIColor(hexString: "E53935")!;
+    }
+    
+    func textHighlightButtonColor() -> UIColor {
+        return UIColor.white;
+    }
 }

@@ -8,5 +8,9 @@
     "STR_LABEL_NOTIFICATION": "Thông Báo",
     "STR_LABEL_SEARCH_HINT": "Tìm thứ bạn cần....",
     "STR_LABEL_CATEGORY": "Danh mục sản phẩm",
-    "STR_LABEL_SEE_ALL": "Xem tất cả"
+    "STR_LABEL_SEE_ALL": "Xem tất cả",
+    "STR_LABEL_LOG_IN": "Đăng nhập",
+    "STR_LABEL_REGISTER": "Đăng ký",
+    "STR_LABEL_INTRO_LOGIN": "Đăng nhập để trải nghiệm tốt nhất",
+    "STR_LABEL_BEST_SELLER_PRODUCT": "Sản phẩm bán chạy"
 }
