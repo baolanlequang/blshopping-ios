@@ -40,6 +40,9 @@
                                 <state key="normal" title="Xem tất cả">
                                     <color key="titleColor" red="0.1058823529" green="0.6588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnSeeAllClicked:" destination="5C1-qp-xgX" eventType="touchUpInside" id="3WL-g0-XYu"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHk-SH-8pS">
                                 <rect key="frame" x="0.0" y="43" width="768" height="1"/>
@@ -92,7 +95,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="btnSeeAll" destination="PRZ-xU-te5" id="XYo-6f-Ex3"/>
                 <outlet property="collectionView" destination="AAf-XQ-Lzb" id="d5L-PB-fhl"/>
+                <outlet property="lblTitle" destination="OIh-fx-bzk" id="s1e-cj-iW6"/>
             </connections>
             <point key="canvasLocation" x="34.782608695652179" y="-2.6785714285714284"/>
         </tableViewCell>

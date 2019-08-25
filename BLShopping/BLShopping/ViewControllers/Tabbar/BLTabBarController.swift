@@ -14,6 +14,7 @@ class BLTabBarController: UITabBarController {
         super.viewDidLoad()
 
         self.automaticallyAdjustsScrollViewInsets = false;
+        self.tabBar.tintColor = BLColor.sharedInstance.defaultColor();
         
         //TODO: notification
 //        // register Notification

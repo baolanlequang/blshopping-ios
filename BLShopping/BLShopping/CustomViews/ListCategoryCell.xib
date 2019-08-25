@@ -94,7 +94,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnSeeAll" destination="ubb-xe-UYn" id="qfk-a1-y5u"/>
                 <outlet property="collectionView" destination="ES0-es-5ke" id="G5P-Cs-FiN"/>
+                <outlet property="lblTitle" destination="aQY-6q-K2i" id="8Nf-7f-07G"/>
             </connections>
         </tableViewCell>
     </objects>

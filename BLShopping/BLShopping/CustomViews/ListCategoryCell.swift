@@ -17,6 +17,8 @@ class ListCategoryCell: UITableViewCell, UICollectionViewDataSource, UICollectio
     
     // variables
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var btnSeeAll: UIButton!
     
     //call back
     var delegate: ListCategoryCellDelegate?;
@@ -33,10 +35,17 @@ class ListCategoryCell: UITableViewCell, UICollectionViewDataSource, UICollectio
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        //set color
+        self.lblTitle.textColor = BLColor.sharedInstance.defaultTextColor();
+        self.btnSeeAll.setTitleColor(BLColor.sharedInstance.defaultColor(), for: .normal);
     }
     
     func setData(listCategory: [CategoryDTO]) {
+        //localize strings
+        self.lblTitle.text = localizedString(key: "STR_LABEL_CATEGORY")
+        self.btnSeeAll.setTitle(localizedString(key: "STR_LABEL_SEE_ALL"), for: .normal)
+        
+        
         self.listCategory = listCategory;
         self.collectionView.reloadData();
     }

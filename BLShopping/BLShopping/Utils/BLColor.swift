@@ -14,9 +14,15 @@ class BLColor {
         
     } //This prevents others from using the default '()' initializer for this class.
     
-    public func defaultColor() -> UIColor {
-        return UIColor.init(hexString: "#2699FB")!;
+    func defaultColor() -> UIColor {
+        return UIColor(hexString: "#1BA8FF")!;
     }
     
+    func defaultTextColor() -> UIColor {
+        return UIColor.black;
+    }
     
+    func textHintColor() -> UIColor {
+        return UIColor(hexString: "#8E8E93")!;
+    }
 }

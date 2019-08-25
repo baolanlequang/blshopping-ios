@@ -16,9 +16,9 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topBarView: UIView!
     @IBOutlet weak var bgSearchBar: UIView!
+    @IBOutlet weak var btnOpenSearch: UIButton!
     
     @IBOutlet weak var marginTopTopBarView: NSLayoutConstraint!
-    
     
     //check scroll
     var lastContentOffset: CGFloat = 0;
@@ -34,7 +34,12 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
         self.navigationController?.isNavigationBarHidden = true;
         self.edgesForExtendedLayout = [];
         
+        //set corner radius
         self.bgSearchBar.layer.cornerRadius = 3;
+        
+        //set color
+        self.topBarView.backgroundColor = BLColor.sharedInstance.defaultColor();
+        self.btnOpenSearch.setTitleColor(BLColor.sharedInstance.textHintColor(), for: .normal);
         
         //get data
         self.getSlideBanner();
@@ -45,6 +50,8 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
         super.viewWillAppear(animated);
         
         //TODO: localized and load list viewed product
+        self.btnOpenSearch.setTitle(localizedString(key: "STR_LABEL_SEARCH_HINT"), for: .normal);
+        
 //        self.listWatchedProduct.removeAll();
 //        self.listWatchedProduct = BLGlobal.shared.getRecentOpenProducts();
         self.tableView.reloadData();

@@ -18,6 +18,8 @@ class HomeCategoryCollectionCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        //set color
+        self.lblName.textColor = BLColor.sharedInstance.defaultTextColor();
     }
     
     func setData(categoryDTO: CategoryDTO) {

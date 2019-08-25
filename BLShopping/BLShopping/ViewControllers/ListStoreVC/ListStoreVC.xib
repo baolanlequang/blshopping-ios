@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListStoreVC" customModule="BLShopping" customModuleProvider="target">
             <connections>
                 <outlet property="bgSearchBar" destination="Rt6-Ml-vn7" id="PFD-f0-g1j"/>
+                <outlet property="btnOpenSearch" destination="MmE-3f-Mk1" id="UVi-sP-GuJ"/>
                 <outlet property="marginTopTopBarView" destination="glR-Dv-YJl" id="c7N-D3-enF"/>
                 <outlet property="tableView" destination="lXT-PI-XOn" id="cnk-Zz-kTb"/>
                 <outlet property="topBarView" destination="vSV-At-J49" id="f0g-dQ-0C1"/>
@@ -38,6 +39,9 @@
                                     <state key="normal" title="Sản phẩm, thương hiệu và mọi thứ bạn cần" image="icon_search_small">
                                         <color key="titleColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="btnOpenSearchClicked:" destination="-1" eventType="touchUpInside" id="65j-Jm-Fr6"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -92,6 +96,6 @@
     </objects>
     <resources>
         <image name="icon_search_small" width="15" height="15"/>
-        <image name="logo_top" width="16" height="16"/>
+        <image name="logo_top" width="512" height="73.5"/>
     </resources>
 </document>

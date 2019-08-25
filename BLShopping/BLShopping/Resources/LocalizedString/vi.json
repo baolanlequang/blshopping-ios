@@ -5,5 +5,8 @@
     "STR_LABEL_SEARCH": "Tìm Kiếm",
     "STR_LABEL_CART": "Giỏ Hàng",
     "STR_LABEL_ACCOUNT": "Tài Khoản",
-    "STR_LABEL_NOTIFICATION": "Thông Báo"
+    "STR_LABEL_NOTIFICATION": "Thông Báo",
+    "STR_LABEL_SEARCH_HINT": "Tìm thứ bạn cần....",
+    "STR_LABEL_CATEGORY": "Danh mục sản phẩm",
+    "STR_LABEL_SEE_ALL": "Xem tất cả"
 }

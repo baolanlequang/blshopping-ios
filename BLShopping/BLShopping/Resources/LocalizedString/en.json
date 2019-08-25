@@ -5,5 +5,8 @@
     "STR_LABEL_SEARCH": "Search",
     "STR_LABEL_CART": "Your Cart",
     "STR_LABEL_ACCOUNT": "Account",
-    "STR_LABEL_NOTIFICATION": "Notification"
+    "STR_LABEL_NOTIFICATION": "Notification",
+    "STR_LABEL_SEARCH_HINT": "Find what's you need...",
+    "STR_LABEL_CATEGORY": "Categories",
+    "STR_LABEL_SEE_ALL": "See all"
 }

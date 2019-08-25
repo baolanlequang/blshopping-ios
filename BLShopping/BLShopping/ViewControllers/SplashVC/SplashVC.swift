@@ -14,6 +14,9 @@ class SplashVC: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.isNavigationBarHidden = true;
+        
+        //set background color
+        self.view.backgroundColor = BLColor.sharedInstance.defaultColor();
 
         //TODO: check user
 //        let userDTO = BLGlobal.shared.getUser();
