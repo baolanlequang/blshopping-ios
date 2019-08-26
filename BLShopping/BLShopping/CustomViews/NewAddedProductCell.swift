@@ -1,26 +1,26 @@
 //
-//  BestSellerCell.swift
+//  NewAddedProductCell.swift
 //  BLShopping
 //
-//  Created by Bao Lan Le Quang on 8/25/19.
+//  Created by Bao Lan Le Quang on 8/26/19.
 //  Copyright © 2019 BLShopping. All rights reserved.
 //
 
 import UIKit
 
-protocol BestSellerCellDelegate {
+protocol NewAddedProductCellDelegate {
     func openProductDetail(productDTO: ProductDTO);
 }
 
-class BestSellerCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
+class NewAddedProductCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var lblTitle: UILabel!
     
     var listProducts: [ProductDTO] = [];
-
-    var delegate: BestSellerCellDelegate?;
     
+    var delegate: NewAddedProductCellDelegate?;
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -37,9 +37,6 @@ class BestSellerCell: UITableViewCell, UICollectionViewDataSource, UICollectionV
     }
     
     func setData(listProducts: [ProductDTO]) {
-        //localize strings
-        self.lblTitle.text = localizedString(key: "STR_LABEL_BEST_SELLER_PRODUCT")
-        
         self.listProducts = listProducts;
         
         self.collectionView.reloadData();
@@ -53,7 +50,12 @@ class BestSellerCell: UITableViewCell, UICollectionViewDataSource, UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell: BestSellerProductCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "BestSellerProductCell", for: indexPath) as? BestSellerProductCell;
         if (cell == nil) {
-            cell = BestSellerProductCell(frame: CGRect(x: 0, y: 0, width: 140, height: 180));
+            if (checkIsIpad()) {
+                cell = BestSellerProductCell(frame: CGRect(x: 0, y: 0, width: 200, height: 250));
+            }
+            else {
+                cell = BestSellerProductCell(frame: CGRect(x: 0, y: 0, width: 140, height: 180));
+            }
         }
         let productDTO = self.listProducts[indexPath.row];
         cell?.setData(productDTO: productDTO);

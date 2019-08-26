@@ -11,13 +11,14 @@
 		305A4FD42312D072002C8968 /* ListCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305A4FD22312D072002C8968 /* ListCategoryCell.xib */; };
 		305A4FD72312D130002C8968 /* HomeCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A4FD52312D130002C8968 /* HomeCategoryCollectionCell.swift */; };
 		305A4FD82312D130002C8968 /* HomeCategoryCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305A4FD62312D130002C8968 /* HomeCategoryCollectionCell.xib */; };
+		307B41F8231384E100A02B47 /* NewAddedProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307B41F6231384E100A02B47 /* NewAddedProductCell.swift */; };
+		307B41F9231384E100A02B47 /* NewAddedProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307B41F7231384E100A02B47 /* NewAddedProductCell.xib */; };
+		307B41FB2313851900A02B47 /* NewAddedProductCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307B41FA2313851900A02B47 /* NewAddedProductCell~ipad.xib */; };
 		30932E3D2312D17600AC87A0 /* HomeCategoryCollectionCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30932E3C2312D17600AC87A0 /* HomeCategoryCollectionCell~ipad.xib */; };
 		30932E3F2312D4A300AC87A0 /* ListCategoryCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30932E3E2312D4A300AC87A0 /* ListCategoryCell~ipad.xib */; };
 		30932E422312DDE500AC87A0 /* NeedLoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30932E402312DDE500AC87A0 /* NeedLoginCell.swift */; };
 		30932E432312DDE500AC87A0 /* NeedLoginCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30932E412312DDE500AC87A0 /* NeedLoginCell.xib */; };
 		30932E452312DE4E00AC87A0 /* SubCategoryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30932E442312DE4E00AC87A0 /* SubCategoryDTO.swift */; };
-		30932E482312E24A00AC87A0 /* BestSellerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30932E462312E24A00AC87A0 /* BestSellerCell.swift */; };
-		30932E492312E24A00AC87A0 /* BestSellerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30932E472312E24A00AC87A0 /* BestSellerCell.xib */; };
 		30932E4C2312E45600AC87A0 /* BestSellerProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30932E4A2312E45600AC87A0 /* BestSellerProductCell.swift */; };
 		30932E4D2312E45600AC87A0 /* BestSellerProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30932E4B2312E45600AC87A0 /* BestSellerProductCell.xib */; };
 		30932E4F2312E48500AC87A0 /* BestSellerProductCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30932E4E2312E48500AC87A0 /* BestSellerProductCell~ipad.xib */; };
@@ -67,13 +68,14 @@
 		305A4FD22312D072002C8968 /* ListCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCategoryCell.xib; sourceTree = "<group>"; };
 		305A4FD52312D130002C8968 /* HomeCategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryCollectionCell.swift; sourceTree = "<group>"; };
 		305A4FD62312D130002C8968 /* HomeCategoryCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCategoryCollectionCell.xib; sourceTree = "<group>"; };
+		307B41F6231384E100A02B47 /* NewAddedProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAddedProductCell.swift; sourceTree = "<group>"; };
+		307B41F7231384E100A02B47 /* NewAddedProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAddedProductCell.xib; sourceTree = "<group>"; };
+		307B41FA2313851900A02B47 /* NewAddedProductCell~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "NewAddedProductCell~ipad.xib"; sourceTree = "<group>"; };
 		30932E3C2312D17600AC87A0 /* HomeCategoryCollectionCell~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "HomeCategoryCollectionCell~ipad.xib"; sourceTree = "<group>"; };
 		30932E3E2312D4A300AC87A0 /* ListCategoryCell~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "ListCategoryCell~ipad.xib"; sourceTree = "<group>"; };
 		30932E402312DDE500AC87A0 /* NeedLoginCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedLoginCell.swift; sourceTree = "<group>"; };
 		30932E412312DDE500AC87A0 /* NeedLoginCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NeedLoginCell.xib; sourceTree = "<group>"; };
 		30932E442312DE4E00AC87A0 /* SubCategoryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryDTO.swift; sourceTree = "<group>"; };
-		30932E462312E24A00AC87A0 /* BestSellerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellerCell.swift; sourceTree = "<group>"; };
-		30932E472312E24A00AC87A0 /* BestSellerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestSellerCell.xib; sourceTree = "<group>"; };
 		30932E4A2312E45600AC87A0 /* BestSellerProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellerProductCell.swift; sourceTree = "<group>"; };
 		30932E4B2312E45600AC87A0 /* BestSellerProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestSellerProductCell.xib; sourceTree = "<group>"; };
 		30932E4E2312E48500AC87A0 /* BestSellerProductCell~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "BestSellerProductCell~ipad.xib"; sourceTree = "<group>"; };
@@ -254,11 +256,12 @@
 				30932E3C2312D17600AC87A0 /* HomeCategoryCollectionCell~ipad.xib */,
 				30932E402312DDE500AC87A0 /* NeedLoginCell.swift */,
 				30932E412312DDE500AC87A0 /* NeedLoginCell.xib */,
-				30932E462312E24A00AC87A0 /* BestSellerCell.swift */,
-				30932E472312E24A00AC87A0 /* BestSellerCell.xib */,
 				30932E4A2312E45600AC87A0 /* BestSellerProductCell.swift */,
 				30932E4B2312E45600AC87A0 /* BestSellerProductCell.xib */,
 				30932E4E2312E48500AC87A0 /* BestSellerProductCell~ipad.xib */,
+				307B41F6231384E100A02B47 /* NewAddedProductCell.swift */,
+				307B41F7231384E100A02B47 /* NewAddedProductCell.xib */,
+				307B41FA2313851900A02B47 /* NewAddedProductCell~ipad.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -423,6 +426,8 @@
 				305A4FD42312D072002C8968 /* ListCategoryCell.xib in Resources */,
 				30932E3F2312D4A300AC87A0 /* ListCategoryCell~ipad.xib in Resources */,
 				30932E4D2312E45600AC87A0 /* BestSellerProductCell.xib in Resources */,
+				307B41FB2313851900A02B47 /* NewAddedProductCell~ipad.xib in Resources */,
+				307B41F9231384E100A02B47 /* NewAddedProductCell.xib in Resources */,
 				30BB6CE82312685400D25667 /* SplashVC.xib in Resources */,
 				30BB6D0D23126BA100D25667 /* NotificationVC.xib in Resources */,
 				30932E4F2312E48500AC87A0 /* BestSellerProductCell~ipad.xib in Resources */,
@@ -430,7 +435,6 @@
 				30932E432312DDE500AC87A0 /* NeedLoginCell.xib in Resources */,
 				30BB6CF923126AFA00D25667 /* ListStoreVC.xib in Resources */,
 				30932E3D2312D17600AC87A0 /* HomeCategoryCollectionCell~ipad.xib in Resources */,
-				30932E492312E24A00AC87A0 /* BestSellerCell.xib in Resources */,
 				30BB6D332312775100D25667 /* BannerCell.xib in Resources */,
 				30BB6D0523126B8600D25667 /* CartVC.xib in Resources */,
 				30BB6CD92312658400D25667 /* Assets.xcassets in Resources */,
@@ -558,11 +562,11 @@
 				30BB6CE72312685400D25667 /* SplashVC.swift in Sources */,
 				305A4FD72312D130002C8968 /* HomeCategoryCollectionCell.swift in Sources */,
 				30BB6D3B2312844B00D25667 /* CategoryDTO.swift in Sources */,
-				30932E482312E24A00AC87A0 /* BestSellerCell.swift in Sources */,
 				30BB6D0023126B6700D25667 /* SearchVC.swift in Sources */,
 				30BB6D0823126B9400D25667 /* AccountVC.swift in Sources */,
 				30BB6D2F2312762700D25667 /* BannerDTO.swift in Sources */,
 				30BB6D1123126BE500D25667 /* Constants.swift in Sources */,
+				307B41F8231384E100A02B47 /* NewAddedProductCell.swift in Sources */,
 				30BB6D252312705800D25667 /* ProductDTO.swift in Sources */,
 				30932E4C2312E45600AC87A0 /* BestSellerProductCell.swift in Sources */,
 				30BB6D322312775100D25667 /* BannerCell.swift in Sources */,

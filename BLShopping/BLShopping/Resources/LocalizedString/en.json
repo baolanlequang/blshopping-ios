@@ -12,5 +12,8 @@
     "STR_LABEL_LOG_IN": "Login",
     "STR_LABEL_REGISTER": "Register",
     "STR_LABEL_INTRO_LOGIN": "Please login to get more benefits",
-    "STR_LABEL_BEST_SELLER_PRODUCT": "Best seller"
+    "STR_LABEL_BEST_SELLER_PRODUCT": "Best seller",
+    "STR_LABEL_NEW_PRODUCTS": "New products",
+    "STR_LABEL_HOT_PRODUCTS": "HOT products",
+    "STR_LABEL_WATCHED_PRODUCTS": "Recent watched"
 }

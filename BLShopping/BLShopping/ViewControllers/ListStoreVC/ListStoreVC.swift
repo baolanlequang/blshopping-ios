@@ -10,7 +10,7 @@ import UIKit
 import MBProgressHUD
 import SwiftyJSON
 
-class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate, ListCategoryCellDelegate, NeedLoginCellDelegate {
+class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate, ListCategoryCellDelegate, NeedLoginCellDelegate, NewAddedProductCellDelegate {
     
     // variables
     @IBOutlet weak var tableView: UITableView!
@@ -50,6 +50,7 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
         self.getSlideBanner();
         self.getCategory();
         self.getBestSellerProduct();
+        self.getNewAddedProducts();
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -135,25 +136,31 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
             cell?.delegate = self;
             return cell!;
         }
-        else if (indexPath.section == 3) {
-            var cell: BestSellerCell? = tableView.dequeueReusableCell(withIdentifier: "BestSellerCell") as? BestSellerCell;
+        else if (indexPath.section < 7) {
+            var cell: NewAddedProductCell? = tableView.dequeueReusableCell(withIdentifier: "NewAddedProductCell") as? NewAddedProductCell;
             if (cell == nil) {
-                cell = Bundle.main.loadNibNamed("BestSellerCell", owner: self, options: nil)?.first as? BestSellerCell;
+                cell = Bundle.main.loadNibNamed("NewAddedProductCell", owner: self, options: nil)?.first as? NewAddedProductCell;
             }
-//            cell?.delegate = self;
-            cell?.setData(listProducts: self.listBestSellerProduct);
+            cell?.delegate = self;
+            
+            if (indexPath.section == 3) {
+                cell?.setData(listProducts: self.self.listBestSellerProduct);
+                cell?.lblTitle.text = localizedString(key: "STR_LABEL_BEST_SELLER_PRODUCT");
+            }
+            else if (indexPath.section == 4) {
+                cell?.setData(listProducts: self.listNewAddedProduct);
+                cell?.lblTitle.text = localizedString(key: "STR_LABEL_NEW_PRODUCTS");
+            }
+            else if (indexPath.section == 5) {
+                cell?.setData(listProducts: self.listHotProduct);
+                cell?.lblTitle.text = localizedString(key: "STR_LABEL_HOT_PRODUCTS");
+            }
+            else {
+                cell?.setData(listProducts: self.listWatchedProduct);
+                cell?.lblTitle.text = localizedString(key: "STR_LABEL_WATCHED_PRODUCTS");
+            }
             return cell!;
         }
-//        else if (indexPath.section == 4) {
-//            var cell: ProductForYouCell? = tableView.dequeueReusableCell(withIdentifier: "ProductForYouCell") as? ProductForYouCell;
-//            if (cell == nil) {
-//                cell = Bundle.main.loadNibNamed("ProductForYouCell", owner: self, options: nil)?.first as? ProductForYouCell;
-//            }
-//            cell?.delegate = self;
-//            cell?.setData(listProducts: self.listNewAddedProduct);
-//            cell?.lblTitle.text = "Sản Phẩm Mới";
-//            return cell!;
-//        }
 //        else if (indexPath.section == 5) {
 //            var cell: ProductForYouCell? = tableView.dequeueReusableCell(withIdentifier: "ProductForYouCell") as? ProductForYouCell;
 //            if (cell == nil) {
@@ -253,6 +260,13 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
 //        let nav = UINavigationController(rootViewController: loginVC);
 //        loginVC.delegate = self;
 //        self.view.window?.rootViewController?.present(nav, animated: true, completion: nil);
+    }
+    
+    // MARK: - NewAddedProductCellDelegate
+    func openProductDetail(productDTO: ProductDTO) {
+//        let productDetailVC = ProductDetailVC(nibName: "ProductDetailVC", bundle: nil);
+//        productDetailVC.productDTO = productDTO;
+//        self.navigationController?.pushViewController(productDetailVC, animated: true);
     }
     
     // MARK: - CALL APIs
@@ -393,6 +407,41 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
 //            }
 //            else {
 //                
+//            }
+//        }
+    }
+    
+    func getNewAddedProducts() {
+        //TODO: demo best seller
+        for i in 1...5 {
+            let product = ProductDTO()
+            product.ID = "\(i)"
+            product.imageURL = "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg";
+            product.name = "Product \(i+1)"
+            product.price = "\(i*100)$"
+            product.priceBeforeDiscount = "\(i*100+i)$"
+            self.listNewAddedProduct.append(product)
+        }
+        self.tableView.reloadData();
+        
+//        let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
+//        requestGetNewAddedProducts { (operation, responseObject, error) in
+//            hud.hide(animated: true);
+//            if (error == nil) {
+//                //                print("RecentlyAddedProductsResult: \(responseObject)");
+//                let json = JSON(responseObject ?? [:]);
+//                if (json["RecentlyAddedProductsResult"].array != nil) {
+//                    let data = json["RecentlyAddedProductsResult"].arrayValue;
+//                    for jsonData in data {
+//                        let productDTO = ProductDTO(jsonData: jsonData);
+//                        self.listNewAddedProduct.append(productDTO);
+//                    }
+//                    self.tableView.reloadData();
+//                }
+//
+//            }
+//            else {
+//
 //            }
 //        }
     }

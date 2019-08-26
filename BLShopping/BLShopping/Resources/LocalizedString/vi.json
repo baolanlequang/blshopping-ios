@@ -12,5 +12,8 @@
     "STR_LABEL_LOG_IN": "Đăng nhập",
     "STR_LABEL_REGISTER": "Đăng ký",
     "STR_LABEL_INTRO_LOGIN": "Đăng nhập để trải nghiệm tốt nhất",
-    "STR_LABEL_BEST_SELLER_PRODUCT": "Sản phẩm bán chạy"
+    "STR_LABEL_BEST_SELLER_PRODUCT": "Sản phẩm bán chạy",
+    "STR_LABEL_NEW_PRODUCTS": "Sản phẩm mới",
+    "STR_LABEL_HOT_PRODUCTS": "Sản phẩm HOT",
+    "STR_LABEL_WATCHED_PRODUCTS": "Sản phẩm đã xem"
 }
