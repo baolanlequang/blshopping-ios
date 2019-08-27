@@ -14,6 +14,8 @@ class CategoryDTO: NSObject {
     var name = "";
     var thumbnail = "";
     var listSubCat: [CategoryDTO] = [];
+    var listProduct: [ProductDTO] = [];
+    var listFirstFourProduct: [ProductDTO] = [];
     
     override init() {
         

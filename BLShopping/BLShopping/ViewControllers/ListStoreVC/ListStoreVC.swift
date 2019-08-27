@@ -10,7 +10,7 @@ import UIKit
 import MBProgressHUD
 import SwiftyJSON
 
-class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate, ListCategoryCellDelegate, NeedLoginCellDelegate, NewAddedProductCellDelegate {
+class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate, ListCategoryCellDelegate, NeedLoginCellDelegate, NewAddedProductCellDelegate, CategoryCellDelegate {
     
     // variables
     @IBOutlet weak var tableView: UITableView!
@@ -27,7 +27,6 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
     //data
     var listBanners: [BannerDTO] = [];
     var listCategory: [CategoryDTO] = [];
-    var listSubCategory: [SubCategoryDTO] = [];
     var listBestSellerProduct: [ProductDTO] = [];
     var listWatchedProduct: [ProductDTO] = [];
     var listNewAddedProduct: [ProductDTO] = [];
@@ -76,7 +75,7 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (section == 7) {
-            return self.listSubCategory.count;
+            return self.listCategory.count;
         }
         else if (section == 3) {
             if (self.listBestSellerProduct.count > 0) {
@@ -161,41 +160,14 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
             }
             return cell!;
         }
-//        else if (indexPath.section == 5) {
-//            var cell: ProductForYouCell? = tableView.dequeueReusableCell(withIdentifier: "ProductForYouCell") as? ProductForYouCell;
-//            if (cell == nil) {
-//                cell = Bundle.main.loadNibNamed("ProductForYouCell", owner: self, options: nil)?.first as? ProductForYouCell;
-//            }
-//            cell?.delegate = self;
-//            cell?.setData(listProducts: self.listHotProduct);
-//            cell?.lblTitle.text = "Sản Phẩm HOT";
-//            return cell!;
-//        }
-//        else if (indexPath.section == 6) {
-//            var cell: ProductForYouCell? = tableView.dequeueReusableCell(withIdentifier: "ProductForYouCell") as? ProductForYouCell;
-//            if (cell == nil) {
-//                cell = Bundle.main.loadNibNamed("ProductForYouCell", owner: self, options: nil)?.first as? ProductForYouCell;
-//            }
-//            cell?.delegate = self;
-//            cell?.setData(listProducts: self.listWatchedProduct);
-//            cell?.lblTitle.text = "Sản Phẩm Đã Xem";
-//            return cell!;
-//        }
-//        else if (indexPath.section == 7) {
-//            var cell: CategoryCell? = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as? CategoryCell;
-//            if (cell == nil) {
-//                cell = Bundle.main.loadNibNamed("CategoryCell", owner: self, options: nil)?.first as? CategoryCell;
-//            }
-//            cell?.delegate = self;
-//            let subCatDTO = self.listSubCategory[indexPath.row];
-//            cell?.setData(subCatDTO: subCatDTO);
-//            return cell!;
-//        }
         else {
-            var cell = tableView.dequeueReusableCell(withIdentifier: "cell");
+            var cell: CategoryCell? = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as? CategoryCell;
             if (cell == nil) {
-                cell = UITableViewCell(style: .default, reuseIdentifier: "cell");
+                cell = Bundle.main.loadNibNamed("CategoryCell", owner: self, options: nil)?.first as? CategoryCell;
             }
+            cell?.delegate = self;
+            let catDTO = self.listCategory[indexPath.row];
+            cell?.setData(catDTO: catDTO);
             return cell!;
         }
     }
@@ -269,6 +241,13 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
 //        self.navigationController?.pushViewController(productDetailVC, animated: true);
     }
     
+    // MARK: - CategoryCellDelegate
+    func openSeeMoreCategory(catDTO: CategoryDTO) {
+//        let listProductVC = ListProductVC(nibName: "ListProductVC", bundle: nil);
+//        listProductVC.categoryDTO = subCatDTO;
+//        self.navigationController?.pushViewController(listProductVC, animated: true);
+    }
+    
     // MARK: - CALL APIs
     func getSlideBanner() {
         
@@ -327,16 +306,29 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
         let cat7 = CategoryDTO(catID: "7", name: "Cat 7", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
         let cat8 = CategoryDTO(catID: "8", name: "Cat 8", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
         let cat9 = CategoryDTO(catID: "9", name: "Cat 9", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
-        self.listCategory.append(cat1)
-        self.listCategory.append(cat2)
-        self.listCategory.append(cat3)
-        self.listCategory.append(cat4)
-        self.listCategory.append(cat5)
-        self.listCategory.append(cat6)
-        self.listCategory.append(cat7)
-        self.listCategory.append(cat8)
-        self.listCategory.append(cat9)
+        
+        for i in 1...4 {
+            let product = ProductDTO()
+            product.ID = "\(i)"
+            product.imageURL = "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg";
+            product.name = "Product \(i+1)"
+            product.price = "\(i*100)$"
+            product.priceBeforeDiscount = "\(i*100+i)$"
+            cat1.listFirstFourProduct.append(product)
+            cat2.listFirstFourProduct.append(product)
+            cat3.listFirstFourProduct.append(product)
+            cat4.listFirstFourProduct.append(product)
+            cat5.listFirstFourProduct.append(product)
+            cat6.listFirstFourProduct.append(product)
+            cat7.listFirstFourProduct.append(product)
+            cat8.listFirstFourProduct.append(product)
+            cat9.listFirstFourProduct.append(product)
+        }
+        
+        self.listCategory.append(contentsOf: [cat1, cat2, cat3, cat4, cat5, cat6, cat7, cat8, cat9])
         self.tableView.reloadData()
+        
+        
         
 //        let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
 //        requestGetCategory { (operation, responseObject, error) in

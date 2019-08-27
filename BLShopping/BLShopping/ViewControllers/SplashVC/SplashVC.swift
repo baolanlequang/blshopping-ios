@@ -57,7 +57,7 @@ class SplashVC: UIViewController {
         
         navNotification.tabBarItem = UITabBarItem(title: localizedString(key: "STR_LABEL_NOTIFICATION"), image: UIImage(named: "icon_notification")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icon_notification_selected")?.withRenderingMode(.alwaysOriginal));
         
-        self.navigationController?.pushViewController(tabbar, animated: true);
+        self.navigationController?.setViewControllers([tabbar], animated: true);
         
     }
     
