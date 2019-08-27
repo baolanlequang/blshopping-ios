@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import MBProgressHUD;
 
-class ListProductVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NeedLoginCellDelegate, NeedLoginCollectionCellDelegate, {
+class ListProductVC: UIViewController {
     
     //variables
     @IBOutlet weak var topView: UIView!
@@ -114,48 +114,48 @@ class ListProductVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     // MARK: - UITableViewDataSource
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2;
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (section == 0) {
-            if (BLGlobal.shared.userDTO != nil) {
-                return 0;
-            }
-            return 1;
-        }
-        return self.listProducts.count;
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (indexPath.section == 0) {
-            var cell: NeedLoginCell? = tableView.dequeueReusableCell(withIdentifier: "NeedLoginCell") as? NeedLoginCell;
-            if (cell == nil) {
-                cell = Bundle.main.loadNibNamed("NeedLoginCell", owner: self, options: nil)?.first as? NeedLoginCell;
-                cell?.selectionStyle = .none
-            }
-            cell?.delegate = self;
-            return cell!;
-        }
-        else if (indexPath.section == 1) {
-            var cell: ListProductCell? = tableView.dequeueReusableCell(withIdentifier: "ListProductCell") as? ListProductCell;
-            if (cell == nil) {
-                cell = Bundle.main.loadNibNamed("ListProductCell", owner: self, options: nil)?.first as? ListProductCell;
-                cell?.selectionStyle = .none
-            }
-            let productDTO = self.listProducts[indexPath.row];
-            cell?.setData(productDTO: productDTO);
-            return cell!;
-        }
-        else {
-            var cell = tableView.dequeueReusableCell(withIdentifier: "cell");
-            if (cell == nil) {
-                cell = UITableViewCell(style: .default, reuseIdentifier: "cell");
-            }
-            return cell!;
-        }
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 2;
+//    }
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        if (section == 0) {
+//            if (BLGlobal.shared.userDTO != nil) {
+//                return 0;
+//            }
+//            return 1;
+//        }
+//        return self.listProducts.count;
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        if (indexPath.section == 0) {
+//            var cell: NeedLoginCell? = tableView.dequeueReusableCell(withIdentifier: "NeedLoginCell") as? NeedLoginCell;
+//            if (cell == nil) {
+//                cell = Bundle.main.loadNibNamed("NeedLoginCell", owner: self, options: nil)?.first as? NeedLoginCell;
+//                cell?.selectionStyle = .none
+//            }
+//            cell?.delegate = self;
+//            return cell!;
+//        }
+//        else if (indexPath.section == 1) {
+//            var cell: ListProductCell? = tableView.dequeueReusableCell(withIdentifier: "ListProductCell") as? ListProductCell;
+//            if (cell == nil) {
+//                cell = Bundle.main.loadNibNamed("ListProductCell", owner: self, options: nil)?.first as? ListProductCell;
+//                cell?.selectionStyle = .none
+//            }
+//            let productDTO = self.listProducts[indexPath.row];
+//            cell?.setData(productDTO: productDTO);
+//            return cell!;
+//        }
+//        else {
+//            var cell = tableView.dequeueReusableCell(withIdentifier: "cell");
+//            if (cell == nil) {
+//                cell = UITableViewCell(style: .default, reuseIdentifier: "cell");
+//            }
+//            return cell!;
+//        }
+//    }
     
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -169,45 +169,45 @@ class ListProductVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     // MARK: - UICollectionViewDataSource
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2;
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if (section == 0) {
-            if (BLGlobal.shared.userDTO != nil) {
-                return 0;
-            }
-            return 1;
-        }
-        return self.listProducts.count;
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if (indexPath.section == 0) {
-            var cell: NeedLoginCollectionCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "NeedLoginCollectionCell", for: indexPath) as? NeedLoginCollectionCell;
-            if (cell == nil) {
-                cell = NeedLoginCollectionCell(frame: CGRect(x: 0, y: 0, width: 320, height: 100));
-            }
-            cell?.delegate = self;
-            return cell!;
-        }
-        else {
-            var cell: ListProductCollectionCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "ListProductCollectionCell", for: indexPath) as? ListProductCollectionCell;
-            if (cell == nil) {
-                if (checkIsIpad()) {
-                    cell = ListProductCollectionCell(frame: CGRect(x: 0, y: 0, width: 160, height: 300));
-                }
-                else {
-                    cell = ListProductCollectionCell(frame: CGRect(x: 0, y: 0, width: 160, height: 220));
-                }
-            }
-            let productDTO = self.listProducts[indexPath.row];
-            cell?.setData(productDTO: productDTO);
-            return cell!;
-        }
-        
-    }
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return 2;
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        if (section == 0) {
+//            if (BLGlobal.shared.userDTO != nil) {
+//                return 0;
+//            }
+//            return 1;
+//        }
+//        return self.listProducts.count;
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        if (indexPath.section == 0) {
+//            var cell: NeedLoginCollectionCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "NeedLoginCollectionCell", for: indexPath) as? NeedLoginCollectionCell;
+//            if (cell == nil) {
+//                cell = NeedLoginCollectionCell(frame: CGRect(x: 0, y: 0, width: 320, height: 100));
+//            }
+//            cell?.delegate = self;
+//            return cell!;
+//        }
+//        else {
+//            var cell: ListProductCollectionCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "ListProductCollectionCell", for: indexPath) as? ListProductCollectionCell;
+//            if (cell == nil) {
+//                if (checkIsIpad()) {
+//                    cell = ListProductCollectionCell(frame: CGRect(x: 0, y: 0, width: 160, height: 300));
+//                }
+//                else {
+//                    cell = ListProductCollectionCell(frame: CGRect(x: 0, y: 0, width: 160, height: 220));
+//                }
+//            }
+//            let productDTO = self.listProducts[indexPath.row];
+//            cell?.setData(productDTO: productDTO);
+//            return cell!;
+//        }
+//        
+//    }
     
     // MARK: - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

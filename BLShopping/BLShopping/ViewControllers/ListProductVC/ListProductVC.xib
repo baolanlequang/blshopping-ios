@@ -12,7 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListProductVC" customModule="BLShopping" customModuleProvider="target">
             <connections>
+                <outlet property="btnChangeDisplay" destination="NaC-hb-dKs" id="bVh-8L-fNk"/>
+                <outlet property="btnFilter" destination="Dm0-m3-sbQ" id="69E-iv-LKM"/>
+                <outlet property="btnSort" destination="JID-ZT-fHI" id="Ug6-Nz-1eX"/>
+                <outlet property="collectionView" destination="NON-js-Srl" id="BhG-51-ZBF"/>
                 <outlet property="lblTitle" destination="szm-KY-gT9" id="dn2-wx-1vF"/>
+                <outlet property="tableView" destination="L3j-yx-rox" id="XzW-2R-VOk"/>
                 <outlet property="topView" destination="QgH-7e-znZ" id="lBq-Ue-zvY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -29,6 +34,9 @@
                             <rect key="frame" x="0.0" y="32" width="40" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="btn_back"/>
+                            <connections>
+                                <action selector="btnBackClicked:" destination="-1" eventType="touchUpInside" id="lEJ-HR-mwW"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Danh Sách Sản Phẩm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szm-KY-gT9">
                             <rect key="frame" x="0.0" y="42" width="320" height="21"/>
@@ -53,6 +61,9 @@
                             </constraints>
                             <state key="normal" image="icon_grid"/>
                             <state key="selected" image="icon_list"/>
+                            <connections>
+                                <action selector="btnChangeDisplayClicked:" destination="-1" eventType="touchUpInside" id="jEo-eJ-1dx"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JID-ZT-fHI">
                             <rect key="frame" x="0.0" y="0.0" width="128" height="44"/>
@@ -60,6 +71,9 @@
                                 <constraint firstAttribute="height" constant="44" id="gkJ-0F-9rb"/>
                             </constraints>
                             <state key="normal" image="icon_sort"/>
+                            <connections>
+                                <action selector="btnSortClicked:" destination="-1" eventType="touchUpInside" id="H6x-ab-I2x"/>
+                            </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Xd-Nh-huI">
                             <rect key="frame" x="128" y="0.0" width="1" height="44"/>
@@ -74,6 +88,9 @@
                                 <constraint firstAttribute="height" constant="44" id="GmE-Wg-uou"/>
                             </constraints>
                             <state key="normal" image="icon_filter"/>
+                            <connections>
+                                <action selector="btnFilterClicked:" destination="-1" eventType="touchUpInside" id="gXM-Gx-TWy"/>
+                            </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8t-99-UfR">
                             <rect key="frame" x="256" y="0.0" width="1" height="44"/>
