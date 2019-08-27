@@ -147,9 +147,9 @@ class ListAllCategoriesVC: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     func gotoListProduct(categoryDTO: CategoryDTO) {
-//        let listProductVC = ListProductVC(nibName: "ListProductVC", bundle: nil);
-//        listProductVC.categoryDTO = categoryDTO;
-//        self.navigationController?.pushViewController(listProductVC, animated: true);
+        let listProductVC = ListProductVC(nibName: "ListProductVC", bundle: nil);
+        listProductVC.categoryDTO = categoryDTO;
+        self.navigationController?.pushViewController(listProductVC, animated: true);
     }
 
 }

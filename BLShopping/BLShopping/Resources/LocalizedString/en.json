@@ -16,5 +16,6 @@
     "STR_LABEL_NEW_PRODUCTS": "New products",
     "STR_LABEL_HOT_PRODUCTS": "HOT products",
     "STR_LABEL_WATCHED_PRODUCTS": "Recent watched",
-    "STR_LABEL_WATCH_MORE": "Explore more"
+    "STR_LABEL_WATCH_MORE": "Explore more",
+    "STR_LABEL_LIST_PRODUCTS": "Products"
 }

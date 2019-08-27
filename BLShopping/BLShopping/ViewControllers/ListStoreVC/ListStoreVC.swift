@@ -206,7 +206,7 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
     func openSeeAllCategory() {
         let listAllCategoriesVC = ListAllCategoriesVC(nibName: "ListAllCategoriesVC", bundle: nil);
         listAllCategoriesVC.listCategory = self.listCategory;
-        self.navigationController?.pushViewController(listAllCategoriesVC, animated: true);
+        self.tabBarController?.navigationController?.pushViewController(listAllCategoriesVC, animated: true);
     }
     
     func openCategoryDetail(categoryDTO: CategoryDTO) {
@@ -214,12 +214,18 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
             let listAllCategoriesVC = ListAllCategoriesVC(nibName: "ListAllCategoriesVC", bundle: nil);
             listAllCategoriesVC.parentCategory = categoryDTO;
             listAllCategoriesVC.listCategory = categoryDTO.listSubCat;
-            self.navigationController?.pushViewController(listAllCategoriesVC, animated: true);
+            self.tabBarController?.navigationController?.pushViewController(listAllCategoriesVC, animated: true);
+        }
+        else {
+            let listProductVC = ListProductVC(nibName: "ListProductVC", bundle: nil);
+            listProductVC.categoryDTO = categoryDTO;
+            self.tabBarController?.navigationController?.pushViewController(listProductVC, animated: true);
         }
     }
     
     // MARK: - NeedLoginCellDelegate
     func openSignUpView() {
+        //TODO: openSignUpView
 //        let loginVC = LoginSignupVC(nibName: "LoginSignupVC", bundle: nil);
 //        let nav = UINavigationController(rootViewController: loginVC);
 //        loginVC.delegate = self;
@@ -228,6 +234,7 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
     }
     
     func openLoginView() {
+        //TODO: openLoginView
 //        let loginVC = LoginSignupVC(nibName: "LoginSignupVC", bundle: nil);
 //        let nav = UINavigationController(rootViewController: loginVC);
 //        loginVC.delegate = self;
@@ -236,6 +243,7 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
     
     // MARK: - NewAddedProductCellDelegate
     func openProductDetail(productDTO: ProductDTO) {
+        //TODO: openProductDetail
 //        let productDetailVC = ProductDetailVC(nibName: "ProductDetailVC", bundle: nil);
 //        productDetailVC.productDTO = productDTO;
 //        self.navigationController?.pushViewController(productDetailVC, animated: true);
@@ -243,9 +251,9 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
     
     // MARK: - CategoryCellDelegate
     func openSeeMoreCategory(catDTO: CategoryDTO) {
-//        let listProductVC = ListProductVC(nibName: "ListProductVC", bundle: nil);
-//        listProductVC.categoryDTO = subCatDTO;
-//        self.navigationController?.pushViewController(listProductVC, animated: true);
+        let listProductVC = ListProductVC(nibName: "ListProductVC", bundle: nil);
+        listProductVC.categoryDTO = catDTO;
+        self.tabBarController?.navigationController?.pushViewController(listProductVC, animated: true);
     }
     
     // MARK: - CALL APIs
