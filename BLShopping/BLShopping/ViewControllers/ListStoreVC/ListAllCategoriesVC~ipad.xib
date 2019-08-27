@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListAllCategoriesVC" customModule="BLShopping" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="maC-VM-47i" id="RMv-4m-zaw"/>
+                <outlet property="lblTitle" destination="2QI-DI-Ji8" id="Mj1-DD-AAy"/>
+                <outlet property="view" destination="iN0-l3-epB" id="asb-ZP-eHl"/>
+                <outlet property="viewTop" destination="AmT-zB-iUp" id="Vqw-dD-lLV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AmT-zB-iUp">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="80"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zs3-dM-9wu">
+                            <rect key="frame" x="0.0" y="32" width="40" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="btn_back"/>
+                            <connections>
+                                <action selector="back:" destination="-1" eventType="touchUpInside" id="2MO-kU-BTV"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Danh Sách Ngành Hàng" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2QI-DI-Ji8">
+                            <rect key="frame" x="0.0" y="42" width="768" height="21"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.1058823529" green="0.6588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="bnH-9h-aY9"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="maC-VM-47i">
+                    <rect key="frame" x="0.0" y="80" width="768" height="944"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="IYy-f8-EtK">
+                        <size key="itemSize" width="160" height="130"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="74O-xj-Akx"/>
+                        <outlet property="delegate" destination="-1" id="1ff-ZJ-g6X"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="maC-VM-47i" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="8pu-2c-DRp"/>
+                <constraint firstItem="AmT-zB-iUp" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="91J-xf-lLj"/>
+                <constraint firstItem="AmT-zB-iUp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="9yf-cF-7KH"/>
+                <constraint firstItem="maC-VM-47i" firstAttribute="top" secondItem="AmT-zB-iUp" secondAttribute="bottom" id="DVl-SU-ron"/>
+                <constraint firstItem="maC-VM-47i" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Tsw-k3-f5o"/>
+                <constraint firstItem="maC-VM-47i" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="UKm-Zq-pD8"/>
+                <constraint firstItem="AmT-zB-iUp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rvU-qO-4sr"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_back" width="25" height="25"/>
+    </resources>
+</document>

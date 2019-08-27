@@ -204,18 +204,18 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
     
     // MARK: - ListCategoryCellDelegate
     func openSeeAllCategory() {
-//        let listAllCategoriesVC = ListAllCategoriesVC(nibName: "ListAllCategoriesVC", bundle: nil);
-//        listAllCategoriesVC.listCategory = self.listCategory;
-//        self.navigationController?.pushViewController(listAllCategoriesVC, animated: true);
+        let listAllCategoriesVC = ListAllCategoriesVC(nibName: "ListAllCategoriesVC", bundle: nil);
+        listAllCategoriesVC.listCategory = self.listCategory;
+        self.navigationController?.pushViewController(listAllCategoriesVC, animated: true);
     }
     
     func openCategoryDetail(categoryDTO: CategoryDTO) {
-//        if (categoryDTO.listSubCat.count > 0) {
-//            let listAllCategoriesVC = ListAllCategoriesVC(nibName: "ListAllCategoriesVC", bundle: nil);
-//            listAllCategoriesVC.parentCategory = categoryDTO;
-//            listAllCategoriesVC.listCategory = categoryDTO.listSubCat;
-//            self.navigationController?.pushViewController(listAllCategoriesVC, animated: true);
-//        }
+        if (categoryDTO.listSubCat.count > 0) {
+            let listAllCategoriesVC = ListAllCategoriesVC(nibName: "ListAllCategoriesVC", bundle: nil);
+            listAllCategoriesVC.parentCategory = categoryDTO;
+            listAllCategoriesVC.listCategory = categoryDTO.listSubCat;
+            self.navigationController?.pushViewController(listAllCategoriesVC, animated: true);
+        }
     }
     
     // MARK: - NeedLoginCellDelegate
@@ -306,6 +306,9 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
         let cat7 = CategoryDTO(catID: "7", name: "Cat 7", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
         let cat8 = CategoryDTO(catID: "8", name: "Cat 8", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
         let cat9 = CategoryDTO(catID: "9", name: "Cat 9", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
+        
+        let cat11 = CategoryDTO(catID: "cat11", name: "Cat 11", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
+        cat1.listSubCat.append(cat11)
         
         for i in 1...4 {
             let product = ProductDTO()
