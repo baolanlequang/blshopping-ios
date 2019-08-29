@@ -25,3 +25,6 @@ enum SortType: Int {
     case HIGH_LOW = 4
     case CREATED_BY = 5
 }
+
+let NOTI_CART_CHANGED = "NotiCartChanged"
+let NOTI_ADD_REVIEW = "NotiAddReview"

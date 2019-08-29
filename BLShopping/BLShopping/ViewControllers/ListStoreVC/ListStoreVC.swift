@@ -243,10 +243,9 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
     
     // MARK: - NewAddedProductCellDelegate
     func openProductDetail(productDTO: ProductDTO) {
-        //TODO: openProductDetail
-//        let productDetailVC = ProductDetailVC(nibName: "ProductDetailVC", bundle: nil);
-//        productDetailVC.productDTO = productDTO;
-//        self.navigationController?.pushViewController(productDetailVC, animated: true);
+        let productDetailVC = ProductDetailVC(nibName: "ProductDetailVC", bundle: nil);
+        productDetailVC.productDTO = productDTO;
+        self.navigationController?.pushViewController(productDetailVC, animated: true);
     }
     
     // MARK: - CategoryCellDelegate

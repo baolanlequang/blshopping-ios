@@ -24,5 +24,10 @@
     "STR_LABEL_SORT_ZA": "From Z to A",
     "STR_LABEL_SORT_LOW_HIGH": "From low price to high price",
     "STR_LABEL_SORT_HIGH_LOW": "From high price to low price",
-    "STR_LABEL_SORT_CREATED_BY": "Created by"
+    "STR_LABEL_SORT_CREATED_BY": "Created by",
+    "STR_LABEL_RESET": "Reset",
+    "STR_LABEL_APPLY": "Apply",
+    "STR_LABEL_SELECT_FILTER": "Select filter",
+    "STR_LABEL_ALL": "All",
+    "STR_LABEL_ADD_TO_CART": "Add to cart"
 }

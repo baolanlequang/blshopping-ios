@@ -24,5 +24,10 @@
     "STR_LABEL_SORT_ZA": "Tên từ Z đến A",
     "STR_LABEL_SORT_LOW_HIGH": "Giá từ thấp đến cao",
     "STR_LABEL_SORT_HIGH_LOW": "Giá từ cao đến thấp",
-    "STR_LABEL_SORT_CREATED_BY": "Được tạo bởi"
+    "STR_LABEL_SORT_CREATED_BY": "Được tạo bởi",
+    "STR_LABEL_RESET": "Thiết lập lại",
+    "STR_LABEL_APPLY": "Áp dụng",
+    "STR_LABEL_SELECT_FILTER": "Chọn bộ lọc",
+    "STR_LABEL_ALL": "Tất cả",
+    "STR_LABEL_ADD_TO_CART": "Thêm vào giỏ hàng"
 }

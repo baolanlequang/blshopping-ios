@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import MBProgressHUD
 
-class ListProductVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NeedLoginCellDelegate, NeedLoginCollectionCellDelegate, SelectSortTypeViewDelegate {
+class ListProductVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NeedLoginCellDelegate, NeedLoginCollectionCellDelegate, SelectSortTypeViewDelegate, FilterVCDelegate {
     
     //variables
     @IBOutlet weak var topView: UIView!
@@ -35,8 +35,7 @@ class ListProductVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     var isApplingFilter = false;
     
     var listProducts: [ProductDTO] = [];
-    //TODO: filter
-//    var currListFilters: [FilterDTO] = [];
+    var currListFilters: [FilterDTO] = [];
     
     var canLoadMore = true;
 
@@ -92,13 +91,12 @@ class ListProductVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     @IBAction func btnFilterClicked(_ sender: Any) {
-        //TODO: FilterVC
-//        let filterVC = FilterVC(nibName: "FilterVC", bundle: nil);
-//        filterVC.delegate = self;
-//        let navFilter = UINavigationController(rootViewController: filterVC);
-//        filterVC.categoryDTO = self.categoryDTO;
-//        filterVC.listFilter = self.currListFilters;
-//        self.navigationController?.present(navFilter, animated: true, completion: nil);
+        let filterVC = FilterVC(nibName: "FilterVC", bundle: nil);
+        filterVC.delegate = self;
+        let navFilter = UINavigationController(rootViewController: filterVC);
+        filterVC.categoryDTO = self.categoryDTO;
+        filterVC.listFilter = self.currListFilters;
+        self.navigationController?.present(navFilter, animated: true, completion: nil);
     }
     
     @IBAction func btnChangeDisplayClicked(_ sender: Any) {
@@ -158,11 +156,10 @@ class ListProductVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.section > 0) {
-            //TODO: ProductDetailVC
-//            let productDetailVC = ProductDetailVC(nibName: "ProductDetailVC", bundle: nil);
-//            let productDTO = self.listProducts[indexPath.row];
-//            productDetailVC.productDTO = productDTO;
-//            self.navigationController?.pushViewController(productDetailVC, animated: true);
+            let productDetailVC = ProductDetailVC(nibName: "ProductDetailVC", bundle: nil);
+            let productDTO = self.listProducts[indexPath.row];
+            productDetailVC.productDTO = productDTO;
+            self.navigationController?.pushViewController(productDetailVC, animated: true);
         }
     }
     
@@ -220,11 +217,10 @@ class ListProductVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (indexPath.section > 0) {
-            //TODO: ProductDetailVC
-//            let productDetailVC = ProductDetailVC(nibName: "ProductDetailVC", bundle: nil);
-//            let productDTO = self.listProducts[indexPath.row];
-//            productDetailVC.productDTO = productDTO;
-//            self.navigationController?.pushViewController(productDetailVC, animated: true);
+            let productDetailVC = ProductDetailVC(nibName: "ProductDetailVC", bundle: nil);
+            let productDTO = self.listProducts[indexPath.row];
+            productDetailVC.productDTO = productDTO;
+            self.navigationController?.pushViewController(productDetailVC, animated: true);
         }
     }
     
@@ -267,25 +263,24 @@ class ListProductVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     // MARK: - FilterVCDelegate
-    //TODO: FilterVCDelegate
-//    func didApplyFilter(listFilters: [FilterDTO]) {
-//        self.isApplingFilter = false;
-//        for filterDTO in listFilters {
-//            if (filterDTO.selectedSubFilter != nil) {
-//                self.isApplingFilter = true;
-//                break;
-//            }
-//        }
-//
-//        self.currListFilters = listFilters;
-//        self.listProducts.removeAll();
-//        self.pageNumber = 0;
-//        self.tableView.reloadData();
-//        self.collectionView.reloadData();
-//
-//        self.getProduct();
-//
-//    }
+    func didApplyFilter(listFilters: [FilterDTO]) {
+        self.isApplingFilter = false;
+        for filterDTO in listFilters {
+            if (filterDTO.selectedSubFilter != nil) {
+                self.isApplingFilter = true;
+                break;
+            }
+        }
+
+        self.currListFilters = listFilters;
+        self.listProducts.removeAll();
+        self.pageNumber = 0;
+        self.tableView.reloadData();
+        self.collectionView.reloadData();
+
+        self.getProduct();
+
+    }
     
     // MARK: - CALL APIs
     @objc func getProduct() {
