@@ -8,9 +8,9 @@
 
 import UIKit
 import SwiftyJSON
-import MBProgressHUD;
+import MBProgressHUD
 
-class ListProductVC: UIViewController {
+class ListProductVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NeedLoginCellDelegate, NeedLoginCollectionCellDelegate, SelectSortTypeViewDelegate {
     
     //variables
     @IBOutlet weak var topView: UIView!
@@ -24,8 +24,7 @@ class ListProductVC: UIViewController {
     var tableRefreshControl: UIRefreshControl!;
     var collectionRefreshControl: UIRefreshControl!;
     
-    //TODO: SelectSortTypeView
-//    var selectSortTypeView: SelectSortTypeView!;
+    var selectSortTypeView: SelectSortTypeView!;
     
     //data
     var categoryDTO: CategoryDTO?;
@@ -64,9 +63,8 @@ class ListProductVC: UIViewController {
             self.getProduct();
         }
         
-        //TODO: SelectSortTypeView
-//        self.selectSortTypeView = Bundle.main.loadNibNamed("SelectSortTypeView", owner: self, options: nil)?.first as! SelectSortTypeView
-//        self.selectSortTypeView.delegate = self;
+        self.selectSortTypeView = Bundle.main.loadNibNamed("SelectSortTypeView", owner: self, options: nil)?.first as? SelectSortTypeView
+        self.selectSortTypeView.delegate = self;
         
     }
 
@@ -89,9 +87,8 @@ class ListProductVC: UIViewController {
     }
     
     @IBAction func btnSortClicked(_ sender: Any) {
-        //TODO: SortType
-//        let type = SortType(rawValue: self.sortType);
-//        self.selectSortTypeView.show(type: type!);
+        let type = SortType(rawValue: self.sortType);
+        self.selectSortTypeView.show(type: type!);
     }
     
     @IBAction func btnFilterClicked(_ sender: Any) {
@@ -111,51 +108,52 @@ class ListProductVC: UIViewController {
         else {
             self.collectionView.isHidden = true;
         }
+        self.btnChangeDisplay.isSelected = !self.collectionView.isHidden;
     }
     
     // MARK: - UITableViewDataSource
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 2;
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if (section == 0) {
-//            if (BLGlobal.shared.userDTO != nil) {
-//                return 0;
-//            }
-//            return 1;
-//        }
-//        return self.listProducts.count;
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if (indexPath.section == 0) {
-//            var cell: NeedLoginCell? = tableView.dequeueReusableCell(withIdentifier: "NeedLoginCell") as? NeedLoginCell;
-//            if (cell == nil) {
-//                cell = Bundle.main.loadNibNamed("NeedLoginCell", owner: self, options: nil)?.first as? NeedLoginCell;
-//                cell?.selectionStyle = .none
-//            }
-//            cell?.delegate = self;
-//            return cell!;
-//        }
-//        else if (indexPath.section == 1) {
-//            var cell: ListProductCell? = tableView.dequeueReusableCell(withIdentifier: "ListProductCell") as? ListProductCell;
-//            if (cell == nil) {
-//                cell = Bundle.main.loadNibNamed("ListProductCell", owner: self, options: nil)?.first as? ListProductCell;
-//                cell?.selectionStyle = .none
-//            }
-//            let productDTO = self.listProducts[indexPath.row];
-//            cell?.setData(productDTO: productDTO);
-//            return cell!;
-//        }
-//        else {
-//            var cell = tableView.dequeueReusableCell(withIdentifier: "cell");
-//            if (cell == nil) {
-//                cell = UITableViewCell(style: .default, reuseIdentifier: "cell");
-//            }
-//            return cell!;
-//        }
-//    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2;
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (section == 0) {
+            if (BLGlobal.shared.userDTO != nil) {
+                return 0;
+            }
+            return 1;
+        }
+        return self.listProducts.count;
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (indexPath.section == 0) {
+            var cell: NeedLoginCell? = tableView.dequeueReusableCell(withIdentifier: "NeedLoginCell") as? NeedLoginCell;
+            if (cell == nil) {
+                cell = Bundle.main.loadNibNamed("NeedLoginCell", owner: self, options: nil)?.first as? NeedLoginCell;
+                cell?.selectionStyle = .none
+            }
+            cell?.delegate = self;
+            return cell!;
+        }
+        else if (indexPath.section == 1) {
+            var cell: ListProductCell? = tableView.dequeueReusableCell(withIdentifier: "ListProductCell") as? ListProductCell;
+            if (cell == nil) {
+                cell = Bundle.main.loadNibNamed("ListProductCell", owner: self, options: nil)?.first as? ListProductCell;
+                cell?.selectionStyle = .none
+            }
+            let productDTO = self.listProducts[indexPath.row];
+            cell?.setData(productDTO: productDTO);
+            return cell!;
+        }
+        else {
+            var cell = tableView.dequeueReusableCell(withIdentifier: "cell");
+            if (cell == nil) {
+                cell = UITableViewCell(style: .default, reuseIdentifier: "cell");
+            }
+            return cell!;
+        }
+    }
     
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -169,45 +167,45 @@ class ListProductVC: UIViewController {
     }
     
     // MARK: - UICollectionViewDataSource
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 2;
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        if (section == 0) {
-//            if (BLGlobal.shared.userDTO != nil) {
-//                return 0;
-//            }
-//            return 1;
-//        }
-//        return self.listProducts.count;
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if (indexPath.section == 0) {
-//            var cell: NeedLoginCollectionCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "NeedLoginCollectionCell", for: indexPath) as? NeedLoginCollectionCell;
-//            if (cell == nil) {
-//                cell = NeedLoginCollectionCell(frame: CGRect(x: 0, y: 0, width: 320, height: 100));
-//            }
-//            cell?.delegate = self;
-//            return cell!;
-//        }
-//        else {
-//            var cell: ListProductCollectionCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "ListProductCollectionCell", for: indexPath) as? ListProductCollectionCell;
-//            if (cell == nil) {
-//                if (checkIsIpad()) {
-//                    cell = ListProductCollectionCell(frame: CGRect(x: 0, y: 0, width: 160, height: 300));
-//                }
-//                else {
-//                    cell = ListProductCollectionCell(frame: CGRect(x: 0, y: 0, width: 160, height: 220));
-//                }
-//            }
-//            let productDTO = self.listProducts[indexPath.row];
-//            cell?.setData(productDTO: productDTO);
-//            return cell!;
-//        }
-//        
-//    }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2;
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if (section == 0) {
+            if (BLGlobal.shared.userDTO != nil) {
+                return 0;
+            }
+            return 1;
+        }
+        return self.listProducts.count;
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if (indexPath.section == 0) {
+            var cell: NeedLoginCollectionCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "NeedLoginCollectionCell", for: indexPath) as? NeedLoginCollectionCell;
+            if (cell == nil) {
+                cell = NeedLoginCollectionCell(frame: CGRect(x: 0, y: 0, width: 320, height: 100));
+            }
+            cell?.delegate = self;
+            return cell!;
+        }
+        else {
+            var cell: ListProductCollectionCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "ListProductCollectionCell", for: indexPath) as? ListProductCollectionCell;
+            if (cell == nil) {
+                if (checkIsIpad()) {
+                    cell = ListProductCollectionCell(frame: CGRect(x: 0, y: 0, width: 160, height: 300));
+                }
+                else {
+                    cell = ListProductCollectionCell(frame: CGRect(x: 0, y: 0, width: 160, height: 220));
+                }
+            }
+            let productDTO = self.listProducts[indexPath.row];
+            cell?.setData(productDTO: productDTO);
+            return cell!;
+        }
+        
+    }
     
     // MARK: - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -259,15 +257,14 @@ class ListProductVC: UIViewController {
     }
     
     // MARK: - SelectSortTypeViewDelegate
-    //TODO: SelectSortTypeViewDelegate
-//    func onSelectedType(type: SortType) {
-//        self.sortType = type.rawValue;
-//        self.listProducts.removeAll();
-//        self.pageNumber = 0;
-//        self.tableView.reloadData();
-//        self.collectionView.reloadData();
-//        self.getProduct();
-//    }
+    func onSelectedType(type: SortType) {
+        self.sortType = type.rawValue;
+        self.listProducts.removeAll();
+        self.pageNumber = 0;
+        self.tableView.reloadData();
+        self.collectionView.reloadData();
+        self.getProduct();
+    }
     
     // MARK: - FilterVCDelegate
     //TODO: FilterVCDelegate
@@ -297,6 +294,20 @@ class ListProductVC: UIViewController {
             self.collectionRefreshControl.endRefreshing();
             return;
         }
+        
+        
+        //demo
+        for i in 1...4 {
+            let product = ProductDTO()
+            product.ID = "\(i)"
+            product.imageURL = "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg";
+            product.name = "Product \(i+1)"
+            product.price = "\(i*100)$"
+            product.priceBeforeDiscount = "\(i*100+i)$"
+            self.listProducts.append(product)
+        }
+        self.tableView.reloadData();
+        self.collectionView.reloadData();
         
         
         //TODO: getProduct

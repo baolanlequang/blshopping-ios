@@ -1,26 +1,28 @@
 //
-//  NeedLoginCell.swift
+//  NeedLoginCollectionCell.swift
 //  BLShopping
 //
-//  Created by Bao Lan Le Quang on 8/25/19.
+//  Created by Bao Lan Le Quang on 8/29/19.
 //  Copyright © 2019 BLShopping. All rights reserved.
 //
 
 import UIKit
 
-protocol NeedLoginCellDelegate {
+protocol NeedLoginCollectionCellDelegate {
     func openLoginView();
     func openSignUpView();
 }
 
-class NeedLoginCell: UITableViewCell {
-
+class NeedLoginCollectionCell: UICollectionViewCell {
+    
+    //variables
     @IBOutlet weak var lblIntro: UILabel!
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var btnRegister: UIButton!
     
-    var delegate: NeedLoginCellDelegate?;
-    
+    //callback
+    var delegate: NeedLoginCollectionCellDelegate?;
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -38,13 +40,7 @@ class NeedLoginCell: UITableViewCell {
         self.btnLogin.setTitle(localizedString(key: "STR_LABEL_LOG_IN"), for: .normal)
         self.btnRegister.setTitle(localizedString(key: "STR_LABEL_REGISTER"), for: .normal)
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
+
     // MARK: - Buttons Action
     @IBAction func btnLoginClicked(_ sender: Any) {
         self.delegate?.openLoginView();
@@ -53,5 +49,4 @@ class NeedLoginCell: UITableViewCell {
     @IBAction func btnSignUpClicked(_ sender: Any) {
         self.delegate?.openSignUpView();
     }
-    
 }

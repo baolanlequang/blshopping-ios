@@ -1,15 +1,15 @@
 //
-//  ListProductCell.swift
+//  ListProductCollectionCell.swift
 //  BLShopping
 //
-//  Created by Bao Lan Le Quang on 8/27/19.
+//  Created by Bao Lan Le Quang on 8/29/19.
 //  Copyright © 2019 BLShopping. All rights reserved.
 //
 
 import UIKit
 import SDWebImage
 
-class ListProductCell: UITableViewCell {
+class ListProductCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
@@ -25,12 +25,6 @@ class ListProductCell: UITableViewCell {
         self.lblOldPrice.textColor = BLColor.sharedInstance.defaultTextColor();
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     func setData(productDTO: ProductDTO) {
         
         self.imageViewProduct.sd_setImage(with: URL(string: productDTO.imageURL), placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions(), completed: { (image, error, cachedType, url) in

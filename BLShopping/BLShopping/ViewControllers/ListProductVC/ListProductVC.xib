@@ -133,9 +133,13 @@
                         <constraint firstItem="4Xd-Nh-huI" firstAttribute="top" secondItem="CgT-Kb-dGt" secondAttribute="top" id="yM1-f0-vtN"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L3j-yx-rox">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L3j-yx-rox">
                     <rect key="frame" x="0.0" y="124" width="320" height="444"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="2Bl-lF-Kyb"/>
+                        <outlet property="delegate" destination="-1" id="uHY-aP-8tS"/>
+                    </connections>
                 </tableView>
                 <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NON-js-Srl">
                     <rect key="frame" x="0.0" y="124" width="320" height="444"/>
@@ -146,6 +150,10 @@
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="jWV-kX-P5i"/>
+                        <outlet property="delegate" destination="-1" id="j7p-1M-VA8"/>
+                    </connections>
                 </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

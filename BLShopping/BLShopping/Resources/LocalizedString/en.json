@@ -17,5 +17,12 @@
     "STR_LABEL_HOT_PRODUCTS": "HOT products",
     "STR_LABEL_WATCHED_PRODUCTS": "Recent watched",
     "STR_LABEL_WATCH_MORE": "Explore more",
-    "STR_LABEL_LIST_PRODUCTS": "Products"
+    "STR_LABEL_LIST_PRODUCTS": "Products",
+    "STR_LABEL_CLOSE": "Close",
+    "STR_LABEL_SORT_POSITION": "Position",
+    "STR_LABEL_SORT_AZ": "From A to Z",
+    "STR_LABEL_SORT_ZA": "From Z to A",
+    "STR_LABEL_SORT_LOW_HIGH": "From low price to high price",
+    "STR_LABEL_SORT_HIGH_LOW": "From high price to low price",
+    "STR_LABEL_SORT_CREATED_BY": "Created by"
 }

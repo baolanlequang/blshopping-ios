@@ -17,5 +17,12 @@
     "STR_LABEL_HOT_PRODUCTS": "Sản phẩm HOT",
     "STR_LABEL_WATCHED_PRODUCTS": "Sản phẩm đã xem",
     "STR_LABEL_WATCH_MORE": "Xem thêm",
-    "STR_LABEL_LIST_PRODUCTS": "Danh sách sản phẩm"
+    "STR_LABEL_LIST_PRODUCTS": "Danh sách sản phẩm",
+    "STR_LABEL_CLOSE": "Đóng",
+    "STR_LABEL_SORT_POSITION": "Vị trí",
+    "STR_LABEL_SORT_AZ": "Tên từ A đến Z",
+    "STR_LABEL_SORT_ZA": "Tên từ Z đến A",
+    "STR_LABEL_SORT_LOW_HIGH": "Giá từ thấp đến cao",
+    "STR_LABEL_SORT_HIGH_LOW": "Giá từ cao đến thấp",
+    "STR_LABEL_SORT_CREATED_BY": "Được tạo bởi"
 }

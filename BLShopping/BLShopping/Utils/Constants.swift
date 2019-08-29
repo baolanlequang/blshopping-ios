@@ -16,3 +16,12 @@ enum BLLanguageCode: String {
         self = BLLanguageCode(rawValue: fromRawValue) ?? .EN
     }
 }
+
+enum SortType: Int {
+    case POSITION = 0
+    case A_Z = 1
+    case Z_A = 2
+    case LOW_HIGH = 3
+    case HIGH_LOW = 4
+    case CREATED_BY = 5
+}
