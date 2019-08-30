@@ -10,7 +10,7 @@ import UIKit
 import MBProgressHUD
 import SwiftyJSON
 
-class ProductDetailVC: UIViewController, UITableViewDataSource, UITableViewDelegate, ProductInfoCellDelegate {
+class ProductDetailVC: UIViewController, UITableViewDataSource, UITableViewDelegate, ProductInfoCellDelegate, ProductManufactureCellDelegate {
     
     @IBOutlet weak var viewTop: UIView!
     @IBOutlet weak var btnLove: UIButton!
@@ -144,31 +144,31 @@ class ProductDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
             cell?.setData(productDTO: self.productDTO!);
             return cell!;
         }
-//        else if (indexPath.section == 1) {
-//            var cell: ProductManufactureCell? = tableView.dequeueReusableCell(withIdentifier: "ProductManufactureCell") as? ProductManufactureCell;
-//            if (cell == nil) {
-//                cell = Bundle.main.loadNibNamed("ProductManufactureCell", owner: self, options: nil)?.first as? ProductManufactureCell;
-//            }
-//            cell?.delegate = self;
-//            cell?.setData(productDTO: self.productDTO!);
-//            return cell!;
-//        }
-//        else if (indexPath.section == 2) {
-//            var cell: ProductSpecsCell? = tableView.dequeueReusableCell(withIdentifier: "ProductSpecsCell") as? ProductSpecsCell;
-//            if (cell == nil) {
-//                cell = Bundle.main.loadNibNamed("ProductSpecsCell", owner: self, options: nil)?.first as? ProductSpecsCell;
-//            }
-//            cell?.setData(productDTO: self.productDTO!);
-//            return cell!;
-//        }
-//        else if (indexPath.section == 3) {
-//            var cell: ProductDescriptionCell? = tableView.dequeueReusableCell(withIdentifier: "ProductDescriptionCell") as? ProductDescriptionCell;
-//            if (cell == nil) {
-//                cell = Bundle.main.loadNibNamed("ProductDescriptionCell", owner: self, options: nil)?.first as? ProductDescriptionCell;
-//            }
-//            cell?.setData(productDTO: self.productDTO!);
-//            return cell!;
-//        }
+        else if (indexPath.section == 1) {
+            var cell: ProductManufactureCell? = tableView.dequeueReusableCell(withIdentifier: "ProductManufactureCell") as? ProductManufactureCell;
+            if (cell == nil) {
+                cell = Bundle.main.loadNibNamed("ProductManufactureCell", owner: self, options: nil)?.first as? ProductManufactureCell;
+            }
+            cell?.delegate = self;
+            cell?.setData(productDTO: self.productDTO!);
+            return cell!;
+        }
+        else if (indexPath.section == 2) {
+            var cell: ProductSpecsCell? = tableView.dequeueReusableCell(withIdentifier: "ProductSpecsCell") as? ProductSpecsCell;
+            if (cell == nil) {
+                cell = Bundle.main.loadNibNamed("ProductSpecsCell", owner: self, options: nil)?.first as? ProductSpecsCell;
+            }
+            cell?.setData(productDTO: self.productDTO!);
+            return cell!;
+        }
+        else if (indexPath.section == 3) {
+            var cell: ProductDescriptionCell? = tableView.dequeueReusableCell(withIdentifier: "ProductDescriptionCell") as? ProductDescriptionCell;
+            if (cell == nil) {
+                cell = Bundle.main.loadNibNamed("ProductDescriptionCell", owner: self, options: nil)?.first as? ProductDescriptionCell;
+            }
+            cell?.setData(productDTO: self.productDTO!);
+            return cell!;
+        }
 //        else if (indexPath.section == 4) {
 //            var cell: RelatedProductsCell? = tableView.dequeueReusableCell(withIdentifier: "RelatedProductsCell") as? RelatedProductsCell;
 //            if (cell == nil) {

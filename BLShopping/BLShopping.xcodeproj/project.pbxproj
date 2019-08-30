@@ -95,6 +95,14 @@
 		30D4709823158803004737AA /* ListProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4709623158803004737AA /* ListProductCell.swift */; };
 		30D4709923158803004737AA /* ListProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D4709723158803004737AA /* ListProductCell.xib */; };
 		30D4709B23158817004737AA /* ListProductCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D4709A23158817004737AA /* ListProductCell~ipad.xib */; };
+		30FC03D02319200C007C88CA /* ProductManufactureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC03CE2319200C007C88CA /* ProductManufactureCell.swift */; };
+		30FC03D12319200C007C88CA /* ProductManufactureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FC03CF2319200C007C88CA /* ProductManufactureCell.xib */; };
+		30FC03D423192267007C88CA /* ProductSpecsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC03D223192267007C88CA /* ProductSpecsCell.swift */; };
+		30FC03D523192267007C88CA /* ProductSpecsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FC03D323192267007C88CA /* ProductSpecsCell.xib */; };
+		30FC03D82319228A007C88CA /* ProductSpectItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC03D62319228A007C88CA /* ProductSpectItemCell.swift */; };
+		30FC03D92319228A007C88CA /* ProductSpectItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FC03D72319228A007C88CA /* ProductSpectItemCell.xib */; };
+		30FC03DC2319261A007C88CA /* ProductDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC03DA2319261A007C88CA /* ProductDescriptionCell.swift */; };
+		30FC03DD2319261A007C88CA /* ProductDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FC03DB2319261A007C88CA /* ProductDescriptionCell.xib */; };
 		D54E1AC537D86EED1FFCB943 /* Pods_BLShopping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8E6B4EDF68F222745D58C1 /* Pods_BLShopping.framework */; };
 /* End PBXBuildFile section */
 
@@ -193,6 +201,14 @@
 		30D4709623158803004737AA /* ListProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProductCell.swift; sourceTree = "<group>"; };
 		30D4709723158803004737AA /* ListProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListProductCell.xib; sourceTree = "<group>"; };
 		30D4709A23158817004737AA /* ListProductCell~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "ListProductCell~ipad.xib"; sourceTree = "<group>"; };
+		30FC03CE2319200C007C88CA /* ProductManufactureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManufactureCell.swift; sourceTree = "<group>"; };
+		30FC03CF2319200C007C88CA /* ProductManufactureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductManufactureCell.xib; sourceTree = "<group>"; };
+		30FC03D223192267007C88CA /* ProductSpecsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSpecsCell.swift; sourceTree = "<group>"; };
+		30FC03D323192267007C88CA /* ProductSpecsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductSpecsCell.xib; sourceTree = "<group>"; };
+		30FC03D62319228A007C88CA /* ProductSpectItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSpectItemCell.swift; sourceTree = "<group>"; };
+		30FC03D72319228A007C88CA /* ProductSpectItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductSpectItemCell.xib; sourceTree = "<group>"; };
+		30FC03DA2319261A007C88CA /* ProductDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionCell.swift; sourceTree = "<group>"; };
+		30FC03DB2319261A007C88CA /* ProductDescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDescriptionCell.xib; sourceTree = "<group>"; };
 		32745E673456E7EA617BF868 /* Pods-BLShopping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLShopping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLShopping/Pods-BLShopping.debug.xcconfig"; sourceTree = "<group>"; };
 		4B80D749A480EE8077C41772 /* Pods-BLShopping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLShopping.release.xcconfig"; path = "Pods/Target Support Files/Pods-BLShopping/Pods-BLShopping.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -382,6 +398,14 @@
 				30AB6127231817720072DF6E /* SelectSortTypeView.xib */,
 				30AB6141231827B20072DF6E /* ProductInfoCell.swift */,
 				30AB6142231827B20072DF6E /* ProductInfoCell.xib */,
+				30FC03CE2319200C007C88CA /* ProductManufactureCell.swift */,
+				30FC03CF2319200C007C88CA /* ProductManufactureCell.xib */,
+				30FC03D223192267007C88CA /* ProductSpecsCell.swift */,
+				30FC03D323192267007C88CA /* ProductSpecsCell.xib */,
+				30FC03D62319228A007C88CA /* ProductSpectItemCell.swift */,
+				30FC03D72319228A007C88CA /* ProductSpectItemCell.xib */,
+				30FC03DA2319261A007C88CA /* ProductDescriptionCell.swift */,
+				30FC03DB2319261A007C88CA /* ProductDescriptionCell.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -558,16 +582,19 @@
 				30BB6D2D231273A000D25667 /* vi.json in Resources */,
 				30AB6120231812AF0072DF6E /* ListProductCollectionCell~ipad.xib in Resources */,
 				30BB6D0123126B6700D25667 /* SearchVC.xib in Resources */,
+				30FC03D12319200C007C88CA /* ProductManufactureCell.xib in Resources */,
 				305A4FD42312D072002C8968 /* ListCategoryCell.xib in Resources */,
 				30932E3F2312D4A300AC87A0 /* ListCategoryCell~ipad.xib in Resources */,
 				30D4707E23156F6C004737AA /* CategoryCell~ipad.xib in Resources */,
 				30932E4D2312E45600AC87A0 /* BestSellerProductCell.xib in Resources */,
+				30FC03DD2319261A007C88CA /* ProductDescriptionCell.xib in Resources */,
 				307B41FB2313851900A02B47 /* NewAddedProductCell~ipad.xib in Resources */,
 				307B41F9231384E100A02B47 /* NewAddedProductCell.xib in Resources */,
 				30BB6CE82312685400D25667 /* SplashVC.xib in Resources */,
 				30D4708A23157DDF004737AA /* ListAllCategoriesVC~ipad.xib in Resources */,
 				30AB611E231812A50072DF6E /* ListProductCollectionCell.xib in Resources */,
 				30D4708823157DD3004737AA /* ListAllCategoriesVC.xib in Resources */,
+				30FC03D92319228A007C88CA /* ProductSpectItemCell.xib in Resources */,
 				30BB6D0D23126BA100D25667 /* NotificationVC.xib in Resources */,
 				30932E4F2312E48500AC87A0 /* BestSellerProductCell~ipad.xib in Resources */,
 				30AB6133231821A90072DF6E /* ListSubFilterVC.xib in Resources */,
@@ -584,6 +611,7 @@
 				30D4708E23157EB0004737AA /* AllCategoriesCollectionCell.xib in Resources */,
 				30D4708223157958004737AA /* CategoryProductCollectionCell.xib in Resources */,
 				30AB6138231823530072DF6E /* ProductDetailVC.xib in Resources */,
+				30FC03D523192267007C88CA /* ProductSpecsCell.xib in Resources */,
 				30BB6D332312775100D25667 /* BannerCell.xib in Resources */,
 				30D47095231583BF004737AA /* ListProductVC.xib in Resources */,
 				30BB6D0523126B8600D25667 /* CartVC.xib in Resources */,
@@ -691,9 +719,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30FC03D82319228A007C88CA /* ProductSpectItemCell.swift in Sources */,
 				30AB612E23181B8C0072DF6E /* FilterVC.swift in Sources */,
 				30BB6D1523126C2200D25667 /* BLGlobal.swift in Sources */,
 				30AB613E231825300072DF6E /* ProductSpecsDTO.swift in Sources */,
+				30FC03D423192267007C88CA /* ProductSpecsCell.swift in Sources */,
 				305A4FD32312D072002C8968 /* ListCategoryCell.swift in Sources */,
 				30BB6D1323126C1600D25667 /* CallAPIs.swift in Sources */,
 				30BB6CF823126AFA00D25667 /* ListStoreVC.swift in Sources */,
@@ -721,11 +751,13 @@
 				30BB6CF42312698D00D25667 /* UserDTO.swift in Sources */,
 				30D47094231583BF004737AA /* ListProductVC.swift in Sources */,
 				30BB6D0F23126BCC00D25667 /* Utils.swift in Sources */,
+				30FC03DC2319261A007C88CA /* ProductDescriptionCell.swift in Sources */,
 				30932E422312DDE500AC87A0 /* NeedLoginCell.swift in Sources */,
 				30BB6CE72312685400D25667 /* SplashVC.swift in Sources */,
 				30AB61262318176A0072DF6E /* SelectSortTypeView.swift in Sources */,
 				305A4FD72312D130002C8968 /* HomeCategoryCollectionCell.swift in Sources */,
 				30BB6D3B2312844B00D25667 /* CategoryDTO.swift in Sources */,
+				30FC03D02319200C007C88CA /* ProductManufactureCell.swift in Sources */,
 				30BB6D0023126B6700D25667 /* SearchVC.swift in Sources */,
 				30BB6D0823126B9400D25667 /* AccountVC.swift in Sources */,
 				30BB6D2F2312762700D25667 /* BannerDTO.swift in Sources */,

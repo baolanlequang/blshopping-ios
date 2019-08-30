@@ -29,5 +29,8 @@
     "STR_LABEL_APPLY": "Apply",
     "STR_LABEL_SELECT_FILTER": "Select filter",
     "STR_LABEL_ALL": "All",
-    "STR_LABEL_ADD_TO_CART": "Add to cart"
+    "STR_LABEL_ADD_TO_CART": "Add to cart",
+    "STR_LABEL_COMMENTS": "comment(s)",
+    "STR_LABEL_MANUFACTURER": "Manufacturer",
+    "STR_LABEL_MANUFACTURED_BY": "Manufactured by"
 }

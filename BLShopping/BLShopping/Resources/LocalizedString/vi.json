@@ -29,5 +29,8 @@
     "STR_LABEL_APPLY": "Áp dụng",
     "STR_LABEL_SELECT_FILTER": "Chọn bộ lọc",
     "STR_LABEL_ALL": "Tất cả",
-    "STR_LABEL_ADD_TO_CART": "Thêm vào giỏ hàng"
+    "STR_LABEL_ADD_TO_CART": "Thêm vào giỏ hàng",
+    "STR_LABEL_COMMENTS": "nhận xét",
+    "STR_LABEL_MANUFACTURER": "Nhà sản xuất",
+    "STR_LABEL_MANUFACTURED_BY": "Sản xuất bởi"
 }

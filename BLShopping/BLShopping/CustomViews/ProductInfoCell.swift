@@ -71,7 +71,7 @@ class ProductInfoCell: UITableViewCell, UIScrollViewDelegate {
         }
         
         
-        self.btnReview.setTitle("\(productDTO.totalReview) nhận xét", for: .normal);
+        self.btnReview.setTitle("\(productDTO.totalReview) \(localizedString(key: "STR_LABEL_COMMENTS"))", for: .normal);
         
         self.lblPrice.text = productDTO.price;
         

@@ -22,6 +22,10 @@ class BLColor {
         return UIColor.black;
     }
     
+    func defaultTextColorDark() -> UIColor {
+        return UIColor(hexString: "#606060")!;
+    }
+    
     func textHintColor() -> UIColor {
         return UIColor(hexString: "#8E8E93")!;
     }
