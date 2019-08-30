@@ -103,6 +103,15 @@
 		30FC03D92319228A007C88CA /* ProductSpectItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FC03D72319228A007C88CA /* ProductSpectItemCell.xib */; };
 		30FC03DC2319261A007C88CA /* ProductDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC03DA2319261A007C88CA /* ProductDescriptionCell.swift */; };
 		30FC03DD2319261A007C88CA /* ProductDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FC03DB2319261A007C88CA /* ProductDescriptionCell.xib */; };
+		30FC03E023192784007C88CA /* RelatedProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC03DE23192784007C88CA /* RelatedProductsCell.swift */; };
+		30FC03E123192784007C88CA /* RelatedProductsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FC03DF23192784007C88CA /* RelatedProductsCell.xib */; };
+		30FC03E32319281D007C88CA /* RelatedProductsCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FC03E22319281D007C88CA /* RelatedProductsCell~ipad.xib */; };
+		30FC03E6231929A6007C88CA /* OverviewReviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC03E4231929A6007C88CA /* OverviewReviewsCell.swift */; };
+		30FC03E7231929A6007C88CA /* OverviewReviewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FC03E5231929A6007C88CA /* OverviewReviewsCell.xib */; };
+		30FC03EA23192B10007C88CA /* SeeAllReviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC03E823192B10007C88CA /* SeeAllReviewsCell.swift */; };
+		30FC03EB23192B10007C88CA /* SeeAllReviewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FC03E923192B10007C88CA /* SeeAllReviewsCell.xib */; };
+		30FC03EE23192B99007C88CA /* CustomerReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC03EC23192B99007C88CA /* CustomerReviewCell.swift */; };
+		30FC03EF23192B99007C88CA /* CustomerReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FC03ED23192B99007C88CA /* CustomerReviewCell.xib */; };
 		D54E1AC537D86EED1FFCB943 /* Pods_BLShopping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8E6B4EDF68F222745D58C1 /* Pods_BLShopping.framework */; };
 /* End PBXBuildFile section */
 
@@ -209,6 +218,15 @@
 		30FC03D72319228A007C88CA /* ProductSpectItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductSpectItemCell.xib; sourceTree = "<group>"; };
 		30FC03DA2319261A007C88CA /* ProductDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionCell.swift; sourceTree = "<group>"; };
 		30FC03DB2319261A007C88CA /* ProductDescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDescriptionCell.xib; sourceTree = "<group>"; };
+		30FC03DE23192784007C88CA /* RelatedProductsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedProductsCell.swift; sourceTree = "<group>"; };
+		30FC03DF23192784007C88CA /* RelatedProductsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RelatedProductsCell.xib; sourceTree = "<group>"; };
+		30FC03E22319281D007C88CA /* RelatedProductsCell~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "RelatedProductsCell~ipad.xib"; sourceTree = "<group>"; };
+		30FC03E4231929A6007C88CA /* OverviewReviewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewReviewsCell.swift; sourceTree = "<group>"; };
+		30FC03E5231929A6007C88CA /* OverviewReviewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewReviewsCell.xib; sourceTree = "<group>"; };
+		30FC03E823192B10007C88CA /* SeeAllReviewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllReviewsCell.swift; sourceTree = "<group>"; };
+		30FC03E923192B10007C88CA /* SeeAllReviewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeeAllReviewsCell.xib; sourceTree = "<group>"; };
+		30FC03EC23192B99007C88CA /* CustomerReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerReviewCell.swift; sourceTree = "<group>"; };
+		30FC03ED23192B99007C88CA /* CustomerReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerReviewCell.xib; sourceTree = "<group>"; };
 		32745E673456E7EA617BF868 /* Pods-BLShopping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLShopping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLShopping/Pods-BLShopping.debug.xcconfig"; sourceTree = "<group>"; };
 		4B80D749A480EE8077C41772 /* Pods-BLShopping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLShopping.release.xcconfig"; path = "Pods/Target Support Files/Pods-BLShopping/Pods-BLShopping.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -406,6 +424,15 @@
 				30FC03D72319228A007C88CA /* ProductSpectItemCell.xib */,
 				30FC03DA2319261A007C88CA /* ProductDescriptionCell.swift */,
 				30FC03DB2319261A007C88CA /* ProductDescriptionCell.xib */,
+				30FC03DE23192784007C88CA /* RelatedProductsCell.swift */,
+				30FC03DF23192784007C88CA /* RelatedProductsCell.xib */,
+				30FC03E22319281D007C88CA /* RelatedProductsCell~ipad.xib */,
+				30FC03E4231929A6007C88CA /* OverviewReviewsCell.swift */,
+				30FC03E5231929A6007C88CA /* OverviewReviewsCell.xib */,
+				30FC03E823192B10007C88CA /* SeeAllReviewsCell.swift */,
+				30FC03E923192B10007C88CA /* SeeAllReviewsCell.xib */,
+				30FC03EC23192B99007C88CA /* CustomerReviewCell.swift */,
+				30FC03ED23192B99007C88CA /* CustomerReviewCell.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -576,6 +603,7 @@
 				30BB6D2C231273A000D25667 /* en.json in Resources */,
 				30D4709923158803004737AA /* ListProductCell.xib in Resources */,
 				30BB6D392312811100D25667 /* BannerCell~ipad.xib in Resources */,
+				30FC03EB23192B10007C88CA /* SeeAllReviewsCell.xib in Resources */,
 				30BB6D0923126B9400D25667 /* AccountVC.xib in Resources */,
 				305A4FD82312D130002C8968 /* HomeCategoryCollectionCell.xib in Resources */,
 				30AB6128231817720072DF6E /* SelectSortTypeView.xib in Resources */,
@@ -584,6 +612,7 @@
 				30BB6D0123126B6700D25667 /* SearchVC.xib in Resources */,
 				30FC03D12319200C007C88CA /* ProductManufactureCell.xib in Resources */,
 				305A4FD42312D072002C8968 /* ListCategoryCell.xib in Resources */,
+				30FC03E123192784007C88CA /* RelatedProductsCell.xib in Resources */,
 				30932E3F2312D4A300AC87A0 /* ListCategoryCell~ipad.xib in Resources */,
 				30D4707E23156F6C004737AA /* CategoryCell~ipad.xib in Resources */,
 				30932E4D2312E45600AC87A0 /* BestSellerProductCell.xib in Resources */,
@@ -592,6 +621,7 @@
 				307B41F9231384E100A02B47 /* NewAddedProductCell.xib in Resources */,
 				30BB6CE82312685400D25667 /* SplashVC.xib in Resources */,
 				30D4708A23157DDF004737AA /* ListAllCategoriesVC~ipad.xib in Resources */,
+				30FC03E7231929A6007C88CA /* OverviewReviewsCell.xib in Resources */,
 				30AB611E231812A50072DF6E /* ListProductCollectionCell.xib in Resources */,
 				30D4708823157DD3004737AA /* ListAllCategoriesVC.xib in Resources */,
 				30FC03D92319228A007C88CA /* ProductSpectItemCell.xib in Resources */,
@@ -601,6 +631,7 @@
 				30D4707C23156F56004737AA /* CategoryCell.xib in Resources */,
 				30BB6CDC2312658400D25667 /* LaunchScreen.storyboard in Resources */,
 				30D4709B23158817004737AA /* ListProductCell~ipad.xib in Resources */,
+				30FC03E32319281D007C88CA /* RelatedProductsCell~ipad.xib in Resources */,
 				30932E432312DDE500AC87A0 /* NeedLoginCell.xib in Resources */,
 				30D470842315797F004737AA /* CategoryProductCollectionCell~ipad.xib in Resources */,
 				30AB612F23181B8C0072DF6E /* FilterVC.xib in Resources */,
@@ -618,6 +649,7 @@
 				30AB6124231814F00072DF6E /* NeedLoginCollectionCell.xib in Resources */,
 				30BB6CD92312658400D25667 /* Assets.xcassets in Resources */,
 				30BB6D3523127E0800D25667 /* ListStoreVC~ipad.xib in Resources */,
+				30FC03EF23192B99007C88CA /* CustomerReviewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,6 +781,7 @@
 				30AB6132231821A90072DF6E /* ListSubFilterVC.swift in Sources */,
 				30AB611D231812A50072DF6E /* ListProductCollectionCell.swift in Sources */,
 				30BB6CF42312698D00D25667 /* UserDTO.swift in Sources */,
+				30FC03EE23192B99007C88CA /* CustomerReviewCell.swift in Sources */,
 				30D47094231583BF004737AA /* ListProductVC.swift in Sources */,
 				30BB6D0F23126BCC00D25667 /* Utils.swift in Sources */,
 				30FC03DC2319261A007C88CA /* ProductDescriptionCell.swift in Sources */,
@@ -760,12 +793,15 @@
 				30FC03D02319200C007C88CA /* ProductManufactureCell.swift in Sources */,
 				30BB6D0023126B6700D25667 /* SearchVC.swift in Sources */,
 				30BB6D0823126B9400D25667 /* AccountVC.swift in Sources */,
+				30FC03E023192784007C88CA /* RelatedProductsCell.swift in Sources */,
+				30FC03E6231929A6007C88CA /* OverviewReviewsCell.swift in Sources */,
 				30BB6D2F2312762700D25667 /* BannerDTO.swift in Sources */,
 				30AB613A231824E00072DF6E /* ProductPictureDTO.swift in Sources */,
 				30AB612A23181B2E0072DF6E /* FilterDTO.swift in Sources */,
 				30AB613C2318250B0072DF6E /* ManufactureDTO.swift in Sources */,
 				30BB6D1123126BE500D25667 /* Constants.swift in Sources */,
 				30D4709823158803004737AA /* ListProductCell.swift in Sources */,
+				30FC03EA23192B10007C88CA /* SeeAllReviewsCell.swift in Sources */,
 				307B41F8231384E100A02B47 /* NewAddedProductCell.swift in Sources */,
 				30BB6D252312705800D25667 /* ProductDTO.swift in Sources */,
 				30932E4C2312E45600AC87A0 /* BestSellerProductCell.swift in Sources */,

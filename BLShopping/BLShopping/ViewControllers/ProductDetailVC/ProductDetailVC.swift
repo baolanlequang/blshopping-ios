@@ -10,7 +10,7 @@ import UIKit
 import MBProgressHUD
 import SwiftyJSON
 
-class ProductDetailVC: UIViewController, UITableViewDataSource, UITableViewDelegate, ProductInfoCellDelegate, ProductManufactureCellDelegate {
+class ProductDetailVC: UIViewController, UITableViewDataSource, UITableViewDelegate, ProductInfoCellDelegate, ProductManufactureCellDelegate, RelatedProductsCellDelegate, OverviewReviewsCellDelegate {
     
     @IBOutlet weak var viewTop: UIView!
     @IBOutlet weak var btnLove: UIButton!
@@ -169,48 +169,48 @@ class ProductDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
             cell?.setData(productDTO: self.productDTO!);
             return cell!;
         }
-//        else if (indexPath.section == 4) {
-//            var cell: RelatedProductsCell? = tableView.dequeueReusableCell(withIdentifier: "RelatedProductsCell") as? RelatedProductsCell;
-//            if (cell == nil) {
-//                cell = Bundle.main.loadNibNamed("RelatedProductsCell", owner: self, options: nil)?.first as? RelatedProductsCell;
-//            }
-//            cell?.setData(listProducts: self.listRelatedProduct);
-//            cell?.delegate = self;
-//            return cell!;
-//        }
-//        else if (indexPath.section == 5) {
-//            if (indexPath.row == 0) {
-//                var cell: OverviewReviewsCell? = tableView.dequeueReusableCell(withIdentifier: "OverviewReviewsCell") as? OverviewReviewsCell;
-//                if (cell == nil) {
-//                    cell = Bundle.main.loadNibNamed("OverviewReviewsCell", owner: self, options: nil)?.first as? OverviewReviewsCell;
-//                }
-//                cell?.delegate = self;
-//                cell?.setData(listReview: self.listReviews, productDTO: self.productDTO!);
-//                return cell!;
-//            }
-//            else if (indexPath.row == self.listReviews.count + 1) {
-//                var cell: SeeAllReviewsCell? = tableView.dequeueReusableCell(withIdentifier: "SeeAllReviewsCell") as? SeeAllReviewsCell;
-//                if (cell == nil) {
-//                    cell = Bundle.main.loadNibNamed("SeeAllReviewsCell", owner: self, options: nil)?.first as? SeeAllReviewsCell;
-//                }
-//                if (self.listReviews.count > 2) {
-//                    cell?.setHeight(height: 44);
-//                }
-//                else {
-//                    cell?.setHeight(height: 0);
-//                }
-//                return cell!;
-//            }
-//            else {
-//                var cell: CustomerReviewCell? = tableView.dequeueReusableCell(withIdentifier: "CustomerReviewCell") as? CustomerReviewCell;
-//                if (cell == nil) {
-//                    cell = Bundle.main.loadNibNamed("CustomerReviewCell", owner: self, options: nil)?.first as? CustomerReviewCell;
-//                }
-//                let reviewDTO = self.listReviews[indexPath.row - 1];
-//                cell?.setData(reviewDTO: reviewDTO);
-//                return cell!;
-//            }
-//        }
+        else if (indexPath.section == 4) {
+            var cell: RelatedProductsCell? = tableView.dequeueReusableCell(withIdentifier: "RelatedProductsCell") as? RelatedProductsCell;
+            if (cell == nil) {
+                cell = Bundle.main.loadNibNamed("RelatedProductsCell", owner: self, options: nil)?.first as? RelatedProductsCell;
+            }
+            cell?.setData(listProducts: self.listRelatedProduct);
+            cell?.delegate = self;
+            return cell!;
+        }
+        else if (indexPath.section == 5) {
+            if (indexPath.row == 0) {
+                var cell: OverviewReviewsCell? = tableView.dequeueReusableCell(withIdentifier: "OverviewReviewsCell") as? OverviewReviewsCell;
+                if (cell == nil) {
+                    cell = Bundle.main.loadNibNamed("OverviewReviewsCell", owner: self, options: nil)?.first as? OverviewReviewsCell;
+                }
+                cell?.delegate = self;
+                cell?.setData(listReview: self.listReviews, productDTO: self.productDTO!);
+                return cell!;
+            }
+            else if (indexPath.row == self.listReviews.count + 1) {
+                var cell: SeeAllReviewsCell? = tableView.dequeueReusableCell(withIdentifier: "SeeAllReviewsCell") as? SeeAllReviewsCell;
+                if (cell == nil) {
+                    cell = Bundle.main.loadNibNamed("SeeAllReviewsCell", owner: self, options: nil)?.first as? SeeAllReviewsCell;
+                }
+                if (self.listReviews.count > 2) {
+                    cell?.setHeight(height: 44);
+                }
+                else {
+                    cell?.setHeight(height: 0);
+                }
+                return cell!;
+            }
+            else {
+                var cell: CustomerReviewCell? = tableView.dequeueReusableCell(withIdentifier: "CustomerReviewCell") as? CustomerReviewCell;
+                if (cell == nil) {
+                    cell = Bundle.main.loadNibNamed("CustomerReviewCell", owner: self, options: nil)?.first as? CustomerReviewCell;
+                }
+                let reviewDTO = self.listReviews[indexPath.row - 1];
+                cell?.setData(reviewDTO: reviewDTO);
+                return cell!;
+            }
+        }
         else {
             var cell = tableView.dequeueReusableCell(withIdentifier: "cell");
             if (cell == nil) {
