@@ -10,7 +10,7 @@ import UIKit
 import MBProgressHUD
 import SwiftyJSON
 
-class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate, ListCategoryCellDelegate, NeedLoginCellDelegate, NewAddedProductCellDelegate, CategoryCellDelegate {
+class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate, ListCategoryCellDelegate, NeedLoginCellDelegate, NewAddedProductCellDelegate, CategoryCellDelegate, LoginSignupVCDelegate {
     
     // variables
     @IBOutlet weak var tableView: UITableView!
@@ -225,20 +225,18 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
     
     // MARK: - NeedLoginCellDelegate
     func openSignUpView() {
-        //TODO: openSignUpView
-//        let loginVC = LoginSignupVC(nibName: "LoginSignupVC", bundle: nil);
-//        let nav = UINavigationController(rootViewController: loginVC);
-//        loginVC.delegate = self;
-//        loginVC.isShowSignUp = true
-//        self.view.window?.rootViewController?.present(nav, animated: true, completion: nil);
+        let loginVC = LoginSignupVC(nibName: "LoginSignupVC", bundle: nil);
+        let nav = UINavigationController(rootViewController: loginVC);
+        loginVC.delegate = self;
+        loginVC.isShowSignUp = true
+        self.view.window?.rootViewController?.present(nav, animated: true, completion: nil);
     }
     
     func openLoginView() {
-        //TODO: openLoginView
-//        let loginVC = LoginSignupVC(nibName: "LoginSignupVC", bundle: nil);
-//        let nav = UINavigationController(rootViewController: loginVC);
-//        loginVC.delegate = self;
-//        self.view.window?.rootViewController?.present(nav, animated: true, completion: nil);
+        let loginVC = LoginSignupVC(nibName: "LoginSignupVC", bundle: nil);
+        let nav = UINavigationController(rootViewController: loginVC);
+        loginVC.delegate = self;
+        self.view.window?.rootViewController?.present(nav, animated: true, completion: nil);
     }
     
     // MARK: - NewAddedProductCellDelegate
@@ -253,6 +251,15 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
         let listProductVC = ListProductVC(nibName: "ListProductVC", bundle: nil);
         listProductVC.categoryDTO = catDTO;
         self.tabBarController?.navigationController?.pushViewController(listProductVC, animated: true);
+    }
+    
+    // MARK: - LoginSignupVCDelegate
+    func onBackClick() {
+        
+    }
+    
+    func onLoginSucceed() {
+        self.tableView.reloadData();
     }
     
     // MARK: - CALL APIs
