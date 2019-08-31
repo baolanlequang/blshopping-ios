@@ -10,9 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountVC" customModule="BLShopping" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SupportVC" customModule="BLShopping" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="pNl-Q0-Tzv" id="g7x-Lm-8EF"/>
+                <outlet property="tableView" destination="fM2-jd-m3C" id="Gsl-iS-QJs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,10 +21,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ciu-ap-g4u">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SBA-g7-eix">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quản Lý Tài Khoản" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pk-8i-brt">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hỗ Trợ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tu7-EA-MO8">
                             <rect key="frame" x="0.0" y="29" width="320" height="21"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -34,27 +34,27 @@
                     </subviews>
                     <color key="backgroundColor" red="0.1058823529" green="0.6588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="64" id="9lV-jK-nBx"/>
+                        <constraint firstAttribute="height" constant="64" id="afe-88-sqJ"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="pNl-Q0-Tzv">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="fM2-jd-m3C">
                     <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="MKv-Qf-paO"/>
-                        <outlet property="delegate" destination="-1" id="EuG-ha-fO5"/>
+                        <outlet property="dataSource" destination="-1" id="4em-Ms-7lW"/>
+                        <outlet property="delegate" destination="-1" id="AJv-WV-iQ3"/>
                     </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="ciu-ap-g4u" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3Io-Kp-b8C"/>
-                <constraint firstItem="ciu-ap-g4u" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="3mc-qJ-arc"/>
-                <constraint firstItem="ciu-ap-g4u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LtZ-SD-nYI"/>
-                <constraint firstItem="pNl-Q0-Tzv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e20-Ov-VWw"/>
-                <constraint firstItem="pNl-Q0-Tzv" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fMP-3r-WXp"/>
-                <constraint firstItem="pNl-Q0-Tzv" firstAttribute="top" secondItem="ciu-ap-g4u" secondAttribute="bottom" id="idV-ov-pC9"/>
-                <constraint firstAttribute="bottom" secondItem="pNl-Q0-Tzv" secondAttribute="bottom" id="x5j-Qx-s24"/>
+                <constraint firstItem="fM2-jd-m3C" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="3TI-tv-z9N"/>
+                <constraint firstItem="SBA-g7-eix" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Smc-qC-pz7"/>
+                <constraint firstItem="fM2-jd-m3C" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="avg-mK-BZy"/>
+                <constraint firstAttribute="bottom" secondItem="fM2-jd-m3C" secondAttribute="bottom" id="ifS-DO-x26"/>
+                <constraint firstItem="SBA-g7-eix" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="oYD-OX-7la"/>
+                <constraint firstItem="fM2-jd-m3C" firstAttribute="top" secondItem="SBA-g7-eix" secondAttribute="bottom" id="zAP-Zr-LCn"/>
+                <constraint firstItem="SBA-g7-eix" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zhz-Oz-1ut"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
