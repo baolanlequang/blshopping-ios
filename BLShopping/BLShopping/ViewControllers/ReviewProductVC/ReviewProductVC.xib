@@ -17,10 +17,13 @@
                 <outlet property="lblPlaceHolderContent" destination="eJd-Z1-O6M" id="gw0-db-c1z"/>
                 <outlet property="lblProductName" destination="R3H-Fq-cty" id="w1y-js-E0W"/>
                 <outlet property="lblStatusReview" destination="QZy-5V-LBK" id="uMQ-CC-Pd3"/>
+                <outlet property="scrollView" destination="onw-fz-5ym" id="ZgB-n8-Y65"/>
                 <outlet property="txtReviewContent" destination="Eei-Pv-0cO" id="Kdg-1g-Unu"/>
                 <outlet property="txtReviewTitle" destination="BxH-pH-hT9" id="fng-le-2RJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewContainerReview" destination="3wT-mp-SqB" id="B9O-N9-hUL"/>
+                <outlet property="viewReviewContent" destination="RWv-p6-HGQ" id="G8J-Td-RgI"/>
+                <outlet property="viewReviewTitle" destination="hTO-Ru-kID" id="9ln-lO-FXu"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

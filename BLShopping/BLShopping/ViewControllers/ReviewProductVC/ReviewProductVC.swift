@@ -61,7 +61,7 @@ class ReviewProductVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(tap:)));
         self.view.addGestureRecognizer(tap);
         
-        self.scrollView.contentSize = CGSize(width: 0, height: self.btnSend.frame.origin.y + self.btnSend.frame.size.height + 20);
+//        self.scrollView.contentSize = CGSize(width: 0, height: self.btnSend.frame.origin.y + self.btnSend.frame.size.height + 20);
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil);
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil);
