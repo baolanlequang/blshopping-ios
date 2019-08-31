@@ -125,11 +125,12 @@ class AccountVC: UIViewController, LoginSignupVCDelegate, UITableViewDataSource,
     
     // MARK: - LogOutCellDelegate
     func onLogOutClicked() {
-        BLGlobal.shared.cartDTO.listProduct = [:];
-        BLGlobal.shared.cartDTO.saveCart();
-        BLGlobal.shared.userDTO = nil;
-        BLGlobal.shared.saveUser();
-        self.onBackClick();
+        //TODO: logout clicked
+//        BLGlobal.shared.cartDTO.listProduct = [:];
+//        BLGlobal.shared.cartDTO.saveCart();
+//        BLGlobal.shared.userDTO = nil;
+//        BLGlobal.shared.saveUser();
+//        self.onBackClick();
     }
     
     // MARK: - CALL APIs
