@@ -84,6 +84,9 @@
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="uzk-1B-PRQ"/>
+                                    </connections>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RY4-bf-cFL">
                                     <rect key="frame" x="0.0" y="50" width="320" height="1"/>
@@ -100,6 +103,9 @@
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="2Af-cZ-62w"/>
+                                    </connections>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DD0-4s-VA4">
                                     <rect key="frame" x="0.0" y="89" width="320" height="1"/>
@@ -116,6 +122,9 @@
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="dtB-WC-Y3R"/>
+                                    </connections>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4v5-NW-XGs">
                                     <rect key="frame" x="0.0" y="128" width="320" height="1"/>
@@ -132,6 +141,9 @@
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="m40-h3-nbb"/>
+                                    </connections>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uh4-Ke-3Pq">
                                     <rect key="frame" x="0.0" y="167" width="320" height="1"/>

@@ -57,6 +57,8 @@
 		30799CC3231AC7E800F20555 /* ShippingMethodDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30799CC2231AC7E800F20555 /* ShippingMethodDTO.swift */; };
 		30799CC6231AC8D600F20555 /* AddNewAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30799CC4231AC8D600F20555 /* AddNewAddressVC.swift */; };
 		30799CC7231AC8D600F20555 /* AddNewAddressVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30799CC5231AC8D600F20555 /* AddNewAddressVC.xib */; };
+		30799CCA231ACA6200F20555 /* ShippingMethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30799CC8231ACA6200F20555 /* ShippingMethodVC.swift */; };
+		30799CCB231ACA6200F20555 /* ShippingMethodVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30799CC9231ACA6200F20555 /* ShippingMethodVC.xib */; };
 		307B41F8231384E100A02B47 /* NewAddedProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307B41F6231384E100A02B47 /* NewAddedProductCell.swift */; };
 		307B41F9231384E100A02B47 /* NewAddedProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307B41F7231384E100A02B47 /* NewAddedProductCell.xib */; };
 		307B41FB2313851900A02B47 /* NewAddedProductCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307B41FA2313851900A02B47 /* NewAddedProductCell~ipad.xib */; };
@@ -223,6 +225,8 @@
 		30799CC2231AC7E800F20555 /* ShippingMethodDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingMethodDTO.swift; sourceTree = "<group>"; };
 		30799CC4231AC8D600F20555 /* AddNewAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAddressVC.swift; sourceTree = "<group>"; };
 		30799CC5231AC8D600F20555 /* AddNewAddressVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewAddressVC.xib; sourceTree = "<group>"; };
+		30799CC8231ACA6200F20555 /* ShippingMethodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingMethodVC.swift; sourceTree = "<group>"; };
+		30799CC9231ACA6200F20555 /* ShippingMethodVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShippingMethodVC.xib; sourceTree = "<group>"; };
 		307B41F6231384E100A02B47 /* NewAddedProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAddedProductCell.swift; sourceTree = "<group>"; };
 		307B41F7231384E100A02B47 /* NewAddedProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAddedProductCell.xib; sourceTree = "<group>"; };
 		307B41FA2313851900A02B47 /* NewAddedProductCell~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "NewAddedProductCell~ipad.xib"; sourceTree = "<group>"; };
@@ -360,6 +364,8 @@
 			children = (
 				30799CB2231AC40500F20555 /* OrderVC.swift */,
 				30799CB3231AC40500F20555 /* OrderVC.xib */,
+				30799CC8231ACA6200F20555 /* ShippingMethodVC.swift */,
+				30799CC9231ACA6200F20555 /* ShippingMethodVC.xib */,
 				30799CC4231AC8D600F20555 /* AddNewAddressVC.swift */,
 				30799CC5231AC8D600F20555 /* AddNewAddressVC.xib */,
 				30799C7B231AB5EA00F20555 /* ListOrderVC.swift */,
@@ -839,6 +845,7 @@
 				30AB611E231812A50072DF6E /* ListProductCollectionCell.xib in Resources */,
 				30799CB1231AC0AD00F20555 /* ProductInSummaryCell.xib in Resources */,
 				30799C75231AB3B300F20555 /* LogOutCell.xib in Resources */,
+				30799CCB231ACA6200F20555 /* ShippingMethodVC.xib in Resources */,
 				30D4708823157DD3004737AA /* ListAllCategoriesVC.xib in Resources */,
 				30FC03D92319228A007C88CA /* ProductSpectItemCell.xib in Resources */,
 				30BB6D0D23126BA100D25667 /* NotificationVC.xib in Resources */,
@@ -1002,6 +1009,7 @@
 				30AB6140231825760072DF6E /* ProductReviewDTO.swift in Sources */,
 				30BB6D2123126C9300D25667 /* EZRatingView.m in Sources */,
 				30799C93231ABAFB00F20555 /* LoginSignupVC.swift in Sources */,
+				30799CCA231ACA6200F20555 /* ShippingMethodVC.swift in Sources */,
 				30BB6D28231271A800D25667 /* BLColor.swift in Sources */,
 				30799C85231AB6E900F20555 /* OrderCell.swift in Sources */,
 				30BB6D1E23126C9300D25667 /* RaisePlaceholder.swift in Sources */,
