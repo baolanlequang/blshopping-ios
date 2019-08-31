@@ -40,7 +40,7 @@ class ReviewProductVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
         self.ratingView.stepInterval = 1;
         self.ratingView.center = CGPoint(x: self.viewContainerReview.frame.size.width/2, y: self.viewContainerReview.frame.size.height/2);
         self.viewContainerReview.addSubview(self.ratingView);
-        self.ratingView.addTarget(self, action: #selector(self.ratingViewChange(sender:)), for: UIControlEvents.valueChanged);
+        self.ratingView.addTarget(self, action: #selector(self.ratingViewChange(sender:)), for: UIControl.Event.valueChanged);
         
         
         
@@ -63,8 +63,8 @@ class ReviewProductVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
         
         self.scrollView.contentSize = CGSize(width: 0, height: self.btnSend.frame.origin.y + self.btnSend.frame.size.height + 20);
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil);
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil);
     }
     
     override func didReceiveMemoryWarning() {

@@ -99,6 +99,12 @@
 		30E739C3231A462B001537B5 /* ListProductManuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30E739C1231A462B001537B5 /* ListProductManuVC.xib */; };
 		30E739C7231A4756001537B5 /* ReviewProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E739C5231A4756001537B5 /* ReviewProductVC.swift */; };
 		30E739C8231A4756001537B5 /* ReviewProductVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30E739C6231A4756001537B5 /* ReviewProductVC.xib */; };
+		30E739CC231A4AC9001537B5 /* PhotoViewerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E739CA231A4AC9001537B5 /* PhotoViewerVC.swift */; };
+		30E739CD231A4AC9001537B5 /* PhotoViewerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30E739CB231A4AC9001537B5 /* PhotoViewerVC.xib */; };
+		30E739D0231A4B90001537B5 /* PhotoViewerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E739CE231A4B90001537B5 /* PhotoViewerCell.swift */; };
+		30E739D1231A4B90001537B5 /* PhotoViewerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30E739CF231A4B90001537B5 /* PhotoViewerCell.xib */; };
+		30E739D4231A4BDE001537B5 /* PhotoViewerLargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E739D2231A4BDE001537B5 /* PhotoViewerLargeCell.swift */; };
+		30E739D5231A4BDE001537B5 /* PhotoViewerLargeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30E739D3231A4BDE001537B5 /* PhotoViewerLargeCell.xib */; };
 		30FC03D02319200C007C88CA /* ProductManufactureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC03CE2319200C007C88CA /* ProductManufactureCell.swift */; };
 		30FC03D12319200C007C88CA /* ProductManufactureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FC03CF2319200C007C88CA /* ProductManufactureCell.xib */; };
 		30FC03D423192267007C88CA /* ProductSpecsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC03D223192267007C88CA /* ProductSpecsCell.swift */; };
@@ -218,6 +224,12 @@
 		30E739C1231A462B001537B5 /* ListProductManuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListProductManuVC.xib; sourceTree = "<group>"; };
 		30E739C5231A4756001537B5 /* ReviewProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewProductVC.swift; sourceTree = "<group>"; };
 		30E739C6231A4756001537B5 /* ReviewProductVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewProductVC.xib; sourceTree = "<group>"; };
+		30E739CA231A4AC9001537B5 /* PhotoViewerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerVC.swift; sourceTree = "<group>"; };
+		30E739CB231A4AC9001537B5 /* PhotoViewerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoViewerVC.xib; sourceTree = "<group>"; };
+		30E739CE231A4B90001537B5 /* PhotoViewerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerCell.swift; sourceTree = "<group>"; };
+		30E739CF231A4B90001537B5 /* PhotoViewerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoViewerCell.xib; sourceTree = "<group>"; };
+		30E739D2231A4BDE001537B5 /* PhotoViewerLargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerLargeCell.swift; sourceTree = "<group>"; };
+		30E739D3231A4BDE001537B5 /* PhotoViewerLargeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoViewerLargeCell.xib; sourceTree = "<group>"; };
 		30FC03CE2319200C007C88CA /* ProductManufactureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManufactureCell.swift; sourceTree = "<group>"; };
 		30FC03CF2319200C007C88CA /* ProductManufactureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductManufactureCell.xib; sourceTree = "<group>"; };
 		30FC03D223192267007C88CA /* ProductSpecsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSpecsCell.swift; sourceTree = "<group>"; };
@@ -316,6 +328,7 @@
 				30AB612B23181B680072DF6E /* FilterVC */,
 				30AB6134231823440072DF6E /* ProductDetailVC */,
 				30E739C4231A4744001537B5 /* ReviewProductVC */,
+				30E739C9231A4AB8001537B5 /* PhotoViewerVC */,
 				30BB6CFA23126B1C00D25667 /* SearchVC */,
 				30BB6CFB23126B2600D25667 /* CartVC */,
 				30BB6CFC23126B3000D25667 /* AccountVC */,
@@ -442,6 +455,10 @@
 				30FC03E923192B10007C88CA /* SeeAllReviewsCell.xib */,
 				30FC03EC23192B99007C88CA /* CustomerReviewCell.swift */,
 				30FC03ED23192B99007C88CA /* CustomerReviewCell.xib */,
+				30E739CE231A4B90001537B5 /* PhotoViewerCell.swift */,
+				30E739CF231A4B90001537B5 /* PhotoViewerCell.xib */,
+				30E739D2231A4BDE001537B5 /* PhotoViewerLargeCell.swift */,
+				30E739D3231A4BDE001537B5 /* PhotoViewerLargeCell.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -541,6 +558,15 @@
 			path = ReviewProductVC;
 			sourceTree = "<group>";
 		};
+		30E739C9231A4AB8001537B5 /* PhotoViewerVC */ = {
+			isa = PBXGroup;
+			children = (
+				30E739CA231A4AC9001537B5 /* PhotoViewerVC.swift */,
+				30E739CB231A4AC9001537B5 /* PhotoViewerVC.xib */,
+			);
+			path = PhotoViewerVC;
+			sourceTree = "<group>";
+		};
 		6FC7CA06164CAD5A3AD8FA1C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -634,6 +660,7 @@
 				305A4FD42312D072002C8968 /* ListCategoryCell.xib in Resources */,
 				30FC03E123192784007C88CA /* RelatedProductsCell.xib in Resources */,
 				30E739C3231A462B001537B5 /* ListProductManuVC.xib in Resources */,
+				30E739D1231A4B90001537B5 /* PhotoViewerCell.xib in Resources */,
 				30932E3F2312D4A300AC87A0 /* ListCategoryCell~ipad.xib in Resources */,
 				30D4707E23156F6C004737AA /* CategoryCell~ipad.xib in Resources */,
 				30932E4D2312E45600AC87A0 /* BestSellerProductCell.xib in Resources */,
@@ -641,6 +668,7 @@
 				307B41FB2313851900A02B47 /* NewAddedProductCell~ipad.xib in Resources */,
 				307B41F9231384E100A02B47 /* NewAddedProductCell.xib in Resources */,
 				30E739C8231A4756001537B5 /* ReviewProductVC.xib in Resources */,
+				30E739D5231A4BDE001537B5 /* PhotoViewerLargeCell.xib in Resources */,
 				30BB6CE82312685400D25667 /* SplashVC.xib in Resources */,
 				30D4708A23157DDF004737AA /* ListAllCategoriesVC~ipad.xib in Resources */,
 				30FC03E7231929A6007C88CA /* OverviewReviewsCell.xib in Resources */,
@@ -660,6 +688,7 @@
 				30BB6CF923126AFA00D25667 /* ListStoreVC.xib in Resources */,
 				30D4709023157EC6004737AA /* AllCategoriesCollectionCell~ipad.xib in Resources */,
 				30932E3D2312D17600AC87A0 /* HomeCategoryCollectionCell~ipad.xib in Resources */,
+				30E739CD231A4AC9001537B5 /* PhotoViewerVC.xib in Resources */,
 				30AB6144231827B20072DF6E /* ProductInfoCell.xib in Resources */,
 				30D4708E23157EB0004737AA /* AllCategoriesCollectionCell.xib in Resources */,
 				30D4708223157958004737AA /* CategoryProductCollectionCell.xib in Resources */,
@@ -777,7 +806,10 @@
 				30AB612E23181B8C0072DF6E /* FilterVC.swift in Sources */,
 				30BB6D1523126C2200D25667 /* BLGlobal.swift in Sources */,
 				30AB613E231825300072DF6E /* ProductSpecsDTO.swift in Sources */,
+				30E739D4231A4BDE001537B5 /* PhotoViewerLargeCell.swift in Sources */,
 				30FC03D423192267007C88CA /* ProductSpecsCell.swift in Sources */,
+				30E739D0231A4B90001537B5 /* PhotoViewerCell.swift in Sources */,
+				30E739CC231A4AC9001537B5 /* PhotoViewerVC.swift in Sources */,
 				305A4FD32312D072002C8968 /* ListCategoryCell.swift in Sources */,
 				30BB6D1323126C1600D25667 /* CallAPIs.swift in Sources */,
 				30BB6CF823126AFA00D25667 /* ListStoreVC.swift in Sources */,
