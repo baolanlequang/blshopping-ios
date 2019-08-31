@@ -47,8 +47,8 @@ class LoginSignupVC: MXSegmentedPagerController, LoginSignupHeaderViewDelegate, 
         // Segmented Control customization
         self.segmentedPager.segmentedControl.selectionIndicatorLocation = .down
         self.segmentedPager.segmentedControl.backgroundColor = UIColor.init(hexString: "f9f9f9");
-        self.segmentedPager.segmentedControl.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.init(hexString: "727272") ?? UIColor.black, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14.0)];
-        self.segmentedPager.segmentedControl.selectedTitleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.black]
+        self.segmentedPager.segmentedControl.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.init(hexString: "727272") ?? UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14.0)];
+        self.segmentedPager.segmentedControl.selectedTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
         self.segmentedPager.segmentedControl.selectionStyle = .fullWidthStripe
         self.segmentedPager.segmentedControl.selectionIndicatorColor = UIColor.init(hexString: "fdd835");
         self.segmentedPager.segmentedControl.borderType = .bottom;
@@ -179,61 +179,63 @@ class LoginSignupVC: MXSegmentedPagerController, LoginSignupHeaderViewDelegate, 
     }
     
     func login(userName: String, password: String) {
-        let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
-        requestLogin(userName: userName, password: password) { (operation, responseObject, error) in
-            hud.hide(animated: true);
-            if (error == nil) {
-                //                print("requestLogin: \(responseObject)")
-                let json = JSON(responseObject ?? [:]);
-                if (json["LoginResult"].dictionary != nil) {
-                    let isValid = json["LoginResult"]["IsValid"].boolValue;
-                    if (isValid == true) {
-                        let customerData = json["LoginResult"];
-                        let userDTO = UserDTO(jsonData: customerData);
-                        BLGlobal.shared.userDTO = userDTO;
-                        BLGlobal.shared.saveUser();
-                        self.delegate?.onLoginSucceed();
-                        self.dismiss(animated: true, completion: nil);
-                    }
-                    else {
-                        showAlert(title: "", message: json["LoginResult"]["Message"].stringValue, viewController: self);
-                    }
-                }
-                
-            }
-            else {
-                showAlert(title: "", message: (error?.localizedDescription)!, viewController: self);
-            }
-        }
+        //TODO: request login
+//        let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
+//        requestLogin(userName: userName, password: password) { (operation, responseObject, error) in
+//            hud.hide(animated: true);
+//            if (error == nil) {
+//                //                print("requestLogin: \(responseObject)")
+//                let json = JSON(responseObject ?? [:]);
+//                if (json["LoginResult"].dictionary != nil) {
+//                    let isValid = json["LoginResult"]["IsValid"].boolValue;
+//                    if (isValid == true) {
+//                        let customerData = json["LoginResult"];
+//                        let userDTO = UserDTO(jsonData: customerData);
+//                        BLGlobal.shared.userDTO = userDTO;
+//                        BLGlobal.shared.saveUser();
+//                        self.delegate?.onLoginSucceed();
+//                        self.dismiss(animated: true, completion: nil);
+//                    }
+//                    else {
+//                        showAlert(title: "", message: json["LoginResult"]["Message"].stringValue, viewController: self);
+//                    }
+//                }
+//
+//            }
+//            else {
+//                showAlert(title: "", message: (error?.localizedDescription)!, viewController: self);
+//            }
+//        }
     }
     
     func signup(userName: String, fullName: String, email: String, password: String, gender: String) {
-        let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
-        requestRegister(userName: userName, fullName: fullName, email: email, password: password, gender: gender) { (operation, responseObject, error) in
-            hud.hide(animated: true);
-            if (error == nil) {
-                //                print("requestRegister: \(responseObject)")
-                let json = JSON(responseObject ?? [:]);
-                if (json["RegisterResult"].dictionary != nil) {
-                    let isValid = json["RegisterResult"]["IsValidRegistration"].boolValue;
-                    if (isValid == true) {
-                        let customerData = json["RegisterResult"]["Customer"];
-                        let userDTO = UserDTO(jsonData: customerData);
-                        BLGlobal.shared.userDTO = userDTO;
-                        BLGlobal.shared.saveUser();
-                        self.delegate?.onLoginSucceed();
-                        self.dismiss(animated: true, completion: nil);
-                    }
-                    else {
-                        showAlert(title: "", message: json["RegisterResult"]["Message"].stringValue, viewController: self);
-                    }
-                }
-                
-            }
-            else {
-                showAlert(title: "", message: (error?.localizedDescription)!, viewController: self);
-            }
-        }
+        //TODO: request sign up
+//        let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
+//        requestRegister(userName: userName, fullName: fullName, email: email, password: password, gender: gender) { (operation, responseObject, error) in
+//            hud.hide(animated: true);
+//            if (error == nil) {
+//                //                print("requestRegister: \(responseObject)")
+//                let json = JSON(responseObject ?? [:]);
+//                if (json["RegisterResult"].dictionary != nil) {
+//                    let isValid = json["RegisterResult"]["IsValidRegistration"].boolValue;
+//                    if (isValid == true) {
+//                        let customerData = json["RegisterResult"]["Customer"];
+//                        let userDTO = UserDTO(jsonData: customerData);
+//                        BLGlobal.shared.userDTO = userDTO;
+//                        BLGlobal.shared.saveUser();
+//                        self.delegate?.onLoginSucceed();
+//                        self.dismiss(animated: true, completion: nil);
+//                    }
+//                    else {
+//                        showAlert(title: "", message: json["RegisterResult"]["Message"].stringValue, viewController: self);
+//                    }
+//                }
+//
+//            }
+//            else {
+//                showAlert(title: "", message: (error?.localizedDescription)!, viewController: self);
+//            }
+//        }
     }
 
 }

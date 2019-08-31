@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderPaymentCell" id="KGk-i7-Jjw" customClass="OrderPaymentCell" customModule="BLShopping" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="252"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="251.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Điện thoại:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ys-ti-plB">
+                        <rect key="frame" x="8" y="89" width="304" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanh toán" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZQ-og-Rqa">
+                        <rect key="frame" x="8" y="164" width="304" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="OhQ-TC-Hgd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Địa chỉ email:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pD5-Uu-rho">
+                        <rect key="frame" x="8" y="63" width="304" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trạng thái:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="We8-Uu-rlw">
+                        <rect key="frame" x="8" y="219" width="304" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phương thức thanh toán:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hrd-t6-lR3">
+                        <rect key="frame" x="8" y="193" width="304" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhG-HU-94m">
+                        <rect key="frame" x="8" y="37" width="304" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Địa chỉ:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBS-LN-AEt">
+                        <rect key="frame" x="8" y="115" width="304" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Địa chỉ thanh toán" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dH-fD-cdy">
+                        <rect key="frame" x="8" y="8" width="304" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="oQe-jr-5dw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="pD5-Uu-rho" secondAttribute="trailing" constant="8" id="14B-wv-hh0"/>
+                    <constraint firstAttribute="trailing" secondItem="We8-Uu-rlw" secondAttribute="trailing" constant="8" id="3af-j4-QcT"/>
+                    <constraint firstItem="jBS-LN-AEt" firstAttribute="top" secondItem="8ys-ti-plB" secondAttribute="bottom" constant="8" id="41q-is-ea7"/>
+                    <constraint firstItem="GZQ-og-Rqa" firstAttribute="top" secondItem="jBS-LN-AEt" secondAttribute="bottom" constant="31" id="4HS-W8-fDf"/>
+                    <constraint firstItem="8ys-ti-plB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="4kQ-8P-AQ1"/>
+                    <constraint firstAttribute="trailing" secondItem="8ys-ti-plB" secondAttribute="trailing" constant="8" id="57I-Yc-mTR"/>
+                    <constraint firstAttribute="trailing" secondItem="FhG-HU-94m" secondAttribute="trailing" constant="8" id="5cF-gA-sOk"/>
+                    <constraint firstItem="pD5-Uu-rho" firstAttribute="top" secondItem="FhG-HU-94m" secondAttribute="bottom" constant="8" id="7Zs-RS-4n8"/>
+                    <constraint firstItem="pD5-Uu-rho" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="MPE-S4-TSd"/>
+                    <constraint firstAttribute="trailing" secondItem="Hrd-t6-lR3" secondAttribute="trailing" constant="8" id="RBt-Nr-hZ7"/>
+                    <constraint firstAttribute="trailing" secondItem="jBS-LN-AEt" secondAttribute="trailing" constant="8" id="STh-p6-KvY"/>
+                    <constraint firstAttribute="trailing" secondItem="7dH-fD-cdy" secondAttribute="trailing" constant="8" id="TqR-Nj-fdt"/>
+                    <constraint firstItem="8ys-ti-plB" firstAttribute="top" secondItem="pD5-Uu-rho" secondAttribute="bottom" constant="8" id="UZP-8A-6Ji"/>
+                    <constraint firstItem="jBS-LN-AEt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="VIA-aA-hzR"/>
+                    <constraint firstItem="FhG-HU-94m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="b3t-uo-Zlt"/>
+                    <constraint firstAttribute="trailing" secondItem="GZQ-og-Rqa" secondAttribute="trailing" constant="8" id="bwC-6c-MYD"/>
+                    <constraint firstItem="We8-Uu-rlw" firstAttribute="top" secondItem="Hrd-t6-lR3" secondAttribute="bottom" constant="8" id="huy-Nx-23p"/>
+                    <constraint firstItem="We8-Uu-rlw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="lJt-ne-bP1"/>
+                    <constraint firstItem="7dH-fD-cdy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="lTm-k3-poh"/>
+                    <constraint firstItem="Hrd-t6-lR3" firstAttribute="top" secondItem="GZQ-og-Rqa" secondAttribute="bottom" constant="8" id="m2N-Up-Nhw"/>
+                    <constraint firstItem="GZQ-og-Rqa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="peF-hG-Wu7"/>
+                    <constraint firstItem="7dH-fD-cdy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="pvk-zw-YsI"/>
+                    <constraint firstItem="FhG-HU-94m" firstAttribute="top" secondItem="7dH-fD-cdy" secondAttribute="bottom" constant="8" id="tur-MA-DTk"/>
+                    <constraint firstAttribute="bottom" secondItem="We8-Uu-rlw" secondAttribute="bottom" constant="14.5" id="wDr-RB-lpg"/>
+                    <constraint firstItem="Hrd-t6-lR3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="yd8-3n-UJ0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblAddress" destination="jBS-LN-AEt" id="scM-NF-6iH"/>
+                <outlet property="lblEmail" destination="pD5-Uu-rho" id="kj8-SS-JMj"/>
+                <outlet property="lblName" destination="FhG-HU-94m" id="nci-eW-0lN"/>
+                <outlet property="lblPaymentMethod" destination="Hrd-t6-lR3" id="OwX-Nj-G1w"/>
+                <outlet property="lblPaymentStatus" destination="We8-Uu-rlw" id="Wya-kl-KRb"/>
+                <outlet property="lblPhone" destination="8ys-ti-plB" id="pD3-XF-AWs"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

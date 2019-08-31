@@ -152,28 +152,29 @@ class SupportVC: UIViewController, UITableViewDataSource, UITableViewDelegate, S
     
     // MARK: - CALL APIs
     func getTopic() {
-        let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
-        requestGetListTopic { (operation, responseObject, error) in
-            hud.hide(animated: true);
-            if (error == nil) {
-                let json = JSON(responseObject ?? [:]);
-                if (json["TopicResult"].array != nil) {
-                    let result = json["TopicResult"].arrayValue;
-                    for jsonData in result {
-                        let topicDTO = TopicDTO(jsonData: jsonData);
-                        let filterArr = self.listTopics.filter({ (oldTopic) -> Bool in
-                            return oldTopic.ID == topicDTO.ID;
-                        })
-                        
-                        if (filterArr.count == 0) {
-                            self.listTopics.append(topicDTO);
-                        }
-                    }
-                    self.tableView.reloadData();
-                    
-                }
-            }
-        }
+        //TODO: get list topic
+//        let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
+//        requestGetListTopic { (operation, responseObject, error) in
+//            hud.hide(animated: true);
+//            if (error == nil) {
+//                let json = JSON(responseObject ?? [:]);
+//                if (json["TopicResult"].array != nil) {
+//                    let result = json["TopicResult"].arrayValue;
+//                    for jsonData in result {
+//                        let topicDTO = TopicDTO(jsonData: jsonData);
+//                        let filterArr = self.listTopics.filter({ (oldTopic) -> Bool in
+//                            return oldTopic.ID == topicDTO.ID;
+//                        })
+//
+//                        if (filterArr.count == 0) {
+//                            self.listTopics.append(topicDTO);
+//                        }
+//                    }
+//                    self.tableView.reloadData();
+//
+//                }
+//            }
+//        }
     }
 
 }

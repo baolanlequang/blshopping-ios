@@ -33,6 +33,9 @@
                             <color key="value" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="DV3-9L-o6v"/>
+                    </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mật khẩu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L9r-P7-0f5" customClass="RaisePlaceholder" customModule="Vat_Gia_Sai_Gon" customModuleProvider="target">
                     <rect key="frame" x="16" y="85" width="288" height="30"/>
@@ -51,6 +54,9 @@
                             <color key="value" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="eeY-g5-1Qy"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hoặc đăng nhập với" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvV-UM-FVQ">
                     <rect key="frame" x="16" y="358" width="288" height="21"/>
@@ -63,12 +69,18 @@
                     <rect key="frame" x="160" y="387" width="120" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="icon_google"/>
+                    <connections>
+                        <action selector="btnGoogleClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="HfY-z7-UvR"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77a-6U-NSK">
                     <rect key="frame" x="40" y="387" width="120" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.18823529410000001" green="0.36470588240000001" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" image="icon_facebook"/>
+                    <connections>
+                        <action selector="btnFacebookClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="um3-YQ-JhX"/>
+                    </connections>
                 </button>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vui lòng nhập email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sr0-wH-R6d">
                     <rect key="frame" x="16" y="49" width="288" height="21"/>
@@ -99,6 +111,9 @@
                     <state key="normal" title="Hiện">
                         <color key="titleColor" red="0.1058823529" green="0.6588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="btnDisplayPasswordClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="eOn-ll-Z2L"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uw5-cC-TP3">
                     <rect key="frame" x="16" y="146" width="288" height="44"/>
@@ -106,10 +121,21 @@
                     <color key="backgroundColor" red="0.8980392157" green="0.22352941179999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="Đăng Nhập"/>
+                    <connections>
+                        <action selector="btnLoginClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="72g-At-lTC"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="btnGoogle" destination="f97-9T-CcO" id="dO0-4H-g9g"/>
+                <outlet property="btnShowHidePassword" destination="uIr-Sj-TLc" id="Gba-9J-94P"/>
+                <outlet property="lblEmailError" destination="sr0-wH-R6d" id="ONT-iz-awY"/>
+                <outlet property="lblPasswordError" destination="f14-Yz-DgQ" id="RMf-CV-DX9"/>
+                <outlet property="txtEmail" destination="vUn-BY-lBd" id="GPa-LD-THp"/>
+                <outlet property="txtPassword" destination="L9r-P7-0f5" id="ZMq-B5-3sT"/>
+            </connections>
         </view>
     </objects>
     <resources>
