@@ -59,6 +59,8 @@
 		30799CC7231AC8D600F20555 /* AddNewAddressVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30799CC5231AC8D600F20555 /* AddNewAddressVC.xib */; };
 		30799CCA231ACA6200F20555 /* ShippingMethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30799CC8231ACA6200F20555 /* ShippingMethodVC.swift */; };
 		30799CCB231ACA6200F20555 /* ShippingMethodVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30799CC9231ACA6200F20555 /* ShippingMethodVC.xib */; };
+		30799CCE231ACBDA00F20555 /* ConfirmOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30799CCC231ACBDA00F20555 /* ConfirmOrderVC.swift */; };
+		30799CCF231ACBDA00F20555 /* ConfirmOrderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30799CCD231ACBDA00F20555 /* ConfirmOrderVC.xib */; };
 		307B41F8231384E100A02B47 /* NewAddedProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307B41F6231384E100A02B47 /* NewAddedProductCell.swift */; };
 		307B41F9231384E100A02B47 /* NewAddedProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307B41F7231384E100A02B47 /* NewAddedProductCell.xib */; };
 		307B41FB2313851900A02B47 /* NewAddedProductCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307B41FA2313851900A02B47 /* NewAddedProductCell~ipad.xib */; };
@@ -227,6 +229,8 @@
 		30799CC5231AC8D600F20555 /* AddNewAddressVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewAddressVC.xib; sourceTree = "<group>"; };
 		30799CC8231ACA6200F20555 /* ShippingMethodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingMethodVC.swift; sourceTree = "<group>"; };
 		30799CC9231ACA6200F20555 /* ShippingMethodVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShippingMethodVC.xib; sourceTree = "<group>"; };
+		30799CCC231ACBDA00F20555 /* ConfirmOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOrderVC.swift; sourceTree = "<group>"; };
+		30799CCD231ACBDA00F20555 /* ConfirmOrderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmOrderVC.xib; sourceTree = "<group>"; };
 		307B41F6231384E100A02B47 /* NewAddedProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAddedProductCell.swift; sourceTree = "<group>"; };
 		307B41F7231384E100A02B47 /* NewAddedProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAddedProductCell.xib; sourceTree = "<group>"; };
 		307B41FA2313851900A02B47 /* NewAddedProductCell~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "NewAddedProductCell~ipad.xib"; sourceTree = "<group>"; };
@@ -368,6 +372,8 @@
 				30799CC9231ACA6200F20555 /* ShippingMethodVC.xib */,
 				30799CC4231AC8D600F20555 /* AddNewAddressVC.swift */,
 				30799CC5231AC8D600F20555 /* AddNewAddressVC.xib */,
+				30799CCC231ACBDA00F20555 /* ConfirmOrderVC.swift */,
+				30799CCD231ACBDA00F20555 /* ConfirmOrderVC.xib */,
 				30799C7B231AB5EA00F20555 /* ListOrderVC.swift */,
 				30799C7C231AB5EA00F20555 /* ListOrderVC.xib */,
 				30799CA2231ABE9C00F20555 /* OrderDetailVC.swift */,
@@ -866,6 +872,7 @@
 				30D4709023157EC6004737AA /* AllCategoriesCollectionCell~ipad.xib in Resources */,
 				30932E3D2312D17600AC87A0 /* HomeCategoryCollectionCell~ipad.xib in Resources */,
 				30E739CD231A4AC9001537B5 /* PhotoViewerVC.xib in Resources */,
+				30799CCF231ACBDA00F20555 /* ConfirmOrderVC.xib in Resources */,
 				30799CB5231AC40500F20555 /* OrderVC.xib in Resources */,
 				30799CAD231ABFF300F20555 /* OrderShippingCell.xib in Resources */,
 				30AB6144231827B20072DF6E /* ProductInfoCell.xib in Resources */,
@@ -994,6 +1001,7 @@
 				30E739D0231A4B90001537B5 /* PhotoViewerCell.swift in Sources */,
 				30799C8B231AB98A00F20555 /* SupportAccountCell.swift in Sources */,
 				30E739CC231A4AC9001537B5 /* PhotoViewerVC.swift in Sources */,
+				30799CCE231ACBDA00F20555 /* ConfirmOrderVC.swift in Sources */,
 				305A4FD32312D072002C8968 /* ListCategoryCell.swift in Sources */,
 				30BB6D1323126C1600D25667 /* CallAPIs.swift in Sources */,
 				30BB6CF823126AFA00D25667 /* ListStoreVC.swift in Sources */,
