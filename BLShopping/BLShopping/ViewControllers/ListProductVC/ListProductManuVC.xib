@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListProductManuVC" customModule="BLShopping" customModuleProvider="target">
+            <connections>
+                <outlet property="btnChangeDisplay" destination="mJh-mz-b3j" id="GF7-Vp-RMt"/>
+                <outlet property="collectionView" destination="ZqR-ch-FnM" id="Tym-pl-eXi"/>
+                <outlet property="lblTitle" destination="VaH-UF-t7W" id="CXq-fi-ARH"/>
+                <outlet property="tableView" destination="rll-4Z-MLG" id="psU-TL-3nL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZl-jE-6vx">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02X-Wh-YYo">
+                            <rect key="frame" x="0.0" y="32" width="40" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="btn_back"/>
+                            <connections>
+                                <action selector="btnBackClicked:" destination="-1" eventType="touchUpInside" id="z4n-AR-gkK"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Danh Sách Sản Phẩm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaH-UF-t7W">
+                            <rect key="frame" x="0.0" y="42" width="320" height="21"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJh-mz-b3j">
+                            <rect key="frame" x="267" y="32" width="45" height="42"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="icon_grid"/>
+                            <connections>
+                                <action selector="btnChangeDisplayClicked:" destination="-1" eventType="touchUpInside" id="66C-uu-OWV"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.1058823529" green="0.6588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="FJ0-j8-uqv"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rll-4Z-MLG">
+                    <rect key="frame" x="0.0" y="80" width="320" height="488"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="gG9-gX-nPK"/>
+                        <outlet property="delegate" destination="-1" id="42N-lu-suv"/>
+                    </connections>
+                </tableView>
+                <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ZqR-ch-FnM">
+                    <rect key="frame" x="0.0" y="80" width="320" height="488"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="FS8-pb-dg1">
+                        <size key="itemSize" width="160" height="200"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="AdC-qo-wBk"/>
+                        <outlet property="delegate" destination="-1" id="sVc-Gh-d8x"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rll-4Z-MLG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3ad-xB-TCP"/>
+                <constraint firstItem="ZqR-ch-FnM" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="F09-bJ-qPe"/>
+                <constraint firstAttribute="bottom" secondItem="rll-4Z-MLG" secondAttribute="bottom" id="JPX-mw-hlC"/>
+                <constraint firstItem="jZl-jE-6vx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SRy-ms-OUk"/>
+                <constraint firstItem="ZqR-ch-FnM" firstAttribute="top" secondItem="jZl-jE-6vx" secondAttribute="bottom" id="cfm-1c-gMj"/>
+                <constraint firstItem="jZl-jE-6vx" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fKh-Nl-D7C"/>
+                <constraint firstItem="rll-4Z-MLG" firstAttribute="top" secondItem="jZl-jE-6vx" secondAttribute="bottom" id="kdK-pG-6gb"/>
+                <constraint firstAttribute="bottom" secondItem="ZqR-ch-FnM" secondAttribute="bottom" id="sVw-9P-Mnu"/>
+                <constraint firstItem="jZl-jE-6vx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vXS-Fm-e0B"/>
+                <constraint firstAttribute="trailing" secondItem="rll-4Z-MLG" secondAttribute="trailing" id="vhb-qj-vMf"/>
+                <constraint firstItem="ZqR-ch-FnM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xqh-Nq-eel"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_back" width="25" height="25"/>
+        <image name="icon_grid" width="16" height="16"/>
+    </resources>
+</document>

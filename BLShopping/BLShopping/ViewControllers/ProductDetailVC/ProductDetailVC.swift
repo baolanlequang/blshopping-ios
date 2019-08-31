@@ -230,10 +230,9 @@ class ProductDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     // MARK: -  OverviewReviewsCellDelegate
     func openReviewProduct() {
-        //TODO: openReviewProduct
-//        let reviewProductVC = ReviewProductVC(nibName: "ReviewProductVC", bundle: nil);
-//        reviewProductVC.productDTO = self.productDTO;
-//        self.navigationController?.present(reviewProductVC, animated: true, completion: nil);
+        let reviewProductVC = ReviewProductVC(nibName: "ReviewProductVC", bundle: nil);
+        reviewProductVC.productDTO = self.productDTO;
+        self.navigationController?.present(reviewProductVC, animated: true, completion: nil);
     }
     
     // MARK: - RelatedProductsCellDelegate
@@ -245,10 +244,9 @@ class ProductDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     // MARK: - ProductManufactureCellDelegate
     func openManufacture(manufacture: ManufactureDTO) {
-        //TODO: openManufacture
-//        let listProductVC = ListProductManuVC(nibName: "ListProductManuVC", bundle: nil);
-//        listProductVC.manufactureDTO = manufacture;
-//        self.navigationController?.pushViewController(listProductVC, animated: true);
+        let listProductVC = ListProductManuVC(nibName: "ListProductManuVC", bundle: nil);
+        listProductVC.manufactureDTO = manufacture;
+        self.navigationController?.pushViewController(listProductVC, animated: true);
     }
     
     // MARK: - CALL APIs
