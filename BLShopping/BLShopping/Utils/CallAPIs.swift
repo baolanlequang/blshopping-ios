@@ -67,3 +67,22 @@ func requestFirstFourProduct(catID: String, completion: @escaping (_ operation: 
         completion(operation, nil, error);
     });
 }
+
+//MARK: - Product
+/**
+ Call api list new added products with GET request
+ @return:
+ */
+func requestNewAddedProducts(completion: @escaping (_ operation: URLSessionDataTask?, _ responseObject: Any?, _ error: Error?) -> Void) -> Void {
+    let manager = AFHTTPSessionManager();
+    manager.requestSerializer = AFJSONRequestSerializer();
+    manager.responseSerializer = AFJSONResponseSerializer();
+    
+    manager.get(API_LIST_NEW_ADDED_PRODUCTS, parameters: nil, progress: nil, success: {(operation: URLSessionDataTask, responseObject) in
+        //        print("requestNewAddedProducts: \(responseObject)")
+        completion(operation, responseObject, nil);
+    }, failure: {(operation, error) in
+        print("requestNewAddedProducts error: \(error)\n")
+        completion(operation, nil, error);
+    });
+}

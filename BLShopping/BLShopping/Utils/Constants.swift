@@ -18,6 +18,10 @@ let API_LIST_BANNERS = SERVER + "banners"
 let API_LIST_CATEGORIES = SERVER + "category/categories"
 let API_FIRST_FOUR_PRODUCTS = SERVER + "category/first_four_products"
 
+//api Product
+let API_LIST_NEW_ADDED_PRODUCTS = SERVER + "product/new_added"
+
+
 // MARK: - Order status
 enum BLLanguageCode: String {
     case EN = "en"

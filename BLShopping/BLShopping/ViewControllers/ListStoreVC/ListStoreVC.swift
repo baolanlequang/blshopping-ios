@@ -243,7 +243,7 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
     func openProductDetail(productDTO: ProductDTO) {
         let productDetailVC = ProductDetailVC(nibName: "ProductDetailVC", bundle: nil);
         productDetailVC.productDTO = productDTO;
-        self.navigationController?.pushViewController(productDetailVC, animated: true);
+        self.tabBarController?.navigationController?.pushViewController(productDetailVC, animated: true);
     }
     
     // MARK: - CategoryCellDelegate
@@ -353,45 +353,30 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
     }
     
     func getNewAddedProducts() {
-        //TODO: demo best seller
-        for i in 1...5 {
-            let product = ProductDTO()
-            product.ID = "\(i)"
-            product.imageURL = "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg";
-            product.name = "Product \(i+1)"
-            product.price = "\(i*100)$"
-            product.priceBeforeDiscount = "\(i*100+i)$"
-            self.listNewAddedProduct.append(product)
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
+        requestNewAddedProducts { (operation, responseObject, error) in
+            if (error == nil) {
+                hud.hide(animated: true)
+                let json = JSON(responseObject ?? [:]);
+//                print("getNewAddedProducts: \(json)")
+                let status = json["status"];
+                if (status["code"].intValue == 1) {
+                    let products = json["data"].arrayValue;
+                    for jsonData in products {
+                        let productDTO = ProductDTO(jsonData: jsonData);
+                        self.listNewAddedProduct.append(productDTO);
+                    }
+                    self.tableView.reloadData()
+                }
+            }
         }
-        self.tableView.reloadData();
-        
-//        let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
-//        requestGetNewAddedProducts { (operation, responseObject, error) in
-//            hud.hide(animated: true);
-//            if (error == nil) {
-//                //                print("RecentlyAddedProductsResult: \(responseObject)");
-//                let json = JSON(responseObject ?? [:]);
-//                if (json["RecentlyAddedProductsResult"].array != nil) {
-//                    let data = json["RecentlyAddedProductsResult"].arrayValue;
-//                    for jsonData in data {
-//                        let productDTO = ProductDTO(jsonData: jsonData);
-//                        self.listNewAddedProduct.append(productDTO);
-//                    }
-//                    self.tableView.reloadData();
-//                }
-//
-//            }
-//            else {
-//
-//            }
-//        }
     }
     
     func getFirstFourProduct(category: CategoryDTO) {
         requestFirstFourProduct(catID: category.ID) { (operation, responseObject, error) in
             if (error == nil) {
                 let json = JSON(responseObject ?? [:]);
-                print("getFirstFourProduct: \(json)")
+//                print("getFirstFourProduct: \(json)")
                 let status = json["status"];
                 if (status["code"].intValue == 1) {
                     let products = json["data"]["products"].arrayValue;
