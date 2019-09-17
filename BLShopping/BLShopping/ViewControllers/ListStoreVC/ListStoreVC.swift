@@ -310,75 +310,33 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
     }
     
     func getCategory() {
-        //TODO: Demo Categories
-        let cat1 = CategoryDTO(catID: "1", name: "Cat 1", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
-        let cat2 = CategoryDTO(catID: "2", name: "Cat 2", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
-        let cat3 = CategoryDTO(catID: "3", name: "Cat 3", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
-        let cat4 = CategoryDTO(catID: "4", name: "Cat 4", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
-        let cat5 = CategoryDTO(catID: "5", name: "Cat 5", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
-        let cat6 = CategoryDTO(catID: "6", name: "Cat 6", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
-        let cat7 = CategoryDTO(catID: "7", name: "Cat 7", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
-        let cat8 = CategoryDTO(catID: "8", name: "Cat 8", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
-        let cat9 = CategoryDTO(catID: "9", name: "Cat 9", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
-        
-        let cat11 = CategoryDTO(catID: "cat11", name: "Cat 11", thumb: "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")
-        cat1.listSubCat.append(cat11)
-        
-        for i in 1...4 {
-            let product = ProductDTO()
-            product.ID = "\(i)"
-            product.imageURL = "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg";
-            product.name = "Product \(i+1)"
-            product.price = "\(i*100)$"
-            product.priceBeforeDiscount = "\(i*100+i)$"
-            cat1.listFirstFourProduct.append(product)
-            cat2.listFirstFourProduct.append(product)
-            cat3.listFirstFourProduct.append(product)
-            cat4.listFirstFourProduct.append(product)
-            cat5.listFirstFourProduct.append(product)
-            cat6.listFirstFourProduct.append(product)
-            cat7.listFirstFourProduct.append(product)
-            cat8.listFirstFourProduct.append(product)
-            cat9.listFirstFourProduct.append(product)
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
+        requestMainCategories { (operation, responseObject, error) in
+            hud.hide(animated: true);
+            if (error == nil) {
+//                print("requestGetCategory: \(responseObject)");
+                let json = JSON(responseObject ?? [:]);
+                let status = json["status"]
+                if (status["code"] == 1) {
+                    let data = json["data"].arrayValue;
+                    for jsonData in data {
+                        let catDTO = CategoryDTO(jsonData: jsonData);
+                        self.listCategory.append(catDTO);
+                    }
+                    
+                    for catDTO in self.listCategory {
+                        self.getFirstFourProduct(category: catDTO)
+                    }
+                    self.tableView.reloadData()
+                }
+                else {
+                    showAlert(title: "", message: status["msg"].stringValue, viewController: self)
+                }
+            }
+            else {
+
+            }
         }
-        
-        self.listCategory.append(contentsOf: [cat1, cat2, cat3, cat4, cat5, cat6, cat7, cat8, cat9])
-        self.tableView.reloadData()
-        
-        
-        
-//        let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
-//        requestGetCategory { (operation, responseObject, error) in
-//            hud.hide(animated: true);
-//            if (error == nil) {
-//                //                print("requestGetCategory: \(responseObject)");
-//                let json = JSON(responseObject ?? [:]);
-//                if (json["TopMenuResult"].dictionary != nil) {
-//                    let data = json["TopMenuResult"];
-//                    if (data["Categories"].array != nil) {
-//                        let categories = data["Categories"].arrayValue;
-//                        for jsonData in categories {
-//                            let catDTO = CategoryDTO(jsonData: jsonData);
-//                            self.listCategory.append(catDTO);
-//
-//                            let subCatDTO = SubCategoryDTO(jsonData: jsonData);
-//                            self.listSubCategory.append(subCatDTO);
-//                        }
-//                    }
-//
-//                    for subCatDTO in self.listSubCategory {
-//                        self.getProductByCategory(subCategoryDTO: subCatDTO);
-//                    }
-//
-//                    self.tableView.reloadData();
-//
-//                }
-//
-//            }
-//            else {
-//
-//            }
-//        }
     }
     
     func getBestSellerProduct() {
@@ -453,5 +411,23 @@ class ListStoreVC: UIViewController, UITableViewDataSource, UIScrollViewDelegate
 //
 //            }
 //        }
+    }
+    
+    func getFirstFourProduct(category: CategoryDTO) {
+        requestFirstFourProduct(catID: category.ID) { (operation, responseObject, error) in
+            if (error == nil) {
+                let json = JSON(responseObject ?? [:]);
+                print("getFirstFourProduct: \(json)")
+                let status = json["status"];
+                if (status["code"].intValue == 1) {
+                    let products = json["data"]["products"].arrayValue;
+                    for jsonData in products {
+                        let productDTO = ProductDTO(jsonData: jsonData);
+                        category.listFirstFourProduct.append(productDTO);
+                    }
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 }

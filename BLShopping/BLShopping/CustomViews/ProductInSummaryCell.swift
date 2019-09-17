@@ -29,7 +29,7 @@ class ProductInSummaryCell: UITableViewCell {
     }
     
     func setData(productDTO: ProductDTO) {
-        self.imageViewProduct.sd_setImage(with: URL(string: productDTO.fullSizeImageURL), placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions(), completed: { (image, error, cachedType, url) in
+        self.imageViewProduct.sd_setImage(with: URL(string: productDTO.imageURL), placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions(), completed: { (image, error, cachedType, url) in
             if (error == nil) {
                 self.imageViewProduct.image = image;
             }

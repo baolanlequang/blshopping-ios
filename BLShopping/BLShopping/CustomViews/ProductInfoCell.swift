@@ -95,7 +95,7 @@ class ProductInfoCell: UITableViewCell, UIScrollViewDelegate {
         for (index, picDTO) in productDTO.listPics.enumerated() {
             let imageViewProd = UIImageView(frame: CGRect(x: CGFloat(index)*imageWidth, y: 0, width: imageWidth, height: imageHeight));
             imageViewProd.contentMode = .scaleAspectFit;
-            imageViewProd.sd_setImage(with: URL(string: picDTO.fullSizeImageURL), placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions(), completed: { (image, error, cachedType, url) in
+            imageViewProd.sd_setImage(with: URL(string: picDTO.imageURL), placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions(), completed: { (image, error, cachedType, url) in
                 if (error == nil) {
                     imageViewProd.image = image;
                 }

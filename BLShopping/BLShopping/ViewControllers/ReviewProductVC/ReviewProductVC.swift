@@ -44,7 +44,7 @@ class ReviewProductVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
         
         
         
-        self.imageViewProduct.sd_setImage(with: URL(string: (self.productDTO?.thumbImageURL)!), placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions(), completed: { (image, error, cachedType, url) in
+        self.imageViewProduct.sd_setImage(with: URL(string: (self.productDTO?.imageURL)!), placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions(), completed: { (image, error, cachedType, url) in
             if (error == nil) {
                 self.imageViewProduct.image = image;
             }

@@ -20,9 +20,7 @@ class ProductDTO: NSObject, NSCoding {
     var totalReview = 0;
     var fullDescription = "";
     var shortDescription = "";
-    var thumbImageURL = "";
     var imageURL = "";
-    var fullSizeImageURL = "";
     
     var listPics: [ProductPictureDTO] = [];
     var listManufactures: [ManufactureDTO] = [];
@@ -37,89 +35,51 @@ class ProductDTO: NSObject, NSCoding {
     
     init(jsonData: JSON) {
         super.init();
-        if (jsonData["ProductId"].null == nil) {
-            self.ID = jsonData["ProductId"].stringValue;
-        }
-        else if (jsonData["Id"].null == nil) {
-            self.ID = jsonData["Id"].stringValue;
+        if (jsonData["_id"].null == nil) {
+            self.ID = jsonData["_id"].stringValue;
         }
 
-        if (jsonData["Name"].null == nil) {
-            self.name = jsonData["Name"].stringValue;
-        }
-        else if (jsonData["ProductName"].null == nil) {
-            self.name = jsonData["ProductName"].stringValue;
+        if (jsonData["name"].null == nil) {
+            self.name = jsonData["name"].stringValue;
         }
 
-
-        if (jsonData["ProductPrice"].string != nil) {
-            self.price = jsonData["ProductPrice"].stringValue;
+        if (jsonData["price"].string != nil) {
+            self.price = jsonData["price"].stringValue;
         }
-        else if (jsonData["ProductPrice"].dictionary != nil) {
-            let dicProductPrice = jsonData["ProductPrice"];
-            if (dicProductPrice["Price"].string != nil) {
-                self.price = dicProductPrice["Price"].stringValue;
-            }
-            if (dicProductPrice["OldPrice"].string != nil) {
-                self.priceBeforeDiscount = dicProductPrice["OldPrice"].stringValue;
-            }
-            if (dicProductPrice["AvailableForPreOrder"].bool != nil) {
-                self.availableForPreOrder = dicProductPrice["AvailableForPreOrder"].boolValue;
-            }
+        
+        if (jsonData["priceBeforeDiscount"].string != nil) {
+            self.priceBeforeDiscount = jsonData["priceBeforeDiscount"].stringValue;
         }
-        else if (jsonData["UnitPrice"].string != nil) {
-            self.priceBeforeDiscount = jsonData["UnitPrice"].stringValue;
-            if (jsonData["SubTotal"].string != nil) {
-                self.price = jsonData["SubTotal"].stringValue;
-            }
+        
+        if (jsonData["allowReview"].null == nil) {
+            self.allowCustomerReviews = jsonData["allowReview"].boolValue;
+        }
+        
+        if (jsonData["description"].string != nil) {
+            self.fullDescription = jsonData["description"].stringValue;
+        }
+        if (jsonData["shortDescription"].string != nil) {
+            self.shortDescription = jsonData["shortDescription"].stringValue;
         }
 
-        if (jsonData["ReviewOverviewModel"].dictionary != nil) {
-            let dicReview = jsonData["ReviewOverviewModel"];
-            if (dicReview["AvailableForPreOrder"].bool != nil) {
-                self.allowCustomerReviews = dicReview["AllowCustomerReviews"].boolValue;
+        if (jsonData["productImages"].null == nil) {
+            let arrImages = jsonData["productImages"].arrayValue;
+            for jsonPic in arrImages {
+                let picDTO = ProductPictureDTO(jsonData: jsonPic);
+                self.listPics.append(picDTO)
             }
-            if (dicReview["RatingSum"].double != nil) {
-                self.totalRating = dicReview["RatingSum"].doubleValue;
-            }
-            if (dicReview["TotalReviews"].int != nil) {
-                self.totalReview = dicReview["TotalReviews"].intValue;
-            }
-        }
-        if (jsonData["FullDescription"].string != nil) {
-            self.fullDescription = jsonData["FullDescription"].stringValue;
-        }
-        if (jsonData["ShortDescription"].string != nil) {
-            self.shortDescription = jsonData["ShortDescription"].stringValue;
-        }
-
-        if (jsonData["DefaultPictureModel"].dictionary != nil) {
-            let dicPicture = jsonData["DefaultPictureModel"];
-            if (dicPicture["ThumbImageUrl"].string != nil) {
-                self.thumbImageURL = dicPicture["ThumbImageUrl"].stringValue;
-            }
-            if (dicPicture["ImageUrl"].string != nil) {
-                self.imageURL = dicPicture["ImageUrl"].stringValue;
-            }
-            if (dicPicture["FullSizeImageUrl"].string != nil) {
-                self.fullSizeImageURL = dicPicture["FullSizeImageUrl"].stringValue;
+            if (self.listPics.count > 0) {
+                let firstPic = self.listPics[0]
+                self.imageURL = firstPic.imageURL;
             }
         }
-        else if (jsonData["Picture"].dictionary != nil) {
-            let dicPicture = jsonData["Picture"];
-            if (dicPicture["ThumbImageUrl"].string != nil) {
-                self.thumbImageURL = dicPicture["ThumbImageUrl"].stringValue;
+        
+        if (jsonData["specifications"].null == nil) {
+            let arrSpecs = jsonData["specifications"].arrayValue;
+            for jsonSpec in arrSpecs {
+                let specDTO = ProductSpecsDTO(jsonData: jsonSpec);
+                self.listSpecs.append(specDTO)
             }
-            if (dicPicture["ImageUrl"].string != nil) {
-                self.imageURL = dicPicture["ImageUrl"].stringValue;
-            }
-            if (dicPicture["FullSizeImageUrl"].string != nil) {
-                self.fullSizeImageURL = dicPicture["FullSizeImageUrl"].stringValue;
-            }
-        }
-
-        if (jsonData["Quantity"].null == nil) {
-            self.quantity = jsonData["Quantity"].intValue;
         }
     }
 
@@ -182,30 +142,7 @@ class ProductDTO: NSObject, NSCoding {
             self.shortDescription = jsonDataCart["ShortDescription"].stringValue;
         }
 
-        if (jsonDataCart["DefaultPictureModel"].dictionary != nil) {
-            let dicPicture = jsonDataCart["DefaultPictureModel"];
-            if (dicPicture["ThumbImageUrl"].string != nil) {
-                self.thumbImageURL = dicPicture["ThumbImageUrl"].stringValue;
-            }
-            if (dicPicture["ImageUrl"].string != nil) {
-                self.imageURL = dicPicture["ImageUrl"].stringValue;
-            }
-            if (dicPicture["FullSizeImageUrl"].string != nil) {
-                self.fullSizeImageURL = dicPicture["FullSizeImageUrl"].stringValue;
-            }
-        }
-        else if (jsonDataCart["Picture"].dictionary != nil) {
-            let dicPicture = jsonDataCart["Picture"];
-            if (dicPicture["ThumbImageUrl"].string != nil) {
-                self.thumbImageURL = dicPicture["ThumbImageUrl"].stringValue;
-            }
-            if (dicPicture["ImageUrl"].string != nil) {
-                self.imageURL = dicPicture["ImageUrl"].stringValue;
-            }
-            if (dicPicture["FullSizeImageUrl"].string != nil) {
-                self.fullSizeImageURL = dicPicture["FullSizeImageUrl"].stringValue;
-            }
-        }
+    
 
         if (jsonDataCart["Quantity"].null == nil) {
             self.quantity = jsonDataCart["Quantity"].intValue;
@@ -262,30 +199,7 @@ class ProductDTO: NSObject, NSCoding {
             self.shortDescription = jsonData["ShortDescription"].stringValue;
         }
 
-        if (jsonData["DefaultPictureModel"].dictionary != nil) {
-            let dicPicture = jsonData["DefaultPictureModel"];
-            if (dicPicture["ThumbImageUrl"].string != nil) {
-                self.thumbImageURL = dicPicture["ThumbImageUrl"].stringValue;
-            }
-            if (dicPicture["ImageUrl"].string != nil) {
-                self.imageURL = dicPicture["ImageUrl"].stringValue;
-            }
-            if (dicPicture["FullSizeImageUrl"].string != nil) {
-                self.fullSizeImageURL = dicPicture["FullSizeImageUrl"].stringValue;
-            }
-        }
-        else if (jsonData["Picture"].dictionary != nil) {
-            let dicPicture = jsonData["Picture"];
-            if (dicPicture["ThumbImageUrl"].string != nil) {
-                self.thumbImageURL = dicPicture["ThumbImageUrl"].stringValue;
-            }
-            if (dicPicture["ImageUrl"].string != nil) {
-                self.imageURL = dicPicture["ImageUrl"].stringValue;
-            }
-            if (dicPicture["FullSizeImageUrl"].string != nil) {
-                self.fullSizeImageURL = dicPicture["FullSizeImageUrl"].stringValue;
-            }
-        }
+        
 
         if (jsonData["PictureModels"].array != nil) {
             self.listPics.removeAll();
@@ -330,9 +244,7 @@ class ProductDTO: NSObject, NSCoding {
         aCoder.encode(self.totalReview, forKey: "totalReview");
         aCoder.encode(self.fullDescription, forKey: "fullDescription");
         aCoder.encode(self.shortDescription, forKey: "shortDescription");
-        aCoder.encode(self.thumbImageURL, forKey: "thumbImageURL");
         aCoder.encode(self.imageURL, forKey: "imageURL");
-        aCoder.encode(self.fullSizeImageURL, forKey: "fullSizeImageURL");
 
         var arrDataPics: [Data] = [];
         for picsDTO in self.listPics {
@@ -365,9 +277,7 @@ class ProductDTO: NSObject, NSCoding {
         self.totalReview = aDecoder.decodeInteger(forKey: "totalReview");
         self.fullDescription = aDecoder.decodeObject(forKey: "fullDescription") as! String;
         self.shortDescription = aDecoder.decodeObject(forKey: "shortDescription") as! String;
-        self.thumbImageURL = aDecoder.decodeObject(forKey: "thumbImageURL") as! String;
         self.imageURL = aDecoder.decodeObject(forKey: "imageURL") as! String;
-        self.fullSizeImageURL = aDecoder.decodeObject(forKey: "fullSizeImageURL") as! String;
 
         let arrDataPics = aDecoder.decodeObject(forKey: "listPics") as! [Data];
         for picsData in arrDataPics {

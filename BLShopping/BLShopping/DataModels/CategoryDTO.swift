@@ -29,19 +29,17 @@ class CategoryDTO: NSObject {
     }
     
     init(jsonData: JSON) {
-        self.ID = jsonData["Id"].stringValue;
-        self.name = jsonData["Name"].stringValue;
-        if (jsonData["SubCategories"].array != nil) {
-            let subCategories = jsonData["SubCategories"].arrayValue;
+        self.ID = jsonData["_id"].stringValue;
+        self.name = jsonData["name"].stringValue;
+        if (jsonData["subCategories"].array != nil) {
+            let subCategories = jsonData["subCategories"].arrayValue;
             for json in subCategories {
                 let subCat = CategoryDTO(jsonData: json);
                 self.listSubCat.append(subCat);
             }
         }
-        if (jsonData["PictureModel"].dictionary != nil) {
-            if (jsonData["PictureModel"]["ImageUrl"].string != nil) {
-                self.thumbnail = jsonData["PictureModel"]["ImageUrl"].stringValue;
-            }
+        if (jsonData["thumbnail"].null == nil) {
+             self.thumbnail = jsonData["thumbnail"].stringValue;
         }
     }
 }

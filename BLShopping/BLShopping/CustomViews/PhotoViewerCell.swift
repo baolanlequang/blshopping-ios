@@ -30,7 +30,7 @@ class PhotoViewerCell: UICollectionViewCell {
     }
     
     func setData(photo: ProductPictureDTO) {
-        self.imageViewProduct.sd_setImage(with: URL(string: photo.thumbImageURL), placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions(), completed: { (image, error, cachedType, url) in
+        self.imageViewProduct.sd_setImage(with: URL(string: photo.imageURL), placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions(), completed: { (image, error, cachedType, url) in
             if (error == nil) {
                 self.imageViewProduct.image = image;
             }

@@ -8,6 +8,13 @@
 
 import Foundation
 
+// MARK: - APIs
+let SERVER = "http://192.168.0.105:3030/api/";
+
+//api Category
+let API_LIST_CATEGORIES = SERVER + "category/categories"
+let API_FIRST_FOUR_PRODUCTS = SERVER + "category/first_four_products"
+
 // MARK: - Order status
 enum BLLanguageCode: String {
     case EN = "en"

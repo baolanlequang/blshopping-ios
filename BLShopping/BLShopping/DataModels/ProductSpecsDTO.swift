@@ -20,9 +20,12 @@ class ProductSpecsDTO: NSObject, NSCoding {
     }
     
     init(jsonData: JSON) {
-        self.name = jsonData["SpecificationAttributeName"].stringValue;
-        self.value = jsonData["ValueRaw"].stringValue;
-        
+        if (jsonData["value"].null == nil) {
+            self.value = jsonData["value"].stringValue;
+        }
+        if (jsonData["name"].null == nil) {
+            self.name = jsonData["name"].stringValue;
+        }
     }
     
     func encode(with aCoder: NSCoder) {
