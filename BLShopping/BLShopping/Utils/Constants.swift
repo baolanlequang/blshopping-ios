@@ -11,6 +11,9 @@ import Foundation
 // MARK: - APIs
 let SERVER = "http://192.168.0.105:3030/api/";
 
+//api Banner
+let API_LIST_BANNERS = SERVER + "banners"
+
 //api Category
 let API_LIST_CATEGORIES = SERVER + "category/categories"
 let API_FIRST_FOUR_PRODUCTS = SERVER + "category/first_four_products"

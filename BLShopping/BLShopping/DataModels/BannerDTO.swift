@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class BannerDTO: NSObject  {
     var bannerID = "";
@@ -26,4 +27,17 @@ class BannerDTO: NSObject  {
         self.link = link;
     }
     
+    init(jsonData: JSON) {
+        super.init();
+        self.bannerID = jsonData["_id"].stringValue;
+        if (jsonData["content"].null == nil) {
+            self.content = jsonData["content"].stringValue;
+        }
+        if (jsonData["imageLink"].null == nil) {
+            self.imageURL = jsonData["imageLink"].stringValue;
+        }
+        if (jsonData["link"].null == nil) {
+            self.link = jsonData["link"].stringValue;
+        }
+    }
 }
