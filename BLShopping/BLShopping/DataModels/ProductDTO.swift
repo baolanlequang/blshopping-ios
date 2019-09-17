@@ -43,11 +43,12 @@ class ProductDTO: NSObject, NSCoding {
             self.name = jsonData["name"].stringValue;
         }
 
-        if (jsonData["price"].string != nil) {
+        if (jsonData["price"].null == nil) {
             self.price = jsonData["price"].stringValue;
+            print(self.price)
         }
         
-        if (jsonData["priceBeforeDiscount"].string != nil) {
+        if (jsonData["priceBeforeDiscount"].null == nil) {
             self.priceBeforeDiscount = jsonData["priceBeforeDiscount"].stringValue;
         }
         
@@ -55,10 +56,10 @@ class ProductDTO: NSObject, NSCoding {
             self.allowCustomerReviews = jsonData["allowReview"].boolValue;
         }
         
-        if (jsonData["description"].string != nil) {
+        if (jsonData["description"].null == nil) {
             self.fullDescription = jsonData["description"].stringValue;
         }
-        if (jsonData["shortDescription"].string != nil) {
+        if (jsonData["shortDescription"].null == nil) {
             self.shortDescription = jsonData["shortDescription"].stringValue;
         }
 
