@@ -20,6 +20,7 @@ let API_FIRST_FOUR_PRODUCTS = SERVER + "category/first_four_products"
 
 //api Product
 let API_LIST_NEW_ADDED_PRODUCTS = SERVER + "product/new_added"
+let API_LIST_PRODUCTS = SERVER + "product/list_products"
 
 
 // MARK: - Order status

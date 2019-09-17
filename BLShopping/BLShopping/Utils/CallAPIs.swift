@@ -86,3 +86,27 @@ func requestNewAddedProducts(completion: @escaping (_ operation: URLSessionDataT
         completion(operation, nil, error);
     });
 }
+
+/**
+ Call api list products with POST request
+ @param catID: id of category
+ @param page
+ @param pageSize
+ @param sortType
+ @return:
+ */
+func requestListProducts(catID: String, page: Int, pageSize: Int, sortType: Int, completion: @escaping (_ operation: URLSessionDataTask?, _ responseObject: Any?, _ error: Error?) -> Void) -> Void {
+    let manager = AFHTTPSessionManager();
+    manager.requestSerializer = AFJSONRequestSerializer();
+    manager.responseSerializer = AFJSONResponseSerializer();
+    
+    let params = ["catID":catID, "page":page, "pageSize":pageSize, "sortType":sortType] as [String : Any]
+    
+    manager.post(API_LIST_PRODUCTS, parameters: params, progress: nil, success: {(operation: URLSessionDataTask, responseObject) in
+        //        print("requestListProducts: \(responseObject)")
+        completion(operation, responseObject, nil);
+    }, failure: {(operation, error) in
+        print("requestListProducts error: \(error)\n")
+        completion(operation, nil, error);
+    });
+}

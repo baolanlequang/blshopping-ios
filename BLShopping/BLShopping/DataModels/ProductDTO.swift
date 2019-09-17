@@ -45,7 +45,6 @@ class ProductDTO: NSObject, NSCoding {
 
         if (jsonData["price"].null == nil) {
             self.price = jsonData["price"].stringValue;
-            print(self.price)
         }
         
         if (jsonData["priceBeforeDiscount"].null == nil) {

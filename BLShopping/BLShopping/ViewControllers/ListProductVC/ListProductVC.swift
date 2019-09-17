@@ -290,29 +290,31 @@ class ListProductVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             return;
         }
         
+    
         
-        //demo
-        for i in 1...4 {
-            let product = ProductDTO()
-            product.ID = "\(i)"
-            product.imageURL = "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg";
-            product.name = "Product \(i+1)"
-            product.price = "\(i*100)$"
-            product.priceBeforeDiscount = "\(i*100+i)$"
-            self.listProducts.append(product)
-        }
-        self.tableView.reloadData();
-        self.collectionView.reloadData();
-        
-        
-        //TODO: getProduct
-        
-//        if (self.categoryDTO != nil) {
-//            let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
-//
-//            let requestPageNumber = self.pageNumber + 1;
-//
-//            if (self.isApplingFilter == false) {
+        if (self.categoryDTO != nil) {
+            let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
+
+            let requestPageNumber = self.pageNumber;
+
+            if (self.isApplingFilter == false) {
+                requestListProducts(catID: self.categoryDTO!.ID, page: requestPageNumber, pageSize: PAGE_SIZE, sortType: sortType) { (operation, responseObject, error) in
+                    hud.hide(animated: true);
+                    if (error == nil) {
+                        let json = JSON(responseObject ?? [:]);
+                        print("getProduct: \(json)")
+                        let status = json["status"];
+                        if (status["code"].intValue == 1) {
+                            let products = json["data"]["products"].arrayValue;
+                            for jsonData in products {
+                                let productDTO = ProductDTO(jsonData: jsonData);
+                                self.listProducts.append(productDTO)
+                            }
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            }
 //                requestGetProductByCategory(categoryDTO: self.categoryDTO!, pageSize: PAGE_SIZE, pageNumber: requestPageNumber, sortType: sortType, completion: { (operation, responseObject, error) in
 //                    hud.hide(animated: true);
 //                    if (error == nil) {
@@ -366,9 +368,9 @@ class ListProductVC: UIViewController, UITableViewDataSource, UITableViewDelegat
 //                        }
 //                    }
 //                })
-//            }
-//            else {
-//                //apply filter
+            }
+            else {
+////                apply filter
 //                requestGetProductByFilter(listFilter: self.currListFilters, categoryDTO: self.categoryDTO!, pageSize: PAGE_SIZE, pageNumber: requestPageNumber, sortType: sortType, completion: { (operation, responseObject, error) in
 //                    hud.hide(animated: true);
 //                    if (error == nil) {
@@ -423,7 +425,7 @@ class ListProductVC: UIViewController, UITableViewDataSource, UITableViewDelegat
 //                    }
 //                })
 //            }
-//
-//        }
+
+        }
     }
 }
