@@ -11,90 +11,65 @@ import SwiftyJSON
 
 class UserDTO: NSObject, NSCoding {
     var userID = "";
+    var facebookID = "";
     var email = "";
-    var username = "";
     var name = "";
-    var gender = "";
     var phone = "";
+    var avatar = ""
+    var token = ""
+    var refreshToken = ""
     
-    var isGuest = false;
+//    var isGuest = false;
     
     override init() {
         
     }
     
     init(jsonData: JSON) {
-        if (jsonData["CustomerId"].string != nil) {
-            self.userID = jsonData["CustomerId"].stringValue;
+        self.userID = jsonData["_id"].stringValue;
+        if (jsonData["name"].null == nil) {
+            self.name = jsonData["name"].stringValue;
         }
-        else if (jsonData["Id"].string != nil) {
-            self.userID = jsonData["Id"].stringValue;
+        if (jsonData["email"].null == nil) {
+            self.email = jsonData["email"].stringValue;
         }
-        
-        if (jsonData["CustomerId"].int != nil) {
-            self.userID = "\(jsonData["CustomerId"].intValue)";
+        if (jsonData["phone"].null == nil) {
+            self.phone = jsonData["phone"].stringValue;
         }
-        else if (jsonData["Id"].int != nil) {
-            self.userID = "\(jsonData["Id"].intValue)";
+        if (jsonData["picture"].null == nil) {
+            self.avatar = jsonData["picture"].stringValue;
         }
-        
-        
-        if (jsonData["EmailId"].string != nil) {
-            self.email = jsonData["EmailId"].stringValue;
+        if (jsonData["token"].null == nil) {
+            self.token = jsonData["token"].stringValue;
         }
-        else if (jsonData["Email"].string != nil) {
-            self.email = jsonData["Email"].stringValue;
+        if (jsonData["refreshToken"].null == nil) {
+            self.refreshToken = jsonData["refreshToken"].stringValue;
         }
-        
-        if (jsonData["UserName"].string != nil) {
-            self.username = jsonData["UserName"].stringValue;
-        }
-        
-    }
-    
-    func updateInfo(jsonData: JSON) {
-        if (jsonData["EmailId"].string != nil) {
-            self.email = jsonData["EmailId"].stringValue;
-        }
-        else if (jsonData["Email"].string != nil) {
-            self.email = jsonData["Email"].stringValue;
-        }
-        
-        if (jsonData["UserName"].string != nil) {
-            self.username = jsonData["UserName"].stringValue;
-        }
-        
-        if (jsonData["FirstName"].string != nil) {
-            self.name = jsonData["FirstName"].stringValue;
-        }
-        
-        if (jsonData["Gender"].string != nil) {
-            self.gender = jsonData["Gender"].stringValue;
-        }
-        
-        if (jsonData["PhoneNumber"].string != nil) {
-            self.phone = jsonData["PhoneNumber"].stringValue;
+        if (jsonData["facebookID"].null == nil) {
+            self.facebookID = jsonData["facebookID"].stringValue;
         }
     }
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(self.userID, forKey: "userID");
         aCoder.encode(self.email, forKey: "email");
-        aCoder.encode(self.username, forKey: "username");
         aCoder.encode(self.name, forKey: "name");
-        aCoder.encode(self.gender, forKey: "gender");
         aCoder.encode(self.phone, forKey: "phone");
-        aCoder.encode(self.isGuest, forKey: "isGuest");
+        aCoder.encode(self.avatar, forKey: "avatar");
+        aCoder.encode(self.token, forKey: "token");
+        aCoder.encode(self.refreshToken, forKey: "refreshToken");
+        aCoder.encode(self.facebookID, forKey: "facebookID");
     }
     
     required init?(coder aDecoder: NSCoder) {
         self.userID = aDecoder.decodeObject(forKey: "userID") as! String;
         self.email = aDecoder.decodeObject(forKey: "email") as! String;
-        self.username = aDecoder.decodeObject(forKey: "username") as! String;
         self.name = aDecoder.decodeObject(forKey: "name") as! String;
-        self.gender = aDecoder.decodeObject(forKey: "gender") as! String;
         self.phone = aDecoder.decodeObject(forKey: "phone") as! String;
-        self.isGuest = aDecoder.decodeBool(forKey: "isGuest");
+        self.avatar = aDecoder.decodeObject(forKey: "avatar") as! String;
+        self.token = aDecoder.decodeObject(forKey: "token") as! String;
+        self.refreshToken = aDecoder.decodeObject(forKey: "refreshToken") as! String;
+        self.facebookID = aDecoder.decodeObject(forKey: "facebookID") as! String;
     }
     
 

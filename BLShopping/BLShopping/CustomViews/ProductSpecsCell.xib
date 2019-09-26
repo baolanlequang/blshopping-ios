@@ -74,8 +74,8 @@
                 </subviews>
                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 <constraints>
-                    <constraint firstItem="u1K-xl-BPo" firstAttribute="top" secondItem="08f-6x-eQ2" secondAttribute="bottom" id="Bh7-h7-Nz7"/>
                     <constraint firstItem="ZB5-jC-O5L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="CCH-9U-dfz"/>
+                    <constraint firstItem="u1K-xl-BPo" firstAttribute="top" secondItem="ZB5-jC-O5L" secondAttribute="bottom" id="H4O-GL-rHH"/>
                     <constraint firstAttribute="trailing" secondItem="ZB5-jC-O5L" secondAttribute="trailing" id="H6t-Wp-Hxb"/>
                     <constraint firstAttribute="bottom" secondItem="u1K-xl-BPo" secondAttribute="bottom" constant="9.5" id="Ja9-Hp-wqZ"/>
                     <constraint firstAttribute="trailing" secondItem="u1K-xl-BPo" secondAttribute="trailing" id="NAB-bO-pTa"/>

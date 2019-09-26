@@ -14,6 +14,11 @@ let SERVER = "http://192.168.0.105:3030/api/";
 //api Banner
 let API_LIST_BANNERS = SERVER + "banners"
 
+//api Authorization
+let API_SIGN_UP = SERVER + "account/signup"
+let API_LOGIN = SERVER + "account/login"
+let API_LOGIN_BY_FACEBOOK = SERVER + "account/fb_login"
+
 //api Category
 let API_LIST_CATEGORIES = SERVER + "category/categories"
 let API_FIRST_FOUR_PRODUCTS = SERVER + "category/first_four_products"
@@ -21,6 +26,7 @@ let API_FIRST_FOUR_PRODUCTS = SERVER + "category/first_four_products"
 //api Product
 let API_LIST_NEW_ADDED_PRODUCTS = SERVER + "product/new_added"
 let API_LIST_PRODUCTS = SERVER + "product/list_products"
+let API_PRODUCT_DETAILS = SERVER + "product/product_details"
 
 
 // MARK: - Order status

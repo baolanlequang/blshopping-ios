@@ -23,8 +23,9 @@ class ProductSpecsDTO: NSObject, NSCoding {
         if (jsonData["value"].null == nil) {
             self.value = jsonData["value"].stringValue;
         }
-        if (jsonData["name"].null == nil) {
-            self.name = jsonData["name"].stringValue;
+        if (jsonData["spec"].null == nil) {
+            let spec = jsonData["spec"]
+            self.name = spec["title"].stringValue;
         }
     }
     

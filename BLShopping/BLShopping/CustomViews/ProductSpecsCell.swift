@@ -45,10 +45,6 @@ class ProductSpecsCell: UITableViewCell, UITableViewDataSource, UITableViewDeleg
         }
         
         self.viewContainerDetail.reloadData();
-//        self.viewContainerDetail.layoutIfNeeded();
-//        self.viewContainerDetail.sizeToFit();
-        
-        //TODO: set height
         self.viewContainerHeight.constant = self.viewContainerDetail.contentSize.height;
         
     }

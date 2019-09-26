@@ -37,7 +37,7 @@ class AccountVC: UIViewController, LoginSignupVCDelegate, UITableViewDataSource,
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
-        if (BLGlobal.shared.userDTO == nil || BLGlobal.shared.userDTO?.isGuest == true) {
+        if (BLGlobal.shared.userDTO == nil) {
             self.openSupportPage();
         }
         else {
@@ -136,7 +136,7 @@ class AccountVC: UIViewController, LoginSignupVCDelegate, UITableViewDataSource,
     // MARK: - CALL APIs
     func getUserInfo() {
         let userDTO = BLGlobal.shared.userDTO;
-        if (userDTO != nil && userDTO?.isGuest == false) {
+        if (userDTO != nil) {
             //TODO: get user info
 //            requestGetUserInfo(userID: (userDTO?.userID)!, completion: { (operation, responseObject, error) in
 //                if (error == nil) {

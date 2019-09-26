@@ -28,6 +28,76 @@ func requestListBanners(completion: @escaping (_ operation: URLSessionDataTask?,
     });
 }
 
+//MARK: - Authorization
+/**
+ Call api sign up with POST request
+ @param fullName
+ @param email
+ @param password
+ @return:
+ */
+func requestSignup(fullName: String, email: String, password: String, completion: @escaping (_ operation: URLSessionDataTask?, _ responseObject: Any?, _ error: Error?) -> Void) -> Void {
+    let manager = AFHTTPSessionManager();
+    manager.requestSerializer = AFJSONRequestSerializer();
+    manager.responseSerializer = AFJSONResponseSerializer();
+    
+    let params = ["fullName":fullName, "email":email, "password":password]
+    
+    manager.post(API_SIGN_UP, parameters: params, progress: nil, success: {(operation: URLSessionDataTask, responseObject) in
+        //        print("requestSignup: \(responseObject)")
+        completion(operation, responseObject, nil);
+    }, failure: {(operation, error) in
+        print("requestSignup error: \(error)\n")
+        completion(operation, nil, error);
+    });
+}
+
+/**
+ Call api sign up with POST request
+ @param email
+ @param password
+ @return:
+ */
+func requestLogin(email: String, password: String, completion: @escaping (_ operation: URLSessionDataTask?, _ responseObject: Any?, _ error: Error?) -> Void) -> Void {
+    let manager = AFHTTPSessionManager();
+    manager.requestSerializer = AFJSONRequestSerializer();
+    manager.responseSerializer = AFJSONResponseSerializer();
+    
+    let params = ["email":email, "password":password]
+    
+    manager.post(API_LOGIN, parameters: params, progress: nil, success: {(operation: URLSessionDataTask, responseObject) in
+        //        print("requestLogin: \(responseObject)")
+        completion(operation, responseObject, nil);
+    }, failure: {(operation, error) in
+        print("requestLogin error: \(error)\n")
+        completion(operation, nil, error);
+    });
+}
+
+/**
+ Call api login by facebook with POST request
+ @param facebookID
+ @param fullName [OPTIONAL]
+ @param email [OPTIONAL]
+ @param avatar [OPTIONAL]
+ @return:
+ */
+func requestLoginByFacebook(facebookID: String, fullName: String, email: String, avatar: String, completion: @escaping (_ operation: URLSessionDataTask?, _ responseObject: Any?, _ error: Error?) -> Void) -> Void {
+    let manager = AFHTTPSessionManager();
+    manager.requestSerializer = AFJSONRequestSerializer();
+    manager.responseSerializer = AFJSONResponseSerializer();
+    
+    let params = ["facebookID":facebookID, "fullName":fullName, "email":email, "picture":avatar]
+    
+    manager.post(API_LOGIN_BY_FACEBOOK, parameters: params, progress: nil, success: {(operation: URLSessionDataTask, responseObject) in
+        //        print("requestLoginByFacebook: \(responseObject)")
+        completion(operation, responseObject, nil);
+    }, failure: {(operation, error) in
+        print("requestLoginByFacebook error: \(error)\n")
+        completion(operation, nil, error);
+    });
+}
+
 //MARK: - Category
 /**
  Call api list main categories with GET request
@@ -107,6 +177,27 @@ func requestListProducts(catID: String, page: Int, pageSize: Int, sortType: Int,
         completion(operation, responseObject, nil);
     }, failure: {(operation, error) in
         print("requestListProducts error: \(error)\n")
+        completion(operation, nil, error);
+    });
+}
+
+/**
+ Call api product detail with POST request
+ @param productID: id of product
+ @return:
+ */
+func requestProductDetails(productID: String, completion: @escaping (_ operation: URLSessionDataTask?, _ responseObject: Any?, _ error: Error?) -> Void) -> Void {
+    let manager = AFHTTPSessionManager();
+    manager.requestSerializer = AFJSONRequestSerializer();
+    manager.responseSerializer = AFJSONResponseSerializer();
+    
+    let params = ["id":productID]
+    
+    manager.post(API_PRODUCT_DETAILS, parameters: params, progress: nil, success: {(operation: URLSessionDataTask, responseObject) in
+        //        print("requestProductDetails: \(responseObject)")
+        completion(operation, responseObject, nil);
+    }, failure: {(operation, error) in
+        print("requestProductDetails error: \(error)\n")
         completion(operation, nil, error);
     });
 }

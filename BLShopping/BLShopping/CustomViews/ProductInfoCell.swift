@@ -57,13 +57,13 @@ class ProductInfoCell: UITableViewCell, UIScrollViewDelegate {
         self.lblName.text = productDTO.name;
         self.lblName.sizeToFit();
         
-        self.lblSKU.text = "SKU: \(productDTO.ID)";
+        self.lblSKU.text = "SKU: \(productDTO.sku)";
         
         self.pageControl.numberOfPages = productDTO.listPics.count;
         
         if (productDTO.totalReview > 0) {
             self.lblRating.text = String.init(format: "%.1f/5", productDTO.totalRating/Double(productDTO.totalReview));
-            self.ratingView.value = CGFloat(productDTO.totalRating/Double(productDTO.totalReview));
+            self.ratingView.value = CGFloat(productDTO.averageRating);
         }
         else {
             self.lblRating.text = "0/5";

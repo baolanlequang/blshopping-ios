@@ -21,6 +21,8 @@ class ProductDTO: NSObject, NSCoding {
     var fullDescription = "";
     var shortDescription = "";
     var imageURL = "";
+    var averageRating = 0.0
+    var sku = ""
     
     var listPics: [ProductPictureDTO] = [];
     var listManufactures: [ManufactureDTO] = [];
@@ -80,6 +82,12 @@ class ProductDTO: NSObject, NSCoding {
                 let specDTO = ProductSpecsDTO(jsonData: jsonSpec);
                 self.listSpecs.append(specDTO)
             }
+        }
+        if (jsonData["averageRating"].null == nil) {
+            self.averageRating = jsonData["averageRating"].doubleValue
+        }
+        if (jsonData["sku"].null == nil) {
+            self.sku = jsonData["sku"].stringValue
         }
     }
 
@@ -149,89 +157,7 @@ class ProductDTO: NSObject, NSCoding {
         }
     }
 
-    func updateData(jsonData: JSON) {
-        if (jsonData["ProductId"].null == nil) {
-            self.ID = jsonData["ProductId"].stringValue;
-        }
-        else if (jsonData["Id"].null == nil) {
-            self.ID = jsonData["Id"].stringValue;
-        }
-
-        if (jsonData["Name"].null == nil) {
-            self.name = jsonData["Name"].stringValue;
-        }
-        else if (jsonData["ProductName"].null == nil) {
-            self.name = jsonData["ProductName"].stringValue;
-        }
-
-        if (jsonData["ProductPrice"].string != nil) {
-            self.price = jsonData["ProductPrice"].stringValue;
-        }
-        else if (jsonData["ProductPrice"].dictionary != nil) {
-            let dicProductPrice = jsonData["ProductPrice"];
-            if (dicProductPrice["Price"].string != nil) {
-                self.price = dicProductPrice["Price"].stringValue;
-            }
-            if (dicProductPrice["OldPrice"].string != nil) {
-                self.priceBeforeDiscount = dicProductPrice["OldPrice"].stringValue;
-            }
-            if (dicProductPrice["AvailableForPreOrder"].bool != nil) {
-                self.availableForPreOrder = dicProductPrice["AvailableForPreOrder"].boolValue;
-            }
-        }
-
-        if (jsonData["ReviewOverviewModel"].dictionary != nil) {
-            let dicReview = jsonData["ReviewOverviewModel"];
-            if (dicReview["AvailableForPreOrder"].bool != nil) {
-                self.allowCustomerReviews = dicReview["AllowCustomerReviews"].boolValue;
-            }
-            if (dicReview["RatingSum"].double != nil) {
-                self.totalRating = dicReview["RatingSum"].doubleValue;
-            }
-            if (dicReview["TotalReviews"].int != nil) {
-                self.totalReview = dicReview["TotalReviews"].intValue;
-            }
-        }
-        if (jsonData["FullDescription"].string != nil) {
-            self.fullDescription = jsonData["FullDescription"].stringValue;
-        }
-        if (jsonData["ShortDescription"].string != nil) {
-            self.shortDescription = jsonData["ShortDescription"].stringValue;
-        }
-
-        
-
-        if (jsonData["PictureModels"].array != nil) {
-            self.listPics.removeAll();
-            let arrPics = jsonData["PictureModels"].arrayValue;
-            for json in arrPics {
-                let productPicsDTO = ProductPictureDTO(jsonData: json);
-                self.listPics.append(productPicsDTO);
-            }
-        }
-
-        if (jsonData["ProductManufacturers"].array != nil) {
-            self.listManufactures.removeAll();
-            let arrManufacs = jsonData["ProductManufacturers"].arrayValue;
-            for json in arrManufacs {
-                let manufactureDTO = ManufactureDTO(jsonData: json);
-                self.listManufactures.append(manufactureDTO);
-            }
-        }
-
-        if (jsonData["ProductSpecifications"].array != nil) {
-            self.listSpecs.removeAll();
-            let arrSpecs = jsonData["ProductSpecifications"].arrayValue;
-            for json in arrSpecs {
-                let productSpecsDTO = ProductSpecsDTO(jsonData: json);
-                self.listSpecs.append(productSpecsDTO);
-            }
-        }
-
-        if (jsonData["Quantity"].null == nil) {
-            self.quantity = jsonData["Quantity"].intValue;
-        }
-    }
+    
 
     func encode(with aCoder: NSCoder) {
         aCoder.encode(self.ID, forKey: "ID");

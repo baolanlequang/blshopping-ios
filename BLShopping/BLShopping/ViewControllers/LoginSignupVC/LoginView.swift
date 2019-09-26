@@ -11,7 +11,7 @@ import UIKit
 protocol LoginViewDelegate {
     func didBtnLoginFacebookClicked();
     func didBtnLoginGoogleClicked();
-    func didBtnLoginClicked(userName: String, password: String);
+    func didBtnLoginClicked(email: String, password: String);
 }
 
 class LoginView: UIView, UITextFieldDelegate {
@@ -60,7 +60,7 @@ class LoginView: UIView, UITextFieldDelegate {
             }
             else {
                 // do login
-                self.delegate?.didBtnLoginClicked(userName: email!, password: password!)
+                self.delegate?.didBtnLoginClicked(email: email!, password: password!)
             }
         }
         else {
@@ -94,7 +94,7 @@ class LoginView: UIView, UITextFieldDelegate {
                 }
                 else {
                     // do login
-                    self.delegate?.didBtnLoginClicked(userName: email!, password: password!)
+                    self.delegate?.didBtnLoginClicked(email: email!, password: password!)
                 }
             }
             else {

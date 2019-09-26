@@ -29,10 +29,6 @@ class ProductSpectItemCell: UITableViewCell {
     func setData(specDTO: ProductSpecsDTO) {
         self.lblName.text = specDTO.name;
         self.lblValue.text = specDTO.value;
-        
-//        self.lblName.sizeToFit();
-//        self.lblValue.sizeToFit();
-//        self.layoutIfNeeded();
     }
     
 }

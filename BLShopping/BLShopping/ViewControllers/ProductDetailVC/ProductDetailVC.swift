@@ -230,9 +230,11 @@ class ProductDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     // MARK: -  OverviewReviewsCellDelegate
     func openReviewProduct() {
-        let reviewProductVC = ReviewProductVC(nibName: "ReviewProductVC", bundle: nil);
-        reviewProductVC.productDTO = self.productDTO;
-        self.navigationController?.present(reviewProductVC, animated: true, completion: nil);
+        if (BLGlobal.shared.userDTO != nil) {
+            let reviewProductVC = ReviewProductVC(nibName: "ReviewProductVC", bundle: nil);
+            reviewProductVC.productDTO = self.productDTO;
+            self.navigationController?.present(reviewProductVC, animated: true, completion: nil);
+        }
     }
     
     // MARK: - RelatedProductsCellDelegate
@@ -252,32 +254,32 @@ class ProductDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     // MARK: - CALL APIs
     func getProductDetail() {
         if (self.productDTO != nil) {
-            //TODO: get product detail
-            
-//            let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
-//            requestGetProductDetail(productDTO: self.productDTO!, completion: { (operation, responseObject, error) in
-//                hud.hide(animated: true);
-//                if (error == nil) {
-//                    //                    print("requestGetProductDetail: \(responseObject)");
-//                    let json = JSON(responseObject ?? [:]);
-//                    if (json["ProductDetailResult"].dictionary != nil) {
-//                        let jsonData = json["ProductDetailResult"];
-//                        self.productDTO?.updateData(jsonData: jsonData);
-//                        self.tableView.reloadData();
-//
-//                        let price = self.productDTO?.price;
-//                        if (price?.lowercased().contains("call"))! {
-//                            self.btnAddToCart.setTitle("Liên Hệ Nhà Cung Cấp", for: .normal);
-//                        }
-//                        else {
-//                            self.btnAddToCart.setTitle("Thêm Vào Giỏ Hàng", for: .normal);
-//                        }
-//                    }
-//                }
-//                else {
-//
-//                }
-//            })
+            let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
+            requestProductDetails(productID: self.productDTO!.ID, completion: { (operation, responseObject, error) in
+                hud.hide(animated: true);
+                if (error == nil) {
+//                    print("requestGetProductDetail: \(responseObject)");
+                    let json = JSON(responseObject ?? [:]);
+                    let status = json["status"];
+                    if (status["code"].intValue == 1) {
+                        let productData = json["data"];
+                        self.productDTO = ProductDTO(jsonData: productData);
+                        self.tableView.reloadData()
+                        
+                        let price = self.productDTO?.price;
+                        if (price?.lowercased().contains("call"))! {
+                            self.btnAddToCart.setTitle("Liên Hệ Nhà Cung Cấp", for: .normal);
+                        }
+                        else {
+                            self.btnAddToCart.setTitle("Thêm Vào Giỏ Hàng", for: .normal);
+                        }
+
+                    }
+                }
+                else {
+
+                }
+            })
         }
     }
     

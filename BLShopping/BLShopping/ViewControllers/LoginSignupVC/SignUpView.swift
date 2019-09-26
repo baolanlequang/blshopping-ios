@@ -10,14 +10,12 @@ import UIKit
 import DLRadioButton
 
 protocol SignUpViewDelegate {
-    func didBtnRegisterClicked(userName: String,fullName: String, email: String, password: String, gender: String);
+    func didBtnRegisterClicked(fullName: String, email: String, password: String);
 }
 
 class SignUpView: UIView, UITextFieldDelegate {
     
     // variables
-    @IBOutlet weak var radioNam: DLRadioButton!
-    @IBOutlet weak var radioNu: DLRadioButton!
     @IBOutlet weak var txtName: RaisePlaceholder!
     @IBOutlet weak var txtEmail: RaisePlaceholder!
     @IBOutlet weak var txtPassword: RaisePlaceholder!
@@ -43,20 +41,13 @@ class SignUpView: UIView, UITextFieldDelegate {
         let name = self.txtName.text;
         let email = self.txtEmail.text;
         let password = self.txtPassword.text;
-        var gender = "";
-        if (self.radioNu.isSelected) {
-            gender = "FeMale";
-        }
-        else {
-            gender = "Male";
-        }
         if (email != "" && password != "" && name != "") {
             if (!isValidEmail(testStr: email!)) {
                 self.lblEmailError.text = "Email không đúng";
             }
             else {
                 // do sign up
-                self.delegate?.didBtnRegisterClicked(userName: email!, fullName: name!, email: email!, password: password!, gender: gender);
+                self.delegate?.didBtnRegisterClicked(fullName: name!, email: email!, password: password!);
             }
         }
         else {
@@ -87,20 +78,13 @@ class SignUpView: UIView, UITextFieldDelegate {
             let name = self.txtName.text;
             let email = self.txtEmail.text;
             let password = self.txtPassword.text;
-            var gender = "";
-            if (self.radioNu.isSelected) {
-                gender = "FeMale";
-            }
-            else {
-                gender = "Male";
-            }
             if (email != "" && password != "" && name != "") {
                 if (!isValidEmail(testStr: email!)) {
                     self.lblEmailError.text = "Email không đúng";
                 }
                 else {
                     // do sign up
-                    self.delegate?.didBtnRegisterClicked(userName: email!, fullName: name!, email: email!, password: password!, gender: gender);
+                    self.delegate?.didBtnRegisterClicked(fullName: name!, email: email!, password: password!);
                 }
             }
             else {

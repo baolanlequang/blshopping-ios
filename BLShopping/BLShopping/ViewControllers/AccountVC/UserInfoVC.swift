@@ -38,12 +38,6 @@ class UserInfoVC: UIViewController , UITextFieldDelegate {
         self.txtEmail.text = (userDTO?.email)!;
         self.txtPhone.text = (userDTO?.phone)!;
         
-        if (userDTO?.gender.lowercased() == "male") {
-            self.radioMale.isSelected = true;
-        }
-        else if (userDTO?.gender.lowercased() == "female") {
-            self.radioFeMale.isSelected = true;
-        }
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(tap:)));
         self.view.addGestureRecognizer(tap);
