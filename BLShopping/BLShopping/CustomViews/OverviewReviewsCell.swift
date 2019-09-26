@@ -92,8 +92,8 @@ class OverviewReviewsCell: UITableViewCell {
     
     func setData(listReview: [ProductReviewDTO], productDTO: ProductDTO) {
         if (productDTO.totalReview > 0) {
-            self.lblRating.text = String.init(format: "%.1f/5", productDTO.totalRating/Double(productDTO.totalReview));
-            self.ratingView.value = CGFloat(productDTO.totalRating/Double(productDTO.totalReview));
+            self.lblRating.text = String.init(format: "%.1f/5", productDTO.averageRating);
+            self.ratingView.value = CGFloat(productDTO.averageRating);
         }
         else {
             self.lblRating.text = "0/5"

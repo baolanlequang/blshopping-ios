@@ -16,7 +16,6 @@ class ProductDTO: NSObject, NSCoding {
     var priceBeforeDiscount = "";
     var availableForPreOrder = false;
     var allowCustomerReviews = false;
-    var totalRating = 0.0;
     var totalReview = 0;
     var fullDescription = "";
     var shortDescription = "";
@@ -86,77 +85,15 @@ class ProductDTO: NSObject, NSCoding {
         if (jsonData["averageRating"].null == nil) {
             self.averageRating = jsonData["averageRating"].doubleValue
         }
+        if (jsonData["totalReview"].null == nil) {
+            self.totalReview = jsonData["totalReview"].intValue
+        }
         if (jsonData["sku"].null == nil) {
             self.sku = jsonData["sku"].stringValue
         }
     }
 
-    init(jsonDataCart: JSON) {
-        super.init();
-        if (jsonDataCart["ProductId"].null == nil) {
-            self.ID = jsonDataCart["ProductId"].stringValue;
-        }
-
-        if (jsonDataCart["Id"].null == nil) {
-            self.itemCartID = jsonDataCart["Id"].stringValue;
-        }
-
-        if (jsonDataCart["Name"].null == nil) {
-            self.name = jsonDataCart["Name"].stringValue;
-        }
-        else if (jsonDataCart["ProductName"].null == nil) {
-            self.name = jsonDataCart["ProductName"].stringValue;
-        }
-
-
-        if (jsonDataCart["ProductPrice"].string != nil) {
-            self.price = jsonDataCart["ProductPrice"].stringValue;
-        }
-        else if (jsonDataCart["ProductPrice"].dictionary != nil) {
-            let dicProductPrice = jsonDataCart["ProductPrice"];
-            if (dicProductPrice["Price"].string != nil) {
-                self.price = dicProductPrice["Price"].stringValue;
-            }
-            if (dicProductPrice["OldPrice"].string != nil) {
-                self.priceBeforeDiscount = dicProductPrice["OldPrice"].stringValue;
-            }
-            if (dicProductPrice["AvailableForPreOrder"].bool != nil) {
-                self.availableForPreOrder = dicProductPrice["AvailableForPreOrder"].boolValue;
-            }
-        }
-        else if (jsonDataCart["UnitPrice"].string != nil) {
-            self.priceBeforeDiscount = jsonDataCart["UnitPrice"].stringValue;
-            if (jsonDataCart["SubTotal"].string != nil) {
-                self.price = jsonDataCart["SubTotal"].stringValue;
-            }
-        }
-
-        if (jsonDataCart["ReviewOverviewModel"].dictionary != nil) {
-            let dicReview = jsonDataCart["ReviewOverviewModel"];
-            if (dicReview["AvailableForPreOrder"].bool != nil) {
-                self.allowCustomerReviews = dicReview["AllowCustomerReviews"].boolValue;
-            }
-            if (dicReview["RatingSum"].double != nil) {
-                self.totalRating = dicReview["RatingSum"].doubleValue;
-            }
-            if (dicReview["TotalReviews"].int != nil) {
-                self.totalReview = dicReview["TotalReviews"].intValue;
-            }
-        }
-        if (jsonDataCart["FullDescription"].string != nil) {
-            self.fullDescription = jsonDataCart["FullDescription"].stringValue;
-        }
-        if (jsonDataCart["ShortDescription"].string != nil) {
-            self.shortDescription = jsonDataCart["ShortDescription"].stringValue;
-        }
-
     
-
-        if (jsonDataCart["Quantity"].null == nil) {
-            self.quantity = jsonDataCart["Quantity"].intValue;
-        }
-    }
-
     
 
     func encode(with aCoder: NSCoder) {
@@ -166,7 +103,7 @@ class ProductDTO: NSObject, NSCoding {
         aCoder.encode(self.priceBeforeDiscount, forKey: "priceBeforeDiscount");
         aCoder.encode(self.availableForPreOrder, forKey: "availableForPreOrder");
         aCoder.encode(self.allowCustomerReviews, forKey: "allowCustomerReviews");
-        aCoder.encode(self.totalRating, forKey: "totalRating");
+        aCoder.encode(self.averageRating, forKey: "averageRating");
         aCoder.encode(self.totalReview, forKey: "totalReview");
         aCoder.encode(self.fullDescription, forKey: "fullDescription");
         aCoder.encode(self.shortDescription, forKey: "shortDescription");
@@ -199,7 +136,7 @@ class ProductDTO: NSObject, NSCoding {
         self.priceBeforeDiscount = aDecoder.decodeObject(forKey: "priceBeforeDiscount") as! String;
         self.availableForPreOrder = aDecoder.decodeBool(forKey: "availableForPreOrder");
         self.allowCustomerReviews = aDecoder.decodeBool(forKey: "allowCustomerReviews");
-        self.totalRating = aDecoder.decodeDouble(forKey: "totalRating");
+        self.averageRating = aDecoder.decodeDouble(forKey: "averageRating");
         self.totalReview = aDecoder.decodeInteger(forKey: "totalReview");
         self.fullDescription = aDecoder.decodeObject(forKey: "fullDescription") as! String;
         self.shortDescription = aDecoder.decodeObject(forKey: "shortDescription") as! String;

@@ -170,26 +170,19 @@ class ReviewProductVC: UIViewController, UITextFieldDelegate, UITextViewDelegate
     
     // MARK: - CALL APIs
     func addReview(title: String, content: String, rating: CGFloat) {
-        let userDTO = BLGlobal.shared.userDTO;
-        var userID = "";
-        if (userDTO != nil) {
-            userID = (userDTO?.userID)!
+    
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
+        requestReviewProduct(productID: self.productDTO!.ID, title: title, content: content, rating: rating) { (operation, responseObject, error) in
+            hud.hide(animated: true)
+            if (error == nil) {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: NOTI_ADD_REVIEW), object: nil);
+                self.btnBackClicked(nil);
+
+            }
+            else {
+                showAlert(title: "", message: (error?.localizedDescription)!, viewController: self);
+            }
         }
-        
-        //TODO: add review
-        
-//        let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
-//        requestAddProductReview(productDTO: self.productDTO!, title: title, content: content, rating: rating, userID: userID, completion: { (operation, responseObject, error) in
-//            hud.hide(animated: true);
-//            if (error == nil) {
-//                //                print("requestAddProductReview: \(responseObject)")
-//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: NOTI_ADD_REVIEW), object: nil);
-//                self.btnBackClicked(nil);
-//            }
-//            else {
-//                showAlert(title: "", message: (error?.localizedDescription)!, viewController: self);
-//            }
-//        })
     }
 
 }

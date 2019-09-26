@@ -23,19 +23,20 @@ class ProductReviewDTO: NSObject {
     }
     
     init(jsonData: JSON) {
-        self.ID = jsonData["Id"].stringValue;
-        if (jsonData["Title"].string != nil) {
-            self.title = jsonData["Title"].stringValue;
+        self.ID = jsonData["_id"].stringValue;
+        if (jsonData["title"].null == nil) {
+            self.title = jsonData["title"].stringValue;
         }
-        if (jsonData["CustomerName"].string != nil) {
-            self.customerName = jsonData["CustomerName"].stringValue;
+        if (jsonData["owner"].null != nil) {
+            let owner = jsonData["owner"]
+            self.customerName = owner["name"].stringValue;
         }
-        self.rating = jsonData["Rating"].doubleValue;
-        if (jsonData["ReviewText"].string != nil) {
-            self.content = jsonData["ReviewText"].stringValue;
+        self.rating = jsonData["rating"].doubleValue;
+        if (jsonData["description"].null == nil) {
+            self.content = jsonData["description"].stringValue;
         }
-        if (jsonData["WrittenOnStr"].string != nil) {
-            self.reviewDate = jsonData["WrittenOnStr"].stringValue;
+        if (jsonData["created"].null == nil) {
+            self.reviewDate = jsonData["created"].stringValue;
         }
     }
     

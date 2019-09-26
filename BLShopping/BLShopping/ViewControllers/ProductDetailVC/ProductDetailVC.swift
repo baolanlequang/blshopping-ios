@@ -310,30 +310,25 @@ class ProductDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func getReview() {
         if (self.productDTO != nil) {
-            //TODO: get product review
             
-//            let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
-//            requestGetProductReview(productDTO: self.productDTO!, completion: { (operation, responseObject, error) in
-//                hud.hide(animated: true);
-//                if (error == nil) {
-//                    //                    print("requestGetProductReview: \(responseObject)");
-//                    let json = JSON(responseObject ?? [:]);
-//                    if (json["ProductReviewsResult"].dictionary != nil) {
-//                        if (json["ProductReviewsResult"]["Items"].array != nil) {
-//                            self.listReviews.removeAll();
-//                            for jsonData in json["ProductReviewsResult"]["Items"].arrayValue {
-//                                let reviewDTO = ProductReviewDTO(jsonData: jsonData);
-//                                self.listReviews.append(reviewDTO);
-//                            }
-//                            self.tableView.reloadData();
-//                        }
-//
-//                    }
-//                }
-//                else {
-//
-//                }
-//            })
+            let hud = MBProgressHUD.showAdded(to: self.view, animated: true);
+            requestGetReviewProduct(productID: self.productDTO!.ID) { (operation, responseObject, error) in
+                hud.hide(animated: true)
+                if (error == nil) {
+                    let json = JSON(responseObject ?? [:])
+                    let status = json["status"];
+                    if (status["code"].intValue == 1) {
+                        let arrReview = json["data"].arrayValue;
+                        self.listReviews.removeAll();
+                        for jsonData in arrReview {
+                            let reviewDTO = ProductReviewDTO(jsonData: jsonData);
+                            self.listReviews.append(reviewDTO);
+                        }
+                        self.tableView.reloadData();
+
+                    }
+                }
+            }
         }
     }
 

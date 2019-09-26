@@ -19,7 +19,7 @@ class SplashVC: UIViewController {
         self.view.backgroundColor = BLColor.sharedInstance.defaultColor();
 
         //TODO: check user
-//        let userDTO = BLGlobal.shared.getUser();
+        let userDTO = BLGlobal.shared.getUser();
 //        if (userDTO != nil) {
 //            self.getCart();
 //        }

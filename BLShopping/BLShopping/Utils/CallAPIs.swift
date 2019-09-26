@@ -201,3 +201,52 @@ func requestProductDetails(productID: String, completion: @escaping (_ operation
         completion(operation, nil, error);
     });
 }
+
+/**
+ Call api review product POST request
+ @param productID
+ @param title
+ @param content
+ @param rating
+ @return:
+ */
+func requestReviewProduct(productID: String, title: String, content: String, rating: CGFloat, completion: @escaping (_ operation: URLSessionDataTask?, _ responseObject: Any?, _ error: Error?) -> Void) -> Void {
+    let manager = AFHTTPSessionManager();
+    manager.requestSerializer = AFJSONRequestSerializer();
+    manager.responseSerializer = AFJSONResponseSerializer();
+    
+    manager.requestSerializer.setValue((BLGlobal.shared.userDTO?.token)!, forHTTPHeaderField: "Authorization");
+    
+    let params = ["id":productID, "title":title, "description":content, "rating":rating] as [String : Any];
+    
+    manager.post(API_REVIEW_PRODUCT, parameters: params, progress: nil, success: {(operation: URLSessionDataTask, responseObject) in
+        //       print(requestReviewProduct: \(responseObject)")
+        completion(operation, responseObject, nil);
+    }, failure: {(operation, error) in
+        print("requestReviewProduct error: \(error)\n")
+        completion(operation, nil, error);
+    });
+}
+
+/**
+ Call api get reviews of product GET request
+ @param productID
+ @return:
+ */
+func requestGetReviewProduct(productID: String, completion: @escaping (_ operation: URLSessionDataTask?, _ responseObject: Any?, _ error: Error?) -> Void) -> Void {
+    let manager = AFHTTPSessionManager();
+    manager.requestSerializer = AFJSONRequestSerializer();
+    manager.responseSerializer = AFJSONResponseSerializer();
+    
+    manager.requestSerializer.setValue((BLGlobal.shared.userDTO?.token)!, forHTTPHeaderField: "Authorization");
+    
+    let params = ["id":productID];
+    
+    manager.get(API_REVIEW_PRODUCT, parameters: params, progress: nil, success: {(operation: URLSessionDataTask, responseObject) in
+        //       print(requestGetReviewProduct: \(responseObject)")
+        completion(operation, responseObject, nil);
+    }, failure: {(operation, error) in
+        print("requestGetReviewProduct error: \(error)\n")
+        completion(operation, nil, error);
+    });
+}

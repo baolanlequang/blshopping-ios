@@ -69,12 +69,6 @@ class OrderDTO: NSObject {
         if (jsonData["OrderShipping"].null == nil) {
             self.shippingFee = jsonData["OrderShipping"].stringValue;
         }
-        if (jsonData["OrderItems"].array != nil) {
-            let items = jsonData["OrderItems"].arrayValue;
-            for jsonProduct in items {
-                let productDTO = ProductDTO(jsonDataCart: jsonProduct);
-                self.listProducts.append(productDTO);
-            }
-        }
+        
     }
 }

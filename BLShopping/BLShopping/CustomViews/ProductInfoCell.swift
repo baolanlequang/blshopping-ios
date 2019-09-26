@@ -62,7 +62,7 @@ class ProductInfoCell: UITableViewCell, UIScrollViewDelegate {
         self.pageControl.numberOfPages = productDTO.listPics.count;
         
         if (productDTO.totalReview > 0) {
-            self.lblRating.text = String.init(format: "%.1f/5", productDTO.totalRating/Double(productDTO.totalReview));
+            self.lblRating.text = String.init(format: "%.1f/5", productDTO.averageRating);
             self.ratingView.value = CGFloat(productDTO.averageRating);
         }
         else {
